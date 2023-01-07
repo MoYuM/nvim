@@ -12,7 +12,9 @@ Plug('junegunn/fzf', {
 		vim.call('fzf#run', { source = 'git ls-files' })
 	end
 })
-Plug 'junegunn/fzf.vim'Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'junegunn/fzf.vim'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'icymind/neosolarized'
 
 vim.call('plug#end')
 
@@ -21,4 +23,13 @@ vim.g.CtrlSpaceSaveWorkspaceOnSwitch = 1
 vim.g.CtrlSpaceSaveWorkspaceOnExit = 1
 
 -- autocmd
-vim.api.nvim_create_autocmd('VimEnter', { command = ':CtrlSpace b' })
+-- vim.api.nvim_create_autocmd('VimEnter', { command = ':CtrlSpace b' })
+
+-- colorschema
+vim.o.background = 'dark'
+local colorscheme = "NeoSolarized"
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not status_ok then
+	vim.notify("colorscheme " .. colorscheme .. " not Found")
+	return
+end
