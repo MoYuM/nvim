@@ -5,3 +5,6 @@ vim.keymap.set('n', '<leader>', '<Plug>(easymotion-prefix)', { desc = '设置 ea
 
 -- fzf
 vim.keymap.set('n', '\\', ':FZF<Enter>')
+
+-- ctrl space
+vim.g.CtrlSpaceDefaultMappingKey = '1'
