@@ -16,3 +16,9 @@ Plug 'junegunn/fzf.vim'Plug 'vim-ctrlspace/vim-ctrlspace'
 
 vim.call('plug#end')
 
+-- ctrlspace
+vim.g.CtrlSpaceSaveWorkspaceOnSwitch = 1
+vim.g.CtrlSpaceSaveWorkspaceOnExit = 1
+
+-- autocmd
+vim.api.nvim_create_autocmd('VimEnter', { command = ':CtrlSpace b' })
