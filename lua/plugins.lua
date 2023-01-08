@@ -29,4 +29,6 @@ use {
     }
   end
 }
+
+use 'f-person/git-blame.nvim'
 end)
