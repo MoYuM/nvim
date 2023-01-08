@@ -12,3 +12,11 @@ vim.keymap.set('n', '<c-p>', builtin.git_files, {})
 -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+
+-- hop
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('', 'f', function()
+  hop.hint_char1()
+end, {remap=true})
