@@ -1,22 +1,6 @@
 require('keybingdings')
+require('plugins')
 
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin', '~/.config/nvim/plugged')
-
-Plug 'easymotion/vim-easymotion'
-Plug 'bling/vim-airline'
-Plug('junegunn/fzf', {
-	['do'] = function()
-		vim.call('fzf#install')
-		vim.call('fzf#run', { source = 'git ls-files' })
-	end
-})
-Plug 'junegunn/fzf.vim'
-Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'icymind/neosolarized'
-
-vim.call('plug#end')
 
 -- ctrlspace
 vim.g.CtrlSpaceSaveWorkspaceOnSwitch = 1
@@ -33,3 +17,9 @@ if not status_ok then
 	vim.notify("colorscheme " .. colorscheme .. " not Found")
 	return
 end
+
+-- neovide
+vim.cmd [[
+let g:neovide_floating_blur_amount_x = 2.0
+let g:neovide_floating_blur_amount_y = 2.0
+]]
