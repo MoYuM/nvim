@@ -1,6 +1,6 @@
+require('setup')
 require('keybingdings')
 require('plugins')
-
 
 -- colorschema
 -- vim.o.background = 'dark'
@@ -10,6 +10,8 @@ require('plugins')
 -- 	vim.notify("colorscheme " .. colorscheme .. " not Found")
 -- 	return
 -- end
+
+
 
 -- neovide
 -- vim.cmd [[

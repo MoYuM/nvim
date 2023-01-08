@@ -1,6 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use "nvim-lua/plenary.nvim"
@@ -31,4 +29,24 @@ use {
 }
 
 use 'f-person/git-blame.nvim'
-end)
+
+
+use {
+  'ms-jpq/coq_nvim',
+  branch = 'coq',
+}
+
+use {
+  'ms-jpq/coq.artifacts',
+  branch = 'artifacts'
+}
+
+end,
+config = {
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end
+  }
+}})
+

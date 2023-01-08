@@ -80,6 +80,16 @@ _G.packer_plugins = {
     path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
+  ["coq.artifacts"] = {
+    loaded = true,
+    path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/coq.artifacts",
+    url = "https://github.com/ms-jpq/coq.artifacts"
+  },
+  coq_nvim = {
+    loaded = true,
+    path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/coq_nvim",
+    url = "https://github.com/ms-jpq/coq_nvim"
+  },
   ["git-blame.nvim"] = {
     loaded = true,
     path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
