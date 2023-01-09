@@ -6,7 +6,6 @@ require('keybingdings')
 require('plugins')
 require('coq')
 
-
 -- colorschema
 -- vim.o.background = 'dark'
 -- local colorscheme = "NeoSolarized"
