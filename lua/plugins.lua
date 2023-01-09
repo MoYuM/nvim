@@ -75,7 +75,12 @@ return require('packer').startup({function(use)
         enabling = nil, -- ran when enabling auto-save
         disabling = nil, -- ran when disabling auto-save
         before_asserting_save = nil, -- ran before checking `condition`
-        before_saving = nil, -- ran before doing the actual save
+        before_saving = function()
+          vim.cmd[[
+          BufWritePre * undojoin | Neoformat 
+          ]]
+
+        end, -- ran before doing the actual save
         after_saving = nil -- ran after doing the actual save
       }
     }	end,
@@ -96,13 +101,15 @@ return require('packer').startup({function(use)
     end,
   }
 
-use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
-  tag = 'nightly' -- optional, updated every week. (see issue #1193)
-}
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
+
+  use 'sbdchd/neoformat'
 
 end,
 config = {
