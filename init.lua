@@ -19,6 +19,7 @@ vim.cmd[[colorscheme tokyonight]]
 -- vim
 vim.cmd[[
 set number
+set nowrap
 set autoindent expandtab tabstop=2 shiftwidth=2
 ]]
 
