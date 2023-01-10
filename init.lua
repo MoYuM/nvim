@@ -4,7 +4,6 @@ vim.g.coq_settings = {
 
 require('keybingdings')
 require('plugins')
-require('coq')
 
 -- colorschema
 vim.cmd[[colorscheme tokyonight]]
@@ -21,6 +20,7 @@ vim.cmd[[
 set number
 set nowrap
 set autoindent expandtab tabstop=2 shiftwidth=2
+set completeopt=menu,menuone,noselect
 ]]
 
 -- nvim-tree
