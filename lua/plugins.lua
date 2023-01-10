@@ -3,8 +3,12 @@ return require("packer").startup({
 		-- Packer can manage itself
 		use("wbthomason/packer.nvim")
 		use("nvim-lua/plenary.nvim")
+
+    -- colorscheme
 		use("folke/tokyonight.nvim")
 
+
+    -- fuzzy find
 		use({
 			"nvim-telescope/telescope.nvim",
 			tag = "0.1.0",
@@ -12,6 +16,8 @@ return require("packer").startup({
 			requires = { { "nvim-lua/plenary.nvim" } },
 		})
 
+
+    -- motion
 		use({
 			"phaazon/hop.nvim",
 			branch = "v2", -- optional but strongly recommended
@@ -21,6 +27,8 @@ return require("packer").startup({
 			end,
 		})
 
+
+    -- session
 		use({
 			"rmagatti/auto-session",
 			config = function()
@@ -31,14 +39,12 @@ return require("packer").startup({
 			end,
 		})
 
+
+    -- git-blame
 		use("f-person/git-blame.nvim")
 
 
-		use({
-			"ms-jpq/coq.artifacts",
-			branch = "artifacts",
-		})
-
+    -- auto save
 		use({
 			"Pocco81/auto-save.nvim",
 			config = function()
@@ -74,7 +80,6 @@ return require("packer").startup({
 						disabling = nil, -- ran when disabling auto-save
 						before_asserting_save = nil, -- ran before checking `condition`
 						before_saving = function()
-              
 							vim.call("Neoformat")
 						end, -- ran before doing the actual save
 						after_saving = nil, -- ran after doing the actual save
@@ -83,6 +88,8 @@ return require("packer").startup({
 			end,
 		})
 
+
+    -- comment
 		use({
 			"numToStr/Comment.nvim",
 			config = function()
@@ -90,14 +97,8 @@ return require("packer").startup({
 			end,
 		})
 
-		use({
-			"nvim-treesitter/nvim-treesitter",
-			run = function()
-				local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-				ts_update()
-			end,
-		})
 
+    -- explore
 		use({
 			"nvim-tree/nvim-tree.lua",
 			requires = {
@@ -106,76 +107,44 @@ return require("packer").startup({
 			tag = "nightly", -- optional, updated every week. (see issue #1193)
 		})
 
+
+    -- format
 		use("sbdchd/neoformat")
 
-		use("neovim/nvim-lspconfig")
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use {
-'hrsh7th/nvim-cmp',
-configure = function()
- -- Set up nvim-cmp.
-  local cmp = require'cmp'
 
-  cmp.setup({
-    snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      end,
-    },
-    window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    }),
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
-    }, {
-      { name = 'buffer' },
-    })
-  })
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
-  })
+    -- lsp
+use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    'neovim/nvim-lspconfig',
+}
 
-  -- Set up lspconfig.
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-    capabilities = capabilities
-  }
-end
+
+  -- diagnostics
+use {
+  "folke/trouble.nvim",
+  requires = "kyazdani42/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
     }
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
-		use({
-			"williamboman/mason.nvim",
-			config = function()
-				require("mason").setup()
-			end,
-		})
+  end
+}
+
+
+
+-- cmp
+use 'neovim/nvim-lspconfig'
+use 'hrsh7th/cmp-nvim-lsp'
+use 'hrsh7th/cmp-buffer'
+use 'hrsh7th/cmp-path'
+use 'hrsh7th/cmp-cmdline'
+use 'hrsh7th/nvim-cmp'
+use 'L3MON4D3/LuaSnip'
+use 'saadparwaiz1/cmp_luasnip'
+
 	end,
 	config = {
 		display = {
