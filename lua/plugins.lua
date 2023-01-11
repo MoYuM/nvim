@@ -145,6 +145,11 @@ use 'hrsh7th/nvim-cmp'
 use 'L3MON4D3/LuaSnip'
 use 'saadparwaiz1/cmp_luasnip'
 
+-- auto pairs
+use {
+    "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+      }
 	end,
 	config = {
 		display = {
