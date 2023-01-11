@@ -4,11 +4,10 @@ return require("packer").startup({
 		use("wbthomason/packer.nvim")
 		use("nvim-lua/plenary.nvim")
 
-    -- colorscheme
+		-- colorscheme
 		use("folke/tokyonight.nvim")
 
-
-    -- fuzzy find
+		-- fuzzy find
 		use({
 			"nvim-telescope/telescope.nvim",
 			tag = "0.1.0",
@@ -16,8 +15,7 @@ return require("packer").startup({
 			requires = { { "nvim-lua/plenary.nvim" } },
 		})
 
-
-    -- motion
+		-- motion
 		use({
 			"phaazon/hop.nvim",
 			branch = "v2", -- optional but strongly recommended
@@ -27,8 +25,7 @@ return require("packer").startup({
 			end,
 		})
 
-
-    -- session
+		-- session
 		use({
 			"rmagatti/auto-session",
 			config = function()
@@ -39,12 +36,10 @@ return require("packer").startup({
 			end,
 		})
 
-
-    -- git-blame
+		-- git-blame
 		use("f-person/git-blame.nvim")
 
-
-    -- auto save
+		-- auto save
 		use({
 			"Pocco81/auto-save.nvim",
 			config = function()
@@ -88,8 +83,7 @@ return require("packer").startup({
 			end,
 		})
 
-
-    -- comment
+		-- comment
 		use({
 			"numToStr/Comment.nvim",
 			config = function()
@@ -97,8 +91,7 @@ return require("packer").startup({
 			end,
 		})
 
-
-    -- explore
+		-- explore
 		use({
 			"nvim-tree/nvim-tree.lua",
 			requires = {
@@ -107,55 +100,60 @@ return require("packer").startup({
 			tag = "nightly", -- optional, updated every week. (see issue #1193)
 		})
 
-
-    -- format
+		-- format
 		use("sbdchd/neoformat")
 
+		-- lsp
+		use({
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+		})
 
-    -- lsp
-use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    'neovim/nvim-lspconfig',
-}
+		-- diagnostics
+		use({
+			"folke/trouble.nvim",
+			requires = "kyazdani42/nvim-web-devicons",
+			config = function()
+				require("trouble").setup({
+					-- your configuration comes here
+					-- or leave it empty to use the default settings
+					-- refer to the configuration section below
+				})
+			end,
+		})
 
+		-- cmp
+		use("neovim/nvim-lspconfig")
+		use("hrsh7th/cmp-nvim-lsp")
+		use("hrsh7th/cmp-buffer")
+		use("hrsh7th/cmp-path")
+		use("hrsh7th/cmp-cmdline")
+		use("hrsh7th/nvim-cmp")
+		use("L3MON4D3/LuaSnip")
+		use("saadparwaiz1/cmp_luasnip")
 
-  -- diagnostics
-use {
-  "folke/trouble.nvim",
-  requires = "kyazdani42/nvim-web-devicons",
-  config = function()
-    require("trouble").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  end
-}
+		-- auto pairs
+		use({
+			"windwp/nvim-autopairs",
+			config = function()
+				require("nvim-autopairs").setup({})
+			end,
+		})
 
+		-- lspsaga
+		use({
+			"glepnir/lspsaga.nvim",
+			branch = "main",
+		})
 
-
--- cmp
-use 'neovim/nvim-lspconfig'
-use 'hrsh7th/cmp-nvim-lsp'
-use 'hrsh7th/cmp-buffer'
-use 'hrsh7th/cmp-path'
-use 'hrsh7th/cmp-cmdline'
-use 'hrsh7th/nvim-cmp'
-use 'L3MON4D3/LuaSnip'
-use 'saadparwaiz1/cmp_luasnip'
-
--- auto pairs
-use {
-    "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-      }
-
--- lspsaga
-use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-})
+		-- gitsigns
+		use({
+			"lewis6991/gitsigns.nvim",
+			config = function()
+				require("gitsigns").setup()
+			end,
+		})
 	end,
 
 	config = {
