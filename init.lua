@@ -99,7 +99,6 @@ require("lspsaga").init_lsp_saga()
 -- treesitter
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
-		"lua",
 		"javascript",
 		"typescript",
 		"css",
@@ -118,3 +117,8 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 	},
 })
+
+local status, autotag = pcall(require, "nvim-ts-autotag")
+if (not status) then return end
+
+autotag.setup({})

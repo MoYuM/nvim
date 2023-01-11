@@ -155,14 +155,17 @@ return require("packer").startup({
 			end,
 		})
 
-    -- treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
+		-- treesitter
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			run = function()
+				local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+				ts_update()
+			end,
+		})
+
+		-- auto tag
+		use("windwp/nvim-ts-autotag")
 	end,
 
 	config = {
