@@ -23,11 +23,14 @@ vim.cmd([[colorscheme tokyonight]])
 
 -- vim
 vim.cmd([[
-set number
 set nowrap
 set autoindent expandtab tabstop=2 shiftwidth=2
 set completeopt=menu,menuone,noselect
 ]])
+
+vim.o.signcolumn = 'yes'
+vim.o.number = true
+
 
 -- nvim-tree
 vim.g.loaded_netrw = 1
@@ -88,10 +91,6 @@ vim.g.neoformat_basic_format_align = 1
 vim.g.neoformat_basic_format_retab = 1
 vim.g.neoformat_basic_format_trim = 1
 vim.g.neoformat_run_all_formatters = 1
-
-vim.diagnostic.config({
-	signs = false,
-})
 
 -- lspsaga
 require("lspsaga").init_lsp_saga()
