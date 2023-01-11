@@ -1,8 +1,12 @@
 -- leader
 vim.g.mapleader = " "
 
+-- mode
 vim.keymap.set("i", "jj", "<Esc>")
 
+-- motion
+vim.keymap.set('n', '9', '<C-d>')
+vim.keymap.set('n', '0', '<C-u>')
 
 -- vscode
 vim.keymap.set({ 'n', 'i' }, '<D-x>', 'dd')
@@ -23,4 +27,7 @@ local directions = require("hop.hint").HintDirection
 vim.keymap.set("n", "<leader>s", hop.hint_char1, { remap = true })
 
 -- nvim-tree
-vim.keymap.set("n", "1", ":NvimTreeToggle<Enter>")
+vim.keymap.set("n", "1", ":NvimTreeFocus<Enter>")
+
+-- format
+vim.keymap.set('n', '=', ":Neoformat<CR>")
