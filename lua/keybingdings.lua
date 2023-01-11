@@ -31,3 +31,6 @@ vim.keymap.set("n", "1", ":NvimTreeFocus<Enter>")
 
 -- format
 vim.keymap.set('n', '=', ":Neoformat<CR>")
+
+-- trouble
+vim.keymap.set('n', '2', ':TroubleToggle document_diagnostics<CR>')

@@ -150,7 +150,9 @@ use {
     "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
       }
+
 	end,
+
 	config = {
 		display = {
 			open_fn = function()
