@@ -56,6 +56,7 @@ require("nvim-tree").setup({
 	},
 })
 
+
 -- cmp
 local cmp = require("cmp")
 cmp.setup({
@@ -95,3 +96,6 @@ vim.g.neoformat_run_all_formatters = 1
 vim.diagnostic.config({
 	signs = false
 })
+
+-- lspsaga
+require('lspsaga').init_lsp_saga()

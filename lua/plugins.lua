@@ -151,6 +151,11 @@ use {
         config = function() require("nvim-autopairs").setup {} end
       }
 
+-- lspsaga
+use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+})
 	end,
 
 	config = {

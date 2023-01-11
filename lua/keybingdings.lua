@@ -23,7 +23,6 @@ vim.keymap.set("n", "<D-p>", builtin.git_files, {})
 
 -- hop
 local hop = require("hop")
-local directions = require("hop.hint").HintDirection
 vim.keymap.set("n", "<leader>s", hop.hint_char1, { remap = true })
 
 -- nvim-tree
@@ -34,3 +33,11 @@ vim.keymap.set('n', '=', ":Neoformat<CR>")
 
 -- trouble
 vim.keymap.set('n', '2', ':TroubleToggle document_diagnostics<CR>')
+
+-- lspsaga
+vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
+vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+vim.keymap.set("n", "<D-k>", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+vim.keymap.set("n", "<D-j>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
+vim.keymap.set("t", "<D-j>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
