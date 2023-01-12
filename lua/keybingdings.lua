@@ -19,8 +19,8 @@ vim.keymap.set("v", "<D-v>", "<C-R>+")
 
 -- telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<D-p>", builtin.git_files, {})
-
+vim.keymap.set("n", "<D-p>", builtin.builtin, {})
+vim.keymap.set('n', 'q', builtin.oldfiles, {})
 -- hop
 local hop = require("hop")
 vim.keymap.set("n", "<leader>s", hop.hint_char1, { remap = true })
