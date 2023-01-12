@@ -19,14 +19,15 @@ vim.keymap.set("v", "<D-v>", "<C-R>+")
 
 -- telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<D-p>", builtin.builtin, {})
+vim.keymap.set("n", "<D-p>", builtin.find_files, {})
+vim.keymap.set("n", "<C-p>", builtin.builtin, {})
 vim.keymap.set('n', 'q', builtin.oldfiles, {})
 -- hop
 local hop = require("hop")
 vim.keymap.set("n", "<leader>s", hop.hint_char1, { remap = true })
 
 -- nvim-tree
-vim.keymap.set("n", "1", ":NvimTreeFocus<Enter>")
+vim.keymap.set("n", "1", ":NvimTreeFindFileToggle<Enter>")
 
 -- format
 vim.keymap.set("n", "=", ":Neoformat<CR>")
