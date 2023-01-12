@@ -28,9 +28,8 @@ set autoindent expandtab tabstop=2 shiftwidth=2
 set completeopt=menu,menuone,noselect
 ]])
 
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = "yes"
 vim.o.number = true
-
 
 -- nvim-tree
 vim.g.loaded_netrw = 1
@@ -41,20 +40,21 @@ vim.opt.termguicolors = true
 
 -- OR setup with some options
 require("nvim-tree").setup({
-	sort_by = "case_sensitive",
+	sort_by = "name",
 	view = {
 		adaptive_size = true,
-		mappings = {
-			list = {
-				{ key = "u", action = "dir_up" },
-			},
+		float = {
+			enable = true,
 		},
 	},
 	renderer = {
 		group_empty = true,
+    highlight_git = true,
 	},
-	filters = {
-		dotfiles = true,
+	actions = {
+		open_file = {
+			quit_on_open = true,
+		},
 	},
 })
 
@@ -118,8 +118,10 @@ require("nvim-treesitter.configs").setup({
 })
 
 local status, autotag = pcall(require, "nvim-ts-autotag")
-if (not status) then return end
+if not status then
+	return
+end
 
 autotag.setup({})
 
-require('lualine').setup()
+require("lualine").setup()
