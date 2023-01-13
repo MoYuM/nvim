@@ -1,18 +1,24 @@
 require("keybingdings")
 require("plugins")
-require('ui')
+require("ui")
 
 -- lsp
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-lspconfig").setup_handlers({
 	function(server_name) -- default handler (optional)
-		require("lspconfig")[server_name].setup({})
+		require("lspconfig")[server_name].setup({
+			settings = {
+				Lua = {
+					diagnostics = {
+						-- Get the language server to recognize the `vim` global
+						globals = { "vim" },
+					},
+				},
+			},
+		})
 	end,
 })
-
--- colorschema
-vim.cmd([[colorscheme tokyonight]])
 
 -- vim
 vim.cmd([[
@@ -20,9 +26,6 @@ set nowrap
 set autoindent expandtab tabstop=2 shiftwidth=2
 set completeopt=menu,menuone,noselect
 ]])
-
-vim.o.signcolumn = "yes"
-vim.o.number = true
 
 -- nvim-tree
 vim.g.loaded_netrw = 1
@@ -43,16 +46,16 @@ require("nvim-tree").setup({
 	},
 	renderer = {
 		group_empty = true,
-    highlight_git = true,
+		highlight_git = true,
 	},
 	actions = {
 		open_file = {
 			quit_on_open = true,
 		},
 	},
-   filters = {
-    dotfiles = true,
-  },
+	filters = {
+		dotfiles = true,
+	},
 })
 
 -- cmp
@@ -120,4 +123,3 @@ if not status then
 end
 
 autotag.setup({})
-
