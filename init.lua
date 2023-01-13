@@ -1,7 +1,3 @@
-vim.g.coq_settings = {
-	auto_start = "shut-up",
-}
-
 require("keybingdings")
 require("plugins")
 
@@ -12,10 +8,6 @@ require("mason-lspconfig").setup_handlers({
 	function(server_name) -- default handler (optional)
 		require("lspconfig")[server_name].setup({})
 	end,
-})
-
-vim.diagnostic.config({
-	update_in_insert = true,
 })
 
 -- colorschema
@@ -38,7 +30,8 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- OR setup with some options
+-- nvim tree
+-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L164
 require("nvim-tree").setup({
 	sort_by = "name",
 	view = {
@@ -56,6 +49,9 @@ require("nvim-tree").setup({
 			quit_on_open = true,
 		},
 	},
+   filters = {
+    dotfiles = true,
+  },
 })
 
 -- cmp
@@ -93,7 +89,7 @@ vim.g.neoformat_basic_format_trim = 1
 vim.g.neoformat_run_all_formatters = 1
 
 -- lspsaga
-require("lspsaga").init_lsp_saga()
+require("lspsaga").setup({})
 
 -- treesitter
 require("nvim-treesitter.configs").setup({
