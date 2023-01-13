@@ -1,8 +1,10 @@
 -- leader
 vim.g.mapleader = " "
 
--- mode
+-- basic
 vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set('i', 'oo', '<Esc>o')
+vim.keymap.set('n', '<C-o>', '<C-o>zz')
 
 -- motion
 vim.keymap.set("n", "9", "<C-d>")
@@ -19,7 +21,7 @@ vim.keymap.set("v", "<D-v>", "<C-R>+")
 
 -- telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<D-p>", builtin.find_files, {})
+vim.keymap.set("n", "<leader>f", builtin.find_files, {})
 vim.keymap.set("n", "<C-p>", builtin.builtin, {})
 vim.keymap.set('n', 'q', builtin.oldfiles, {})
 -- hop
@@ -39,6 +41,4 @@ vim.keymap.set("n", "2", ":TroubleToggle document_diagnostics<CR>")
 vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
-vim.keymap.set("n", "<D-k>", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
-vim.keymap.set("n", "<D-j>", "<cmd>Lspsaga open_floaterm lazygit<CR>", { silent = true })
-vim.keymap.set("t", "<D-j>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
+vim.keymap.set("n", "hd", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
