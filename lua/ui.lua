@@ -1,3 +1,10 @@
+vim.cmd('colorscheme tokyonight')
+vim.cmd[[
+  colorscheme tokyonight
+  set signcolumn
+  set number
+]]
+
 -- lualine
 -- https://github.com/nvim-lualine/lualine.nvim
 
