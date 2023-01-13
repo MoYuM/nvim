@@ -1,5 +1,6 @@
 require("keybingdings")
 require("plugins")
+require('ui')
 
 -- lsp
 require("mason").setup()
@@ -120,4 +121,3 @@ end
 
 autotag.setup({})
 
-require("lualine").setup()
