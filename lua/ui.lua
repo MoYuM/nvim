@@ -1,9 +1,10 @@
 vim.cmd('colorscheme tokyonight')
 vim.cmd[[
   colorscheme tokyonight
-  set signcolumn
   set number
 ]]
+
+vim.o.signcolumn = 'yes';
 
 -- lualine
 -- https://github.com/nvim-lualine/lualine.nvim
