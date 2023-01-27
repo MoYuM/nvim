@@ -26,7 +26,6 @@ vim.cmd([[
 set nowrap
 set autoindent expandtab tabstop=2 shiftwidth=2
 set completeopt=menu,menuone,noselect
-set clipboard^=unnamed,unnamedplus
 ]])
 
 -- nvim-tree

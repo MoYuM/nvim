@@ -3,8 +3,8 @@ vim.g.mapleader = " "
 
 -- basic
 vim.keymap.set("i", "jj", "<Esc>")
-vim.keymap.set('i', 'oo', '<Esc>o')
-vim.keymap.set('n', '<C-o>', '<C-o>zz')
+vim.keymap.set("i", "oo", "<Esc>o")
+vim.keymap.set("n", "<C-o>", "<C-o>zz")
 
 -- motion
 vim.keymap.set("n", "9", "<C-d>")
@@ -14,16 +14,15 @@ vim.keymap.set("n", "0", "<C-u>")
 vim.keymap.set({ "n", "i" }, "<D-x>", "dd")
 
 -- paste and yank
-vim.keymap.set({ "n" }, "<D-v>", '"+p<CR>')
-vim.keymap.set("!", "<D-v>", "<C-R>+")
-vim.keymap.set("t", "<D-v>", "<C-R>+")
-vim.keymap.set("v", "<D-v>", "<C-R>+")
+vim.keymap.set({ "n" }, "<C-v>", '"+p<CR>')
+vim.keymap.set({ "n", "v" }, "<C-c>", '"+y')
 
 -- telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>f", builtin.find_files, {})
 vim.keymap.set("n", "<C-p>", builtin.builtin, {})
-vim.keymap.set('n', '<leader><CR>', builtin.oldfiles, {})
+vim.keymap.set("n", "<leader><CR>", builtin.oldfiles, {})
+
 -- hop
 local hop = require("hop")
 vim.keymap.set("n", "<leader>s", hop.hint_char1, { remap = true })
