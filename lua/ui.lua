@@ -1,7 +1,7 @@
 vim.cmd[[
   colorscheme tokyonight
   set number
-  set signcolumn
+  set signcolumn=yes
 ]]
 
 -- lualine
