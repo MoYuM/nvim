@@ -1,6 +1,7 @@
 require("keybingdings")
 require("plugins")
 require("ui")
+require('snippets')
 
 -- lsp
 require("mason").setup()
