@@ -1,14 +1,12 @@
 local cmp = require("cmp")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lspconfig = require('lspconfig')
+local lspconfig = require("lspconfig")
 
-require("luasnip/loaders/from_vscode").lazy_load()
-
-local servers = { 'cssls'}
+local servers = { "cssls" }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    capabilities = capabilities,
-  }
+	lspconfig[lsp].setup({
+		capabilities = capabilities,
+	})
 end
 
 --   פּ ﯟ   some other good icons
