@@ -21,7 +21,7 @@ vim.keymap.set({ "n", "v" }, "<C-c>", '"+y')
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>f", builtin.find_files, {})
 vim.keymap.set("n", "<C-p>", builtin.builtin, {})
-vim.keymap.set("n", "<leader><CR>", builtin.oldfiles, {})
+vim.keymap.set("n", "<leader>o", builtin.oldfiles, {})
 
 -- hop
 local hop = require("hop")
