@@ -172,6 +172,14 @@ return require("packer").startup({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		})
+
+    -- Neoscroll
+		use({
+			"karb94/neoscroll.nvim",
+			config = function()
+				require("neoscroll").setup()
+			end,
+		})
 	end,
 
 	config = {

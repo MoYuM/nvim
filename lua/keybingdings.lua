@@ -6,10 +6,6 @@ vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("i", "oo", "<Esc>o")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 
--- motion
-vim.keymap.set("n", "9", "<C-d>")
-vim.keymap.set("n", "0", "<C-u>")
-
 -- vscode
 vim.keymap.set({ "n", "i" }, "<D-x>", "dd")
 
