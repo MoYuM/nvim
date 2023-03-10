@@ -1,5 +1,5 @@
-require("keybingdings")
 require("plugins")
+require("keybingdings")
 require("ui")
 require('snippets')
 
@@ -26,6 +26,10 @@ vim.cmd([[
 set nowrap
 set autoindent expandtab tabstop=2 shiftwidth=2
 set completeopt=menu,menuone,noselect
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+augroup end
 ]])
 
 -- nvim-tree
@@ -72,26 +76,26 @@ vim.g.neoformat_run_all_formatters = 1
 require("lspsaga").setup({})
 
 -- treesitter
-require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"javascript",
-		"typescript",
-		"css",
-		"html",
-	},
-	sync_install = true,
-	auto_install = true,
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
-	indent = {
-		enable = true,
-	},
-	autotag = {
-		enable = true,
-	},
-})
+-- require("nvim-treesitter.configs").setup({
+-- 	ensure_installed = {
+-- 		"javascript",
+-- 		"typescript",
+-- 		"css",
+-- 		"html",
+-- 	},
+-- 	sync_install = true,
+-- 	auto_install = true,
+-- 	highlight = {
+-- 		enable = true,
+-- 		additional_vim_regex_highlighting = false,
+-- 	},
+-- 	indent = {
+-- 		enable = true,
+-- 	},
+-- 	autotag = {
+-- 		enable = true,
+-- 	},
+-- })
 
 local status, autotag = pcall(require, "nvim-ts-autotag")
 if not status then
