@@ -27,6 +27,7 @@ return require("packer").startup({
     use("saadparwaiz1/cmp_luasnip")
     use("windwp/nvim-ts-autotag")
     use("github/copilot.vim")
+    use("danilamihailov/beacon.nvim")
     use({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
