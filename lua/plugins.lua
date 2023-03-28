@@ -187,6 +187,13 @@ return require("packer").startup({
 
     use("github/copilot.vim")
 
+    use {
+      "max397574/better-escape.nvim",
+      config = function()
+        require("better_escape").setup()
+      end,
+    }
+
 		if packer_bootstrap then
 			require('packer').sync()
 		end
