@@ -32,6 +32,10 @@ return require("packer").startup({
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
     })
+    use {
+      'declancm/cinnamon.nvim',
+      config = function() require('cinnamon').setup() end
+    }
 
     use({
       "nvim-telescope/telescope.nvim",
