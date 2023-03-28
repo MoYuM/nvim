@@ -185,13 +185,7 @@ return require("packer").startup({
 			requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		})
 
-    -- Neoscroll
-		use({
-			"karb94/neoscroll.nvim",
-			config = function()
-				require("neoscroll").setup()
-			end,
-		})
+    use("github/copilot.vim")
 
 		if packer_bootstrap then
 			require('packer').sync()
