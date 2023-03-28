@@ -137,7 +137,6 @@ return require("packer").startup({
 		})
 
 		-- cmp
-		use("neovim/nvim-lspconfig")
 		use("hrsh7th/cmp-nvim-lsp")
 		use("hrsh7th/cmp-buffer")
 		use("hrsh7th/cmp-path")

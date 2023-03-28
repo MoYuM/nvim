@@ -1,25 +1,9 @@
 require("plugins")
 require("keybingdings")
 require("ui")
-require('snippets')
-
--- lsp
-require("mason").setup()
-require("mason-lspconfig").setup()
-require("mason-lspconfig").setup_handlers({
-	function(server_name) -- default handler (optional)
-		require("lspconfig")[server_name].setup({
-			settings = {
-				Lua = {
-					diagnostics = {
-						-- Get the language server to recognize the `vim` global
-						globals = { "vim", "hs" },
-					},
-				},
-			},
-		})
-	end,
-})
+require('postfix')
+require('lsp')
+require('tree')
 
 -- vim
 vim.cmd([[
@@ -32,36 +16,8 @@ autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 augroup end
 ]])
 
--- nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
-
--- nvim tree
--- https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L164
-require("nvim-tree").setup({
-	sort_by = "name",
-	view = {
-		adaptive_size = true,
-		float = {
-			enable = true,
-		},
-	},
-	renderer = {
-		group_empty = true,
-		highlight_git = true,
-	},
-	actions = {
-		open_file = {
-			quit_on_open = true,
-		},
-	},
-	filters = {
-		dotfiles = true,
-	},
-})
 
 -- cmp
 require('cmpsetup')
