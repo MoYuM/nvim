@@ -1,3 +1,11 @@
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = 'float' })
+
+function Lazygit_toggle()
+  lazygit:toggle()
+end
+
+
 -- leader
 vim.g.mapleader = " "
 
@@ -37,3 +45,6 @@ vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 vim.keymap.set("n", "hd", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+-- lazygit terminal
+vim.keymap.set("n", "<leader>g", "<cmd>lua Lazygit_toggle()<CR>", {noremap = true, silent = true})

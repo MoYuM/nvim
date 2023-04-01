@@ -1,5 +1,4 @@
 require("plugins")
-require("keybingdings")
 require("ui")
 require('postfix')
 require('lsp')
@@ -7,6 +6,7 @@ require('tree')
 require('cmpsetup')
 require("lspsaga").setup({})
 require("treesitter")
+require("keybingdings")
 
 -- vim
 vim.cmd([[

@@ -174,7 +174,8 @@ return require("packer").startup({
 
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
       require("toggleterm").setup({
-        open_mapping = [[<c-j>]]
+        open_mapping = [[<c-j>]],
+        direction = 'float'
       })
     end}
 
