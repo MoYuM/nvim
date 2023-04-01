@@ -172,6 +172,12 @@ return require("packer").startup({
       end,
     }
 
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup({
+        open_mapping = [[<c-j>]]
+      })
+    end}
+
     if packer_bootstrap then
       require('packer').sync()
     end
