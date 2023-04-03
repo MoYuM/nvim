@@ -27,12 +27,13 @@ return require("packer").startup({
     use("saadparwaiz1/cmp_luasnip")
     use("windwp/nvim-ts-autotag")
     use("github/copilot.vim")
-    use("danilamihailov/beacon.nvim")
     use({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
     })
+    
+    -- better scroll
     use {
       'declancm/cinnamon.nvim',
       config = function() require('cinnamon').setup() end
@@ -156,8 +157,6 @@ return require("packer").startup({
       end,
     })
 
-    -- auto tag
-
     -- statuts line
     use({
       "nvim-lualine/lualine.nvim",
@@ -178,6 +177,24 @@ return require("packer").startup({
         direction = 'float'
       })
     end}
+
+    use {
+      "yamatsum/nvim-cursorline",
+      config = function()
+        require('nvim-cursorline').setup {
+          cursorline = {
+            enable = true,
+            timeout = 0,
+            number = true,
+          },
+          cursorword = {
+            enable = true,
+            min_length = 3,
+            hl = { underline = true },
+          }
+        } 
+      end,
+    }
 
     if packer_bootstrap then
       require('packer').sync()

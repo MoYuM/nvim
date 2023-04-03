@@ -86,21 +86,16 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["auto-save.nvim"] = {
-    config = { "\27LJ\2\nT\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\0019\1\3\1'\3\4\0B\1\2\2&\0\1\0L\0\2\0\r%H:%M:%S\rstrftime\afn\bvim\24AutoSave: saved at ≥\1\0\1\t\0\b\1\0246\1\0\0009\1\1\0016\2\2\0'\4\3\0B\2\2\0029\3\4\1\18\5\0\0'\6\5\0B\3\3\2\t\3\0\0X\3\vÄ9\3\6\0029\5\4\1\18\a\0\0'\b\a\0B\5\3\0024\6\0\0B\3\3\2\15\0\3\0X\4\2Ä+\3\2\0L\3\2\0+\3\1\0L\3\2\0\14&filetype\vnot_in\16&modifiable\14getbufvar\25auto-save.utils.data\frequire\afn\bvim\2.\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\14Neoformat\tcall\bvim∞\2\1\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0003\4\4\0=\4\6\3=\3\a\0025\3\b\0=\3\t\0023\3\n\0=\3\v\0025\3\f\0003\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\14callbacks\18before_saving\0\1\0\0\14condition\0\19trigger_events\1\3\0\0\16InsertLeave\16TextChanged\22execution_message\fmessage\1\0\2\22cleaning_interval\3‚\t\bdim\4äÆèÖ\aΩîú˛\3\0\1\0\3\22write_all_buffers\1\fenabled\2\19debounce_delay\3á\1\nsetup\14auto-save\frequire\0" },
+    config = { "\27LJ\2\nT\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\0019\1\3\1'\3\4\0B\1\2\2&\0\1\0L\0\2\0\r%H:%M:%S\rstrftime\afn\bvim\24AutoSave: saved at ÔøΩ\1\0\1\t\0\b\1\0246\1\0\0009\1\1\0016\2\2\0'\4\3\0B\2\2\0029\3\4\1\18\5\0\0'\6\5\0B\3\3\2\t\3\0\0X\3\vÔøΩ9\3\6\0029\5\4\1\18\a\0\0'\b\a\0B\5\3\0024\6\0\0B\3\3\2\15\0\3\0X\4\2ÔøΩ+\3\2\0L\3\2\0+\3\1\0L\3\2\0\14&filetype\vnot_in\16&modifiable\14getbufvar\25auto-save.utils.data\frequire\afn\bvim\2.\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\14Neoformat\tcall\bvimÔøΩ\2\1\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0003\4\4\0=\4\6\3=\3\a\0025\3\b\0=\3\t\0023\3\n\0=\3\v\0025\3\f\0003\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\14callbacks\18before_saving\0\1\0\0\14condition\0\19trigger_events\1\3\0\0\16InsertLeave\16TextChanged\22execution_message\fmessage\1\0\2\22cleaning_interval\3ÔøΩ\t\bdim\4ÔøΩÔøΩÔøΩÔøΩ\aÔøΩÔøΩÔøΩÔøΩ\3\0\1\0\3\22write_all_buffers\1\fenabled\2\19debounce_delay\3ÔøΩ\1\nsetup\14auto-save\frequire\0" },
     loaded = true,
     path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
     url = "https://github.com/Pocco81/auto-save.nvim"
   },
   ["auto-session"] = {
-    config = { "\27LJ\2\nî\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\31auto_session_suppress_dirs\1\5\0\0\a~/\15~/Projects\16~/Downloads\6/\1\0\1\14log_level\nerror\nsetup\17auto-session\frequire\0" },
+    config = { "\27LJ\2\nÔøΩ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\31auto_session_suppress_dirs\1\5\0\0\a~/\15~/Projects\16~/Downloads\6/\1\0\1\14log_level\nerror\nsetup\17auto-session\frequire\0" },
     loaded = true,
     path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
-  },
-  ["beacon.nvim"] = {
-    loaded = true,
-    path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/beacon.nvim",
-    url = "https://github.com/danilamihailov/beacon.nvim"
   },
   ["better-escape.nvim"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18better_escape\frequire\0" },
@@ -197,6 +192,12 @@ _G.packer_plugins = {
     path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-cursorline"] = {
+    config = { "\27LJ\2\nÔøΩ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0005\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\15cursorword\ahl\1\0\1\14underline\2\1\0\2\venable\2\15min_length\3\3\15cursorline\1\0\0\1\0\3\venable\2\vnumber\2\ftimeout\3\0\nsetup\20nvim-cursorline\frequire\0" },
+    loaded = true,
+    path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/nvim-cursorline",
+    url = "https://github.com/yamatsum/nvim-cursorline"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/moyum/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -274,11 +275,11 @@ try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B
 time([[Config for nvim-autopairs]], false)
 -- Config for: auto-save.nvim
 time([[Config for auto-save.nvim]], true)
-try_loadstring("\27LJ\2\nT\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\0019\1\3\1'\3\4\0B\1\2\2&\0\1\0L\0\2\0\r%H:%M:%S\rstrftime\afn\bvim\24AutoSave: saved at ≥\1\0\1\t\0\b\1\0246\1\0\0009\1\1\0016\2\2\0'\4\3\0B\2\2\0029\3\4\1\18\5\0\0'\6\5\0B\3\3\2\t\3\0\0X\3\vÄ9\3\6\0029\5\4\1\18\a\0\0'\b\a\0B\5\3\0024\6\0\0B\3\3\2\15\0\3\0X\4\2Ä+\3\2\0L\3\2\0+\3\1\0L\3\2\0\14&filetype\vnot_in\16&modifiable\14getbufvar\25auto-save.utils.data\frequire\afn\bvim\2.\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\14Neoformat\tcall\bvim∞\2\1\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0003\4\4\0=\4\6\3=\3\a\0025\3\b\0=\3\t\0023\3\n\0=\3\v\0025\3\f\0003\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\14callbacks\18before_saving\0\1\0\0\14condition\0\19trigger_events\1\3\0\0\16InsertLeave\16TextChanged\22execution_message\fmessage\1\0\2\22cleaning_interval\3‚\t\bdim\4äÆèÖ\aΩîú˛\3\0\1\0\3\22write_all_buffers\1\fenabled\2\19debounce_delay\3á\1\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
+try_loadstring("\27LJ\2\nT\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\0019\1\3\1'\3\4\0B\1\2\2&\0\1\0L\0\2\0\r%H:%M:%S\rstrftime\afn\bvim\24AutoSave: saved at ÔøΩ\1\0\1\t\0\b\1\0246\1\0\0009\1\1\0016\2\2\0'\4\3\0B\2\2\0029\3\4\1\18\5\0\0'\6\5\0B\3\3\2\t\3\0\0X\3\vÔøΩ9\3\6\0029\5\4\1\18\a\0\0'\b\a\0B\5\3\0024\6\0\0B\3\3\2\15\0\3\0X\4\2ÔøΩ+\3\2\0L\3\2\0+\3\1\0L\3\2\0\14&filetype\vnot_in\16&modifiable\14getbufvar\25auto-save.utils.data\frequire\afn\bvim\2.\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\14Neoformat\tcall\bvimÔøΩ\2\1\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0003\4\4\0=\4\6\3=\3\a\0025\3\b\0=\3\t\0023\3\n\0=\3\v\0025\3\f\0003\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\14callbacks\18before_saving\0\1\0\0\14condition\0\19trigger_events\1\3\0\0\16InsertLeave\16TextChanged\22execution_message\fmessage\1\0\2\22cleaning_interval\3ÔøΩ\t\bdim\4ÔøΩÔøΩÔøΩÔøΩ\aÔøΩÔøΩÔøΩÔøΩ\3\0\1\0\3\22write_all_buffers\1\fenabled\2\19debounce_delay\3ÔøΩ\1\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
 time([[Config for auto-save.nvim]], false)
 -- Config for: auto-session
 time([[Config for auto-session]], true)
-try_loadstring("\27LJ\2\nî\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\31auto_session_suppress_dirs\1\5\0\0\a~/\15~/Projects\16~/Downloads\6/\1\0\1\14log_level\nerror\nsetup\17auto-session\frequire\0", "config", "auto-session")
+try_loadstring("\27LJ\2\nÔøΩ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\31auto_session_suppress_dirs\1\5\0\0\a~/\15~/Projects\16~/Downloads\6/\1\0\1\14log_level\nerror\nsetup\17auto-session\frequire\0", "config", "auto-session")
 time([[Config for auto-session]], false)
 -- Config for: cinnamon.nvim
 time([[Config for cinnamon.nvim]], true)
