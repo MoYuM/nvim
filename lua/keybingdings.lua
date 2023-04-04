@@ -11,11 +11,7 @@ vim.g.mapleader = " "
 
 -- basic
 vim.keymap.set("i", "jj", "<Esc>")
-vim.keymap.set("i", "oo", "<Esc>o")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
-
--- vscode
-vim.keymap.set({ "n", "i" }, "<D-x>", "dd")
 
 -- paste and yank
 vim.keymap.set({ "n" }, "<C-v>", '"+p<CR>')
@@ -47,6 +43,7 @@ vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 vim.keymap.set("n", "hd", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
 -- lazygit terminal
 vim.keymap.set("n", "<leader>g", "<cmd>lua Lazygit_toggle()<CR>", {noremap = true, silent = true})
