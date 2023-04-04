@@ -163,7 +163,6 @@ return require("packer").startup({
       requires = { "kyazdani42/nvim-web-devicons", opt = true },
     })
 
-
     use {
       "max397574/better-escape.nvim",
       config = function()
@@ -195,6 +194,8 @@ return require("packer").startup({
         } 
       end,
     }
+
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     if packer_bootstrap then
       require('packer').sync()
