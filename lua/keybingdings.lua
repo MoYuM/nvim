@@ -23,9 +23,8 @@ vim.keymap.set({ "n", "v" }, "<C-c>", '"+y')
 
 -- telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>f", builtin.find_files, {})
 vim.keymap.set("n", "<C-p>", builtin.builtin, {})
-vim.keymap.set("n", "<leader>o", builtin.oldfiles, {})
+vim.keymap.set("n", "<leader>o", "<Cmd>lua require('telescope').extensions.smart_open.smart_open({cwd_only=true})<CR>", {noremap = true, silent = true})
 
 -- hop
 local hop = require("hop")
