@@ -28,12 +28,13 @@ return require("packer").startup({
     use("windwp/nvim-ts-autotag")
     use("github/copilot.vim")
     use("tpope/vim-fugitive")
+    use('nvim-tree/nvim-web-devicons')
     use({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
     })
-    
+
     -- better scroll
     use {
       'declancm/cinnamon.nvim',
@@ -44,6 +45,9 @@ return require("packer").startup({
       "nvim-telescope/telescope.nvim",
       tag = "0.1.0",
       requires = { { "nvim-lua/plenary.nvim" } },
+      config = function ()
+        require('telescope').load_extension('fzf')
+      end
     })
 
     use({
@@ -206,6 +210,8 @@ return require("packer").startup({
       end,
       requires = {"kkharji/sqlite.lua"}
     }
+
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     if packer_bootstrap then
       require('packer').sync()
