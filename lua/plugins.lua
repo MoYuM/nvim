@@ -200,8 +200,6 @@ return require("packer").startup({
       end,
     }
 
-    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-
     use {
       "danielfalk/smart-open.nvim",
       branch = "0.1.x",
