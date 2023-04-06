@@ -4,6 +4,8 @@
 
 - Neovim
 - [CascadiaCode](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode) font
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- make
 
 ## Github Copilot
 
