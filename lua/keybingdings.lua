@@ -22,7 +22,7 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.builtin, {})
 vim.keymap.set("n", "<leader>o", "<Cmd>lua require('telescope').extensions.smart_open.smart_open({cwd_only=true})<CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>rg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
-vim.keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
+vim.keymap.set("n", "<leader>gf", "<cmd>lua require('telescope.builtin').git_files()<CR>")
 
 
 -- hop
