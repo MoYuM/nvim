@@ -29,6 +29,7 @@ return require("packer").startup({
     use("github/copilot.vim")
     use("tpope/vim-fugitive")
     use('nvim-tree/nvim-web-devicons')
+    use('JoosepAlviste/nvim-ts-context-commentstring')
     use({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -112,7 +113,9 @@ return require("packer").startup({
     use({
       "numToStr/Comment.nvim",
       config = function()
-        require("Comment").setup()
+        require("Comment").setup({
+          pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+        })
       end,
     })
 
