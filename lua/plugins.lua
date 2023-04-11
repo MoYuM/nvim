@@ -30,6 +30,7 @@ return require("packer").startup({
     use("tpope/vim-fugitive")
     use('nvim-tree/nvim-web-devicons')
     use('JoosepAlviste/nvim-ts-context-commentstring')
+    use('kdheepak/lazygit.nvim')
     use({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -177,13 +178,6 @@ return require("packer").startup({
         require("better_escape").setup()
       end,
     }
-
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-      require("toggleterm").setup({
-        open_mapping = [[<c-j>]],
-        direction = 'float'
-      })
-    end}
 
     use {
       "danielfalk/smart-open.nvim",
