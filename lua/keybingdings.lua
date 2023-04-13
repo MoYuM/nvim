@@ -39,3 +39,6 @@ vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = tru
 
 -- lazygit
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>", {noremap = true, silent = true})
+
+-- ssr
+vim.keymap.set({ "n", "x" }, "<leader>r", function() require("ssr").open() end)

@@ -36,6 +36,10 @@ return require("packer").startup({
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
     })
+    use {
+      "cshuaimin/ssr.nvim",
+      module = "ssr",
+    }
 
     -- better scroll
     use {
