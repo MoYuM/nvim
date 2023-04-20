@@ -31,6 +31,7 @@ return require("packer").startup({
     use('nvim-tree/nvim-web-devicons')
     use('JoosepAlviste/nvim-ts-context-commentstring')
     use('kdheepak/lazygit.nvim')
+    use('lukas-reineke/indent-blankline.nvim')
     use({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
