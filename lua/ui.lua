@@ -4,7 +4,8 @@ vim.cmd[[
   set signcolumn=yes
 ]]
 
-vim.o.guifont = "CaskaydiaCove Nerd Font Mono"
+vim.o.guifont = "CaskaydiaCove Nerd Font Mono:h16"
+vim.opt.linespace = 2
 
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
