@@ -4,6 +4,8 @@ vim.cmd[[
   set signcolumn=yes
 ]]
 
+vim.o.guifont = "CaskaydiaCove Nerd Font Mono"
+
 -- lualine
 -- https://github.com/nvim-lualine/lualine.nvim
 
