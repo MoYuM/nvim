@@ -6,16 +6,15 @@ vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 
 -- paste and yank
-vim.keymap.set({ "n" }, "<C-v>", '"+p<CR>')
-vim.keymap.set({ "n", "v" }, "<C-c>", '"+y')
+-- vim.keymap.set({ "n" }, "<C-v>", '"+p<CR>')
+-- vim.keymap.set({ "n", "v" }, "<C-c>", '"+y')
 
 -- telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.builtin, {})
-vim.keymap.set("n", "<leader>o", "<Cmd>lua require('telescope').extensions.smart_open.smart_open({cwd_only=true})<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>o", "<cmd>lua require('telescope.builtin').oldfiles()<CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>lg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 vim.keymap.set("n", "<leader>gf", "<cmd>lua require('telescope.builtin').git_files()<CR>")
-
 
 -- hop
 local hop = require("hop")
