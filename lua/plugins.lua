@@ -185,15 +185,6 @@ return require("packer").startup({
       end,
     }
 
-    use {
-      "danielfalk/smart-open.nvim",
-      branch = "0.1.x",
-      config = function()
-        require"telescope".load_extension("smart_open")
-      end,
-      requires = {"kkharji/sqlite.lua"}
-    }
-
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     if packer_bootstrap then
