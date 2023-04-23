@@ -32,6 +32,7 @@ return require("packer").startup({
     use('JoosepAlviste/nvim-ts-context-commentstring')
     use('kdheepak/lazygit.nvim')
     use('lukas-reineke/indent-blankline.nvim')
+    use('fedepujol/move.nvim')
     use({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
