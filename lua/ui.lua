@@ -22,12 +22,11 @@ vim.o.guifont = "CaskaydiaCove Nerd Font Mono:h16"
 vim.opt.linespace = 2
 
 require("indent_blankline").setup {
-    space_char_blankline = " ",
-    show_current_context = true,
+  space_char_blankline = " ",
+  show_current_context = true,
 }
 -- lualine
 -- https://github.com/nvim-lualine/lualine.nvim
-
 local function moyum()
   return [[moyum]]
 end
