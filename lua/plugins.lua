@@ -43,12 +43,6 @@ return require("packer").startup({
       module = "ssr",
     }
 
-    -- better scroll
-    use {
-      'declancm/cinnamon.nvim',
-      config = function() require('cinnamon').setup() end
-    }
-
     use({
       "nvim-telescope/telescope.nvim",
       tag = "0.1.0",
