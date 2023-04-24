@@ -19,10 +19,6 @@ autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 augroup end
 ]])
 
--- git-blame
-vim.g.gitblame_date_format = '%r'
-vim.g.gitblame_message_template = 'ﰗ <summary> - שּ <author> - ﮮ <date>'
-
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 

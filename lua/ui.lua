@@ -21,7 +21,6 @@ end
 vim.o.guifont = "CaskaydiaCove Nerd Font Mono:h16"
 vim.opt.linespace = 2
 
-
 require("indent_blankline").setup {
     space_char_blankline = " ",
     show_current_context = true,
@@ -33,18 +32,26 @@ local function moyum()
   return [[moyum]]
 end
 
+-- git-blame
+local git_blame = require('gitblame')
+vim.g.gitblame_date_format = '%r'
+vim.g.gitblame_message_template = 'ﰗ <summary> - שּ <author> - ﮮ <date>'
+vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
+
 require("lualine").setup({
-	options = {
-		theme = "horizon",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-	},
-	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch", },
-		lualine_c = { "filename" },
-		lualine_x = { "diff" },
-		lualine_y = { "diagnostics" },
-		lualine_z = { moyum },
-	},
+  options = {
+    theme = "auto",
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+  },
+  sections = {
+    lualine_a = { "mode" },
+    lualine_b = { "branch", },
+    lualine_x = { "diff" },
+    lualine_y = { "diagnostics" },
+    lualine_z = { moyum },
+    lualine_c = {
+      { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
+    }
+  },
 })
