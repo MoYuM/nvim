@@ -27,11 +27,12 @@ require('lazy').setup({
   {
     "nvim-tree/nvim-tree.lua",
     keys = {
-      { "1", "<cmd>:NvimTreeToggle<cr>", desc = "NvimTree" },
+      { "1", "<cmd>:NvimTreeFindFileToggle<cr>", desc = "NvimTree" },
     },
     config = function()
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
+      vim.opt.termguicolors = true
       require("nvim-tree").setup({
         sort_by = "name",
         view = {
