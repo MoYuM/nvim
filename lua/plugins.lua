@@ -1,6 +1,19 @@
 require('lazy').setup({
   "nvim-lua/plenary.nvim",
   "nvim-tree/nvim-web-devicons",
+  "windwp/nvim-ts-autotag",
+  'fedepujol/move.nvim',
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        auto_refresh = true,
+      })
+    end,
+  },
 
   {
     "folke/tokyonight.nvim",
@@ -96,7 +109,9 @@ require('lazy').setup({
           "lua",
           "typescript",
           "tsx",
-          "javascript"
+          "javascript",
+          "markdown",
+          "markdown_inline",
         },
         highlight = {
           enable = true,
@@ -156,67 +171,109 @@ require('lazy').setup({
       { "<leader>o", "<cmd>:Telescope buffers<cr>", desc = "Buffers" },
     }
   },
-  -- use("f-person/git-blame.nvim")
-  -- use("sbdchd/neoformat")
-  -- use("windwp/nvim-ts-autotag")
-  -- use("github/copilot.vim")
-  -- use('JoosepAlviste/nvim-ts-context-commentstring')
-  -- use('fedepujol/move.nvim')
 
-  -- use {
-  --   "cshuaimin/ssr.nvim",
-  --   module = "ssr",
-  -- }
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup({
+        mapping = { "jj" },
+      })
+    end,
+  },
 
-  -- use({
-  --   "rmagatti/auto-session",
-  --   config = function()
-  --     require("auto-session").setup({
-  --       log_level = "error",
-  --       auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-  --     })
-  --   end,
-  -- })
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "f-person/git-blame.nvim",
+    },
+    config = function()
 
-  -- -- comment
-  -- use({
-  --   "numToStr/Comment.nvim",
-  --   config = function()
-  --     require("Comment").setup({
-  --       pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-  --     })
-  --   end,
-  -- })
+      local function moyum()
+        return [[moyum]]
+      end
 
+      local git_blame = require('gitblame')
+      vim.g.gitblame_date_format = '%r'
+      vim.g.gitblame_message_template = 'ﰗ <summary> - שּ <author> - ﮮ <date>'
+      vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
 
-  -- -- diagnostics
-  -- use({
-  --   "folke/trouble.nvim",
-  --   requires = "kyazdani42/nvim-web-devicons",
-  -- })
+      require("lualine").setup({
+        options = {
+          theme = "tokyonight",
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
+        },
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "branch", },
+          lualine_x = { "diff" },
+          lualine_y = { "diagnostics" },
+          lualine_z = { moyum },
+          lualine_c = {
+            { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
+          }
+        },
+      })
+    end
+  },
 
-  -- -- lspsaga
-  -- use({
-  --   "glepnir/lspsaga.nvim",
-  --   branch = "main",
-  -- })
+  {
+     "rmagatti/auto-session",
+     config = function()
+       require("auto-session").setup({
+         log_level = "error",
+         auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+       })
+     end,
+  },
 
-  -- -- gitsigns
-  -- use({
-  --   "lewis6991/gitsigns.nvim",
-  --   config = function()
-  --     require("gitsigns").setup()
-  --   end,
-  -- })
+  {
+    "numToStr/Comment.nvim",
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    config = function()
+      require("Comment").setup({
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      })
+    end,
+  },
 
-  -- -- statuts line
-  -- use({
-  --   "nvim-lualine/lualine.nvim",
-  --   requires = { "kyazdani42/nvim-web-devicons", opt = true },
-  -- })
+  {
+    "folke/trouble.nvim",
+    config = function()
+       require("trouble").setup()
+    end
+  },
 
-  --   "max397574/better-escape.nvim",
-  --   config = function()
-  --     require("better_escape").setup()
-  --   end,
-})
+  {
+    "glepnir/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    dependencies = {
+      {"nvim-tree/nvim-web-devicons"},
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  },
+
+  {
+   "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  },
+
+  {
+    "phaazon/hop.nvim",
+    keys = {
+      { '<leader>s', '<cmd>:HopChar1<cr>', desc = 'Hop' }
+    },
+    branck = 'v2',
+    config = function ()
+      require('hop').setup()
+    end
+  }
+ })
