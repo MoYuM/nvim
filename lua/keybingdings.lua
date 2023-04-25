@@ -4,14 +4,6 @@ vim.g.mapleader = " "
 -- basic
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 
--- paste and yank
--- vim.keymap.set({ "n" }, "<C-v>", '"+p<CR>')
--- vim.keymap.set({ "n", "v" }, "<C-c>", '"+y')
-
--- hop
--- local hop = require("hop")
--- vim.keymap.set("n", "<leader>s", hop.hint_char1, { remap = true })
-
 -- trouble
 vim.keymap.set("n", "2", ":TroubleToggle document_diagnostics<CR>")
 
