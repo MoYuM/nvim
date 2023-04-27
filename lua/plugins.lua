@@ -119,6 +119,9 @@ require('lazy').setup({
           use_languagetree = true,
         },
         indent = { enable = true },
+        autotag = {
+          enable = true,
+        }
       })
     end,
   },
@@ -169,7 +172,9 @@ require('lazy').setup({
     keys = {
       { "<leader>ff", "<cmd>:Telescope find_files<cr>", desc = "Find Files" },
       { "<leader>lg", "<cmd>:Telescope live_grep<cr>", desc = "Live Grep" },
-      { "<leader>o", "<cmd>:Telescope buffers<cr>", desc = "Buffers" },
+      { "<leader>o", "<cmd>:Telescope oldfiles<cr>", desc = "Buffers" },
+      { "<leader>sh", "<cmd>:Telescope search_history<cr>", desc = "Buffers" },
+      { "<leader>ch", "<cmd>:Telescope command_history<cr>", desc = "Buffers" },
     }
   },
 
