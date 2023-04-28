@@ -251,7 +251,15 @@ require('lazy').setup({
     "glepnir/lspsaga.nvim",
     event = "LspAttach",
     config = function()
-        require("lspsaga").setup({})
+        require("lspsaga").setup({
+          beacon = {
+            enable = true,
+            frequency = 7,
+          },
+          ui = {
+            code_action = "",
+          }
+        })
     end,
     dependencies = {
       {"nvim-tree/nvim-web-devicons"},
