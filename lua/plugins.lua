@@ -127,13 +127,6 @@ require('lazy').setup({
   },
 
   {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require('auto-save').setup()
-    end
-  },
-
-  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "L3MON4D3/LuaSnip",
@@ -145,7 +138,7 @@ require('lazy').setup({
       "hrsh7th/cmp-cmdline",
     },
     config = function()
-      require('cmpsetup')
+      require('configs.cmp')
     end,
   },
 
