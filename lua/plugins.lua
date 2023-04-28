@@ -3,6 +3,7 @@ require('lazy').setup({
   "nvim-tree/nvim-web-devicons",
   "windwp/nvim-ts-autotag",
   'fedepujol/move.nvim',
+  "RRethy/vim-illuminate",
 
   {
     "zbirenbaum/copilot.lua",
