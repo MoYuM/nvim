@@ -252,13 +252,6 @@ require('lazy').setup({
   },
 
   {
-    "folke/trouble.nvim",
-    config = function()
-       require("trouble").setup()
-    end
-  },
-
-  {
     "glepnir/lspsaga.nvim",
     event = "LspAttach",
     config = function()

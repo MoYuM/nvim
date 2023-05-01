@@ -9,15 +9,14 @@ vim.g.mapleader = " "
 -- basic
 map("n", "<C-o>", "<C-o>zz")
 
--- trouble
-map("n", "2", ":TroubleToggle document_diagnostics<CR>")
-
 -- lspsaga
 map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
 map("n", "gr", "<cmd>Lspsaga rename<CR>")
 map("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
 map("n", "hd", "<cmd>Lspsaga hover_doc<CR>")
 map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+map("n", "<leader>k", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+map("n", "<leader>K", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
 -- lazygit
 map("n", "<leader>gg", "<cmd>LazyGit<CR>")
