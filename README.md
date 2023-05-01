@@ -3,7 +3,11 @@
 ## Requirements
 
 - Neovim
-- [CascadiaCode](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode) font
+- [CaskaydiazCove Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode) font
+```bash
+brew tap homebrew/cask-fonts
+brew install font-caskaydia-cove-nerd-font
+```
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - make
 

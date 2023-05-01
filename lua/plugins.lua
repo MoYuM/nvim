@@ -195,7 +195,7 @@ require('lazy').setup({
 
       local git_blame = require('gitblame')
       vim.g.gitblame_date_format = '%r'
-      vim.g.gitblame_message_template = 'ﰗ <summary> - שּ <author> - ﮮ <date>'
+      vim.g.gitblame_message_template = '󰙊 <summary>'
       vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
 
       require("lualine").setup({
@@ -205,7 +205,14 @@ require('lazy').setup({
           section_separators = { left = "", right = "" },
         },
         sections = {
-          lualine_a = { "mode" },
+          lualine_a = {
+            {
+              'mode',
+              fmt = function(str)
+                return ' ' .. str
+              end
+            }
+          },
           lualine_b = { "branch", },
           lualine_x = { "diff" },
           lualine_y = { "diagnostics" },
