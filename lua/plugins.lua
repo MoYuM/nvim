@@ -8,10 +8,14 @@ require('lazy').setup({
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "InsertEnter",
+    lazy = false,
     config = function()
       require("copilot").setup({
-        auto_refresh = true,
+        suggestion = {
+          accept = false,
+          enable = true,
+          auto_trigger = true,
+        },
       })
     end,
   },

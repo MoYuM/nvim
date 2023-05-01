@@ -46,7 +46,18 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	 ["<Tab>"] = cmp.mapping(function(fallback)
+      if require("copilot.suggestion").is_visible() then
+        require("copilot.suggestion").accept()
+      elseif cmp.visible() then
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),-- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	}),
 	sources = {
 		{ name = "nvim_lsp" },

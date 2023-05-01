@@ -33,3 +33,12 @@ map('v', '<C-j>', ':MoveBlock(1)<CR>')
 map('v', '<C-k>', ':MoveBlock(-1)<CR>')
 map('v', '<C-h>', ':MoveHBlock(-1)<CR>')
 map('v', '<C-l>', ':MoveHBlock(1)<CR>')
+
+map("i", '<Tab>', function()
+  local copilot = require("copilot.suggestion")
+  if copilot.is_visible() then
+    copilot.accept()
+  else
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
+  end
+end)
