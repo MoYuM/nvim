@@ -4,6 +4,7 @@ require('lazy').setup({
   "windwp/nvim-ts-autotag",
   'fedepujol/move.nvim',
   "RRethy/vim-illuminate",
+  "pocco81/auto-save.nvim",
 
   {
     "zbirenbaum/copilot.lua",
@@ -287,5 +288,5 @@ require('lazy').setup({
     config = function ()
       require('hop').setup()
     end
-  }
+  },
  })
