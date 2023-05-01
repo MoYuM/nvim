@@ -15,7 +15,7 @@ map("n", "gr", "<cmd>Lspsaga rename<CR>")
 map("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
 map("n", "hd", "<cmd>Lspsaga hover_doc<CR>")
 map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-map("n", "<leader>k", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+map("n", "<leader>k", "<cmd>Lspsaga show_line_diagnostics<CR>")
 map("n", "<leader>K", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
 -- lazygit
