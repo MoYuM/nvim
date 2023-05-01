@@ -5,6 +5,8 @@ require('lazy').setup({
   'fedepujol/move.nvim',
   "RRethy/vim-illuminate",
   "pocco81/auto-save.nvim",
+  "nvim-telescope/telescope.nvim",
+  "kdheepak/lazygit.nvim",
 
   {
     "zbirenbaum/copilot.lua",
@@ -160,24 +162,6 @@ require('lazy').setup({
   },
 
   {
-    "kdheepak/lazygit.nvim",
-    keys = {
-      { "<leader>gg", "<cmd>:LazyGit<cr>", desc = "LazyGit" },
-    }
-  },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      { "<leader>ff", "<cmd>:Telescope find_files<cr>", desc = "Find Files" },
-      { "<leader>lg", "<cmd>:Telescope live_grep<cr>", desc = "Live Grep" },
-      { "<leader>o", "<cmd>:Telescope oldfiles<cr>", desc = "Buffers" },
-      { "<leader>sh", "<cmd>:Telescope search_history<cr>", desc = "Buffers" },
-      { "<leader>ch", "<cmd>:Telescope command_history<cr>", desc = "Buffers" },
-    }
-  },
-
-  {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
     config = function()
@@ -289,4 +273,17 @@ require('lazy').setup({
       require('hop').setup()
     end
   },
+
+  {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
+  }
  })

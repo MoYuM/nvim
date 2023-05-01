@@ -1,37 +1,49 @@
+local wk = require("which-key")
+
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }
   vim.keymap.set(mode, lhs, rhs, opts or options)
 end
-
 -- leader
 vim.g.mapleader = " "
 
--- basic
+-- override default keymaps
 map("n", "<C-o>", "<C-o>zz")
 
--- lspsaga
-map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
-map("n", "gr", "<cmd>Lspsaga rename<CR>")
-map("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
-map("n", "hd", "<cmd>Lspsaga hover_doc<CR>")
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-map("n", "<leader>k", "<cmd>Lspsaga show_line_diagnostics<CR>")
-map("n", "<leader>K", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+wk.register({
+  ["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", "lsp finder" },
+  ["gr"] = { "<cmd>Lspsaga rename<CR>", "rename" },
+  ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "peek definition"},
+  ["hd"] = { "<cmd>Lspsaga hover_doc<CR>", "hover doc"},
+  ['<C-j>'] = {':MoveLine(1)<CR>', "move line downo"},
+  ['<C-k>'] = {':MoveLine(-1)<CR>', "move line up"},
+  ['<C-h>'] = {':MoveHChar(-1)<CR>', "move char left"},
+  ['<C-l>'] = {':MoveHChar(1)<CR>', "move char right"},
+})
 
--- lazygit
-map("n", "<leader>gg", "<cmd>LazyGit<CR>")
+wk.register({
+  ["ca"] = { "<cmd>Lspsaga code_action<CR>", "code action" },
+  ["k"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "show line diagnostics" },
+  ["K"] = {"<cmd>Lspsaga show_buf_diagnostics<CR>", "show buffer diagnostics"},
+  ["O"] = {"<cmd>Lspsaga outline<CR>", 'show outline'},
+  ["gg"] = {"<cmd>LazyGit<CR>", "lazygit"},
+  ["ff"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
+  ["lg"] = {"<cmd>Telescope live_grep<cr>", "Live Grep" },
+  ["o"] = {"<cmd>Telescope oldfiles<cr>", "Buffers" },
+  ["sh"] = {"<cmd>Telescope search_history<cr>", "Buffers" },
+  ["ch"] ={ "<cmd>Telescope command_history<cr>", "Buffers" },
+}, {
+    prefix = '<leader>',
+  })
 
--- Normal-mode commands
-map('n', '<C-j>', ':MoveLine(1)<CR>')
-map('n', '<C-k>', ':MoveLine(-1)<CR>')
-map('n', '<C-h>', ':MoveHChar(-1)<CR>')
-map('n', '<C-l>', ':MoveHChar(1)<CR>')
-
--- Visual-mode commands
-map('v', '<C-j>', ':MoveBlock(1)<CR>')
-map('v', '<C-k>', ':MoveBlock(-1)<CR>')
-map('v', '<C-h>', ':MoveHBlock(-1)<CR>')
-map('v', '<C-l>', ':MoveHBlock(1)<CR>')
+wk.register({
+  ['<C-j>'] = {':MoveBlock(1)<CR>', 'move block down'},
+  ['<C-k>'] = {':MoveBlock(-1)<CR>', 'move block up'},
+  ['<C-h>'] = {':MoveHBlock(-1)<CR>', 'move block left'},
+  ['<C-l>'] = {':MoveHBlock(1)<CR>', 'move block right'},
+}, {
+    mode = 'v',
+  })
 
 map("i", '<Tab>', function()
   local copilot = require("copilot.suggestion")

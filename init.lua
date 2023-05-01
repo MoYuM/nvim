@@ -13,6 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.opt.autowriteall = true
 
+require('plugins')
 require("ui")
 require("mapping")
-require('plugins')
