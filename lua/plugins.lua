@@ -7,7 +7,7 @@ require('lazy').setup({
   "pocco81/auto-save.nvim",
   "nvim-telescope/telescope.nvim",
   "kdheepak/lazygit.nvim",
-
+  "dstein64/nvim-scrollview",
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
