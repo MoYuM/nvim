@@ -5,9 +5,27 @@ require('lazy').setup({
   'fedepujol/move.nvim',
   "RRethy/vim-illuminate",
   "pocco81/auto-save.nvim",
-  "nvim-telescope/telescope.nvim",
   "kdheepak/lazygit.nvim",
   "dstein64/nvim-scrollview",
+  "smartpde/telescope-recent-files",
+
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require("telescope").setup {
+        defaults = {
+          -- Your regular Telescope's options.
+        },
+        extensions = {
+          recent_files = {
+            only_cwd = true,
+          }
+        }
+      }
+      require("telescope").load_extension("recent_files")
+    end
+  },
+
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",

@@ -29,7 +29,7 @@ wk.register({
   ["gg"] = {"<cmd>LazyGit<CR>", "lazygit"},
   ["ff"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
   ["lg"] = {"<cmd>Telescope live_grep<cr>", "Live Grep" },
-  ["o"] = {"<cmd>Telescope oldfiles<cr>", "Buffers" },
+  ["o"] = {"<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
   ["sh"] = {"<cmd>Telescope search_history<cr>", "Buffers" },
   ["ch"] ={ "<cmd>Telescope command_history<cr>", "Buffers" },
 }, {
