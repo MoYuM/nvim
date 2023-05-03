@@ -7,8 +7,11 @@ end
 -- leader
 vim.g.mapleader = " "
 
--- override default keymaps
-map("n", "<C-o>", "<C-o>zz")
+-- dont yank when x
+map("n", "x", "_x")
+
+-- select all
+map("n", "<C-a>", "ggVG")
 
 wk.register({
   ["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", "lsp finder" },
