@@ -1,14 +1,17 @@
 local opt = vim.opt
 
+-- indent
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
 
+-- column
 opt.number = true
 opt.signcolumn = 'yes'
 
+-- cursorline
 opt.cursorline = true
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
