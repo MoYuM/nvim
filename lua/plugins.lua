@@ -286,9 +286,6 @@ require('lazy').setup({
 
   {
     "phaazon/hop.nvim",
-    keys = {
-      { '<leader>s', '<cmd>:HopChar1<cr>', desc = 'Hop' }
-    },
     branck = 'v2',
     config = function ()
       require('hop').setup()

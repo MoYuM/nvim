@@ -8,7 +8,7 @@ end
 vim.g.mapleader = " "
 
 -- dont yank when x
-map("n", "x", "_x")
+-- map("n", "x", "_x")
 
 -- select all
 map("n", "<C-a>", "ggVG")
@@ -35,6 +35,7 @@ wk.register({
   ["o"] = {"<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
   ["sh"] = {"<cmd>Telescope search_history<cr>", "Buffers" },
   ["ch"] ={ "<cmd>Telescope command_history<cr>", "Buffers" },
+  ["s"] = { "<cmd>HopChar1<cr>", "Hop" }
 }, {
     prefix = '<leader>',
   })
