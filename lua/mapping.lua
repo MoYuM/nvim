@@ -13,11 +13,18 @@ vim.g.mapleader = " "
 -- select all
 map("n", "<C-a>", "ggVG")
 
+-- lsp
 wk.register({
   ["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", "lsp finder" },
   ["gr"] = { "<cmd>Lspsaga rename<CR>", "rename" },
   ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "peek definition"},
   ["hd"] = { "<cmd>Lspsaga hover_doc<CR>", "hover doc"},
+  ["d]"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "jump to next diagnostics"},
+  ["d["] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "jump to prev diagnostics"},
+})
+
+-- move line
+wk.register({
   ['<C-j>'] = {':MoveLine(1)<CR>', "move line downo"},
   ['<C-k>'] = {':MoveLine(-1)<CR>', "move line up"},
   ['<C-h>'] = {':MoveHChar(-1)<CR>', "move char left"},
