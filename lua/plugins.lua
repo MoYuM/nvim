@@ -6,7 +6,6 @@ require('lazy').setup({
   "RRethy/vim-illuminate",
   "pocco81/auto-save.nvim",
   "kdheepak/lazygit.nvim",
-  "dstein64/nvim-scrollview",
   "smartpde/telescope-recent-files",
 
   {
