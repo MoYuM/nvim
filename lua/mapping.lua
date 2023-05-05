@@ -13,6 +13,10 @@ vim.g.mapleader = " "
 -- select all
 map("n", "<C-a>", "ggVG")
 
+wk.register({
+  ["3"] = { "#", "find next word under cursor" }
+})
+
 -- lsp
 wk.register({
   ["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", "lsp finder" },
