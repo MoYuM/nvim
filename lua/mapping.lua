@@ -14,7 +14,8 @@ vim.g.mapleader = " "
 map("n", "<C-a>", "ggVG")
 
 wk.register({
-  ["3"] = { "#", "find next word under cursor" }
+  ["3"] = { "#", "find next word under cursor" },
+  ["\\"] = { ":Telescope resume<cr>", "resume telescope" }
 })
 
 -- lsp
