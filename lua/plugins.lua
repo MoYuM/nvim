@@ -10,6 +10,9 @@ require('lazy').setup({
 
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-live-grep-args.nvim",
+    },
     config = function()
       require("telescope").setup {
         defaults = {
@@ -18,18 +21,20 @@ require('lazy').setup({
           find_files = {
             theme = "dropdown",
           },
-          live_grep = {
-            theme = "dropdown",
-          }
         },
         extensions = {
           recent_files = {
             only_cwd = true,
             theme = "dropdown",
+          },
+          live_grep_args = {
+            auto_quoting = false,
+            theme = "dropdown"
           }
         }
       }
       require("telescope").load_extension("recent_files")
+      require("telescope").load_extension("live_grep_args")
     end
   },
 
