@@ -13,11 +13,19 @@ require('lazy').setup({
     config = function()
       require("telescope").setup {
         defaults = {
-          -- Your regular Telescope's options.
+        },
+        pickers = {
+          find_files = {
+            theme = "dropdown",
+          },
+          live_grep = {
+            theme = "dropdown",
+          }
         },
         extensions = {
           recent_files = {
             only_cwd = true,
+            theme = "dropdown",
           }
         }
       }
