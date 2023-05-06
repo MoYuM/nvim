@@ -188,8 +188,8 @@ require('lazy').setup({
     config = function()
       vim.opt.list = true
       require("indent_blankline").setup {
-          space_char_blankline = " ",
-          show_current_context = true,
+        space_char_blankline = " ",
+        show_current_context = true,
       }
     end
   },
@@ -210,7 +210,6 @@ require('lazy').setup({
       "f-person/git-blame.nvim",
     },
     config = function()
-
       local function moyum()
         return [[moyum]]
       end
@@ -248,13 +247,13 @@ require('lazy').setup({
   },
 
   {
-     "rmagatti/auto-session",
-     config = function()
-       require("auto-session").setup({
-         log_level = "error",
-         auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-       })
-     end,
+    "rmagatti/auto-session",
+    config = function()
+      require("auto-session").setup({
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+      })
+    end,
   },
 
   {
@@ -273,19 +272,22 @@ require('lazy').setup({
     "glepnir/lspsaga.nvim",
     event = "LspAttach",
     config = function()
-        require("lspsaga").setup({
-          beacon = {
-            enable = true,
-            frequency = 7,
-          },
-          ui = {
-            code_action = "",
-          }
-        })
+      require("lspsaga").setup({
+        beacon = {
+          enable = true,
+          frequency = 7,
+        },
+        ui = {
+          code_action = "",
+        },
+        symbol_in_winbar = {
+          enable = false,
+        }
+      })
     end,
     dependencies = {
-      {"nvim-tree/nvim-web-devicons"},
-      {"nvim-treesitter/nvim-treesitter"}
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-treesitter/nvim-treesitter" }
     }
   },
 
@@ -295,7 +297,7 @@ require('lazy').setup({
       require("gitsigns").setup()
     end,
   },
-
+ 
   {
     "phaazon/hop.nvim",
     branck = 'v2',
@@ -303,17 +305,26 @@ require('lazy').setup({
       require('hop').setup()
     end
   },
-
+ 
   {
     "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require("which-key").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
+      require("which-key").setup({})
     end,
+  },
+
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
   }
- })
+})
