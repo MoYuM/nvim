@@ -234,9 +234,9 @@ require('lazy').setup({
               end
             }
           },
-          lualine_b = { "branch", },
+          lualine_b = { 'branch', 'diagnostics'},
           lualine_x = { "diff" },
-          lualine_y = { "diagnostics" },
+          lualine_y = { "filename" },
           lualine_z = { moyum },
           lualine_c = {
             { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
