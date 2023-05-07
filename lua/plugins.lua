@@ -326,5 +326,25 @@ require('lazy').setup({
     opts = {
       -- configurations go here
     },
+  },
+
+  {
+    "nvim-pack/nvim-spectre",
+    config = function()
+      require('spectre').setup({
+        mapping={
+          ['run_replace'] = {
+            map = "<leader><cr>",
+            cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
+            desc = "replace all"
+          },
+          ['run_current_replace'] = {
+            map = "<cr>",
+            cmd = "<cmd>lua require('spectre.actions').run_current_replace()<CR>",
+            desc = "replace current line"
+          },
+        }
+      })
+    end,
   }
 })
