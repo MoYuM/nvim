@@ -297,7 +297,7 @@ require('lazy').setup({
       require("gitsigns").setup()
     end,
   },
- 
+
   {
     "phaazon/hop.nvim",
     branck = 'v2',
@@ -305,7 +305,7 @@ require('lazy').setup({
       require('hop').setup()
     end
   },
- 
+
   {
     "folke/which-key.nvim",
     config = function()
@@ -313,19 +313,6 @@ require('lazy').setup({
       vim.o.timeoutlen = 300
       require("which-key").setup({})
     end,
-  },
-
-  {
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {
-      -- configurations go here
-    },
   },
 
   {
@@ -346,5 +333,7 @@ require('lazy').setup({
         }
       })
     end,
-  }
+  },
+
+  'nvim-treesitter/nvim-treesitter-context'
 })
