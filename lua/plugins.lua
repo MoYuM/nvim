@@ -335,5 +335,19 @@ require('lazy').setup({
     end,
   },
 
-  'nvim-treesitter/nvim-treesitter-context'
+  'nvim-treesitter/nvim-treesitter-context',
+
+  {
+    "ray-x/lsp_signature.nvim",
+    config = function ()
+      require("lsp_signature").setup({})
+    end
+  },
+
+  {
+    "j-hui/fidget.nvim",
+    config = function ()
+      require("fidget").setup({})
+    end
+  }
 })
