@@ -24,6 +24,14 @@ local plugins = {
           accept = false,
           enable = true,
           auto_trigger = true,
+          keymap = {
+            accept = "<C-;>",
+            accept_word = false,
+            accept_line = false,
+            next = "<C-]>",
+            prev = "<C-[>",
+            dismiss = "<C-]>",
+          },
         },
       })
     end,
