@@ -10,9 +10,6 @@ vim.g.mapleader = " "
 
 map("n", ";", ":")
 
--- select all
-map("n", "aa", "ggVG")
-
 -- go back
 map("n", "-", "<C-o>")
 
@@ -57,6 +54,7 @@ wk.register({
 })
 
 wk.register({
+  ['a'] = { "ggVG", "Select all" },
   ["ca"] = { "<cmd>Lspsaga code_action<CR>", "code action" },
   ["k"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "show line diagnostics" },
   ["K"] = {"<cmd>Lspsaga show_buf_diagnostics<CR>", "show buffer diagnostics"},
