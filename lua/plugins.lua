@@ -45,11 +45,13 @@ require('lazy').setup({
     lazy = false,
     config = function()
       require("copilot").setup({
-        suggestion = {
-          accept = false,
-          enable = true,
-          auto_trigger = true,
-        },
+        -- suggestion = {
+        --   accept = false,
+        --   enable = true,
+        --   auto_trigger = true,
+        -- },
+        suggestion = { enabled = false },
+        panel = { enabled = false },
       })
     end,
   },
@@ -369,6 +371,13 @@ require('lazy').setup({
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
       })
+    end
+  },
+
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function ()
+      require("copilot_cmp").setup()
     end
   }
 })

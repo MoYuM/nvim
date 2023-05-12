@@ -64,23 +64,18 @@ cmp.setup({
   },
   mapping = {
     ["<Tab>"] = cmp.mapping(function(fallback)
-      if copilot_suggestion.is_visible() then
-        copilot_suggestion.accept()
-      elseif cmp.visible() then
+      if cmp.visible() then
         local entry = cmp.get_selected_entry()
         if not entry then
           cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+          cmp.confirm()
         else
           cmp.confirm()
         end
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, {"i","s","c",}),
     ["<down>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -105,6 +100,7 @@ cmp.setup({
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = "copilot" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -118,13 +114,20 @@ cmp.setup({
     },
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
+  },
+  performance = {
+    debounce = 150
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+      local kind = lspkind.cmp_format({
+        mode = "symbol_text",
+        maxwidth = 50,
+        symbol_map = { Copilot = "" }
+      })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
       kind.kind = " " .. (strings[1] or "") .. " "
       kind.menu = "    (" .. (strings[2] or "") .. ")"
