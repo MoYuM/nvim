@@ -1,8 +1,6 @@
 local cmp = require("cmp")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lspconfig = require("lspconfig")
 local luasnip = require("luasnip")
-local servers = { "cssls" }
+local lspkind = require("lspkind")
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -10,44 +8,57 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
-    capabilities = capabilities,
-  })
-end
+local highlight = {
+  PmenuSel = { bg = "#282C34", fg = "NONE" },
+  Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
 
-local kind_icons = {
-  Text = "󰊄",
-  Method = "m",
-  Function = "󰊕",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
+  CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE", strikethrough = true },
+  CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE", bold = true },
+  CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE", bold = true },
+  CmpItemMenu = { fg = "#C792EA", bg = "NONE", italic = true },
+
+  CmpItemKindField = { fg = "#EED8DA", bg = "#B5585F" },
+  CmpItemKindProperty = { fg = "#EED8DA", bg = "#B5585F" },
+  CmpItemKindEvent = { fg = "#EED8DA", bg = "#B5585F" },
+
+  CmpItemKindText = { fg = "#C3E88D", bg = "#9FBD73" },
+  CmpItemKindEnum = { fg = "#C3E88D", bg = "#9FBD73" },
+  CmpItemKindKeyword = { fg = "#C3E88D", bg = "#9FBD73" },
+
+  CmpItemKindConstant = { fg = "#FFE082", bg = "#D4BB6C" },
+  CmpItemKindConstructor = { fg = "#FFE082", bg = "#D4BB6C" },
+  CmpItemKindReference = { fg = "#FFE082", bg = "#D4BB6C" },
+
+  CmpItemKindFunction = { fg = "#EADFF0", bg = "#A377BF" },
+  CmpItemKindStruct = { fg = "#EADFF0", bg = "#A377BF" },
+  CmpItemKindClass = { fg = "#EADFF0", bg = "#A377BF" },
+  CmpItemKindModule = { fg = "#EADFF0", bg = "#A377BF" },
+  CmpItemKindOperator = { fg = "#EADFF0", bg = "#A377BF" },
+
+  CmpItemKindVariable = { fg = "#C5CDD9", bg = "#7E8294" },
+  CmpItemKindFile = { fg = "#C5CDD9", bg = "#7E8294" },
+
+  CmpItemKindUnit = { fg = "#F5EBD9", bg = "#D4A959" },
+  CmpItemKindSnippet = { fg = "#F5EBD9", bg = "#D4A959" },
+  CmpItemKindFolder = { fg = "#F5EBD9", bg = "#D4A959" },
+
+  CmpItemKindMethod = { fg = "#DDE5F5", bg = "#6C8ED4" },
+  CmpItemKindValue = { fg = "#DDE5F5", bg = "#6C8ED4" },
+  CmpItemKindEnumMember = { fg = "#DDE5F5", bg = "#6C8ED4" },
+
+  CmpItemKindInterface = { fg = "#D8EEEB", bg = "#58B5A8" },
+  CmpItemKindColor = { fg = "#D8EEEB", bg = "#58B5A8" },
+  CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
 }
+
+for name, val in pairs(highlight) do
+  vim.api.nvim_set_hl(0, name,val)
+end
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+      luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = {
@@ -99,8 +110,10 @@ cmp.setup({
     select = false,
   },
   window = {
-    documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    completion = {
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+      col_offset = -3,
+      side_padding = 0,
     },
   },
   experimental = {
@@ -110,14 +123,11 @@ cmp.setup({
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-      })[entry.source.name]
-      return vim_item
+      local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+      local strings = vim.split(kind.kind, "%s", { trimempty = true })
+      kind.kind = " " .. (strings[1] or "") .. " "
+      kind.menu = "    (" .. (strings[2] or "") .. ")"
+      return kind
     end,
   },
 })
@@ -133,7 +143,7 @@ cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = "path" },
-    }, {
+  }, {
       { name = "cmdline" },
-  }),
+    }),
 })

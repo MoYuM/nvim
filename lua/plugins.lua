@@ -7,6 +7,7 @@ require('lazy').setup({
   "pocco81/auto-save.nvim",
   "kdheepak/lazygit.nvim",
   "smartpde/telescope-recent-files",
+  "onsails/lspkind.nvim",
 
   {
     "nvim-telescope/telescope.nvim",
