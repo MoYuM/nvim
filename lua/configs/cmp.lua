@@ -1,6 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
+local copilot_suggestion = require("copilot.suggestion")
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -63,8 +64,8 @@ cmp.setup({
   },
   mapping = {
     ["<Tab>"] = cmp.mapping(function(fallback)
-      if require("copilot.suggestion").is_visible() then
-        require("copilot.suggestion").accept()
+      if copilot_suggestion.is_visible() then
+        copilot_suggestion.accept()
       elseif cmp.visible() then
         local entry = cmp.get_selected_entry()
         if not entry then

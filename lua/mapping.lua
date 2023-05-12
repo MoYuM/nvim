@@ -7,11 +7,11 @@ end
 -- leader
 vim.g.mapleader = " "
 
--- dont yank when x
--- map("n", "x", "_x")
+
+map("n", ";", ":")
 
 -- select all
-map("n", "<C-a>", "ggVG")
+map("n", "aa", "ggVG")
 
 -- go back
 map("n", "-", "<C-o>")
