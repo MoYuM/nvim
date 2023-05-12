@@ -123,22 +123,31 @@ require('lazy').setup({
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup {
-        ensure_installed = { "lua_ls", "tsserver" },
+        ensure_installed = {
+          "lua_ls",
+          "tsserver",
+          "cssls"
+        },
+        handlers = {
+          function (server_name)
+            require("lspconfig")[server_name].setup {}
+          end,
+          ["rust_analyzer"] = function ()
+            require("rust-tools").setup {}
+          end,
+          ["lua_ls"] = function ()
+            require("lspconfig").lua_ls.setup {
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    globals = { "vim" }
+                  }
+                }
+              }
+            }
+          end,
+        }
       }
-      require("mason-lspconfig").setup_handlers({
-        function(server_name) -- default handler (optional)
-          require("lspconfig")[server_name].setup({
-            settings = {
-              Lua = {
-                diagnostics = {
-                  -- Get the language server to recognize the `vim` global
-                  globals = { "vim", "hs" },
-                },
-              },
-            },
-          })
-        end,
-      })
     end
   },
 
