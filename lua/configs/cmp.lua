@@ -52,6 +52,9 @@ for name, val in pairs(highlight) do
 end
 
 cmp.setup({
+  matching = {
+    disallow_fullfuzzy_matching = true,
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
