@@ -8,6 +8,7 @@ require('lazy').setup({
   "kdheepak/lazygit.nvim",
   "smartpde/telescope-recent-files",
   "onsails/lspkind.nvim",
+  "tpope/vim-fugitive",
 
   {
     "nvim-telescope/telescope.nvim",
