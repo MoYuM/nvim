@@ -7,9 +7,6 @@ end
 -- leader
 vim.g.mapleader = " "
 
-
-map("n", ";", ":")
-
 -- go back
 map("n", "-", "<C-o>")
 
