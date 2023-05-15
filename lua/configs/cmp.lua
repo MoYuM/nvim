@@ -43,6 +43,8 @@ local highlight = {
   CmpItemKindInterface = { fg = "#D8EEEB", bg = "#58B5A8" },
   CmpItemKindColor = { fg = "#D8EEEB", bg = "#58B5A8" },
   CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
+
+  CmpItemKindCopilot = { bg = "#2E333A", fg = "#D0DAE5" }
 }
 
 for name, val in pairs(highlight) do
@@ -119,7 +121,7 @@ cmp.setup({
       local kind = lspkind.cmp_format({
         mode = "symbol_text",
         maxwidth = 50,
-        symbol_map = { Copilot = "" }
+        symbol_map = { Copilot = " " }
       })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
       kind.kind = " " .. (strings[1] or "") .. " "
