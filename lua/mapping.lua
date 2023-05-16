@@ -76,11 +76,14 @@ wk.register({
     mode = 'v',
   })
 
-map("i", '<Tab>', function()
-  local copilot = require("copilot.suggestion")
-  if copilot.is_visible() then
-    copilot.accept()
-  else
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
-  end
-end)
+-- toggle terminal
+wk.register({
+  ['<D-j>'] = {':ToggleTerm direction=float<CR>', 'toggle terminal float'},
+}, {
+    mode = 'n'
+  })
+wk.register({
+  ['<esc>'] = {'<C-\\><C-n>', 'quit term mode'},
+}, {
+    mode = 't'
+  })
