@@ -380,5 +380,13 @@ require('lazy').setup({
     config = function ()
       require("copilot_cmp").setup()
     end
+  },
+
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    opts = {
+      autochdir = true,
+    }
   }
 })
