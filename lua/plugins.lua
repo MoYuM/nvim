@@ -44,17 +44,19 @@ require('lazy').setup({
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     lazy = false,
-    config = function()
-      require("copilot").setup({
-        -- suggestion = {
-        --   accept = false,
-        --   enable = true,
-        --   auto_trigger = true,
-        -- },
-        suggestion = { enabled = false },
+    config = function ()
+      require('copilot').setup({
+        suggestion = {
+          accept = false,
+          enable = true,
+          auto_trigger = true,
+          keymap = {
+            accept = "<C-l>"
+          }
+        },
         panel = { enabled = false },
       })
-    end,
+    end
   },
 
   {
@@ -372,13 +374,6 @@ require('lazy').setup({
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
       })
-    end
-  },
-
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function ()
-      require("copilot_cmp").setup()
     end
   },
 
