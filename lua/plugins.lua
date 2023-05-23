@@ -50,7 +50,7 @@ require('lazy').setup({
           enable = true,
           auto_trigger = true,
           keymap = {
-            accept = "<C-l>"
+            accept = "<C-;>"
           }
         },
         panel = { enabled = false },
