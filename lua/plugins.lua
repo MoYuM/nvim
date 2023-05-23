@@ -4,7 +4,6 @@ require('lazy').setup({
   "windwp/nvim-ts-autotag",
   'fedepujol/move.nvim',
   "RRethy/vim-illuminate",
-  "pocco81/auto-save.nvim",
   "kdheepak/lazygit.nvim",
   "smartpde/telescope-recent-files",
   "onsails/lspkind.nvim",
