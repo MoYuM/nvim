@@ -10,6 +10,9 @@ vim.g.mapleader = " "
 -- go back
 map("n", "-", "<C-o>")
 
+-- restart lsp server
+map("n", "<leader>lr", ":LspRestart<cr>")
+
 -- replace
 wk.register({
   ["r"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "search current word" },
