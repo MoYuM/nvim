@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.notify('Hello MoYuM，又是美好的一天！！')
+print('Hello MoYuM，又是美好的一天！！')
 
 require('neovide')
 require('plugins')

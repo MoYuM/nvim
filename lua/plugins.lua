@@ -9,6 +9,7 @@ require('lazy').setup({
   "onsails/lspkind.nvim",
   "tpope/vim-fugitive",
   'nvim-treesitter/nvim-treesitter-context',
+  "Pocco81/auto-save.nvim",
 
   {
     "nvim-telescope/telescope.nvim",
@@ -360,16 +361,6 @@ require('lazy').setup({
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require('treesj').setup({--[[ your config ]]})
-    end,
-  },
-
-  {
-    "tmillr/sos.nvim",
-    config = function()
-      require("sos").setup({
-        enabled = true,
-        timeout = 1000,
-      })
     end,
   },
 
