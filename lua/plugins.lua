@@ -390,5 +390,15 @@ require('lazy').setup({
     config = function()
       require('treesj').setup({--[[ your config ]]})
     end,
+  },
+
+  {
+    "tmillr/sos.nvim",
+    config = function()
+      require("sos").setup({
+        enabled = true,
+        timeout = 2000,
+      })
+    end,
   }
 })
