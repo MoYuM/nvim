@@ -1,9 +1,13 @@
 local wk = require("which-key")
 
-local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	vim.keymap.set(mode, lhs, rhs, opts or options)
+local function map(mode, lhs, rhs, desc)
+  wk.register({
+    [lhs] = { rhs, desc },
+  }, {
+    mode = mode,
+  })
 end
+
 -- leader
 vim.g.mapleader = " "
 
@@ -11,9 +15,13 @@ vim.g.mapleader = " "
 map("n", "-", "<C-o>")
 
 -- restart lsp server
-map("n", "<leader>lr", ":LspRestart<cr>")
+map("n", "<leader>lr", ":LspRestart<cr>", "Restart lsp server")
 
-map("n", "=", ":Neoformat<cr>")
+-- format
+map("n", "=", ":Neoformat<cr>", "Format")
+
+-- quit
+map("n", "<leader>q", ":wqa<cr>", "Quit neovim")
 
 wk.register({
 	["3"] = { "#", "find next word under cursor" },
