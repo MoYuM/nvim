@@ -16,7 +16,6 @@ map("n", "<leader>lr", ":LspRestart<cr>")
 wk.register({
   ["3"] = { "#", "find next word under cursor" },
   ["\\"] = { ":Telescope resume<cr>", "resume telescope" },
-  ["0"] = {":wa<cr>", "sava all"}
 })
 
 -- lsp
