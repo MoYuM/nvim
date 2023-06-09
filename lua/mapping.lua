@@ -1,4 +1,4 @@
-local wk = require("which-key")
+local wk = require('which-key')
 
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }
@@ -12,23 +12,6 @@ map("n", "-", "<C-o>")
 
 -- restart lsp server
 map("n", "<leader>lr", ":LspRestart<cr>")
-
--- replace
-wk.register({
-  ["r"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "search current word" },
-  ["cr"] = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>", "search on current file" },
-}, {
-    prefix = "<leader>",
-  })
-
-wk.register({
-  ["r"] = { "<esc><cmd>lua require('spectre').open_visual()<CR>", "search current word" },
-  ["cr"] = { "<esc><cmd>lua require('spectre').open_file_search()<CR>", "search on current file" },
-}, {
-    mode = "v",
-    prefix = "<leader>"
-  })
-
 
 wk.register({
   ["3"] = { "#", "find next word under cursor" },

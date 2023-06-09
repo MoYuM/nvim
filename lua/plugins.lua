@@ -8,6 +8,7 @@ require('lazy').setup({
   "smartpde/telescope-recent-files",
   "onsails/lspkind.nvim",
   "tpope/vim-fugitive",
+  'nvim-treesitter/nvim-treesitter-context',
 
   {
     "nvim-telescope/telescope.nvim",
@@ -313,14 +314,6 @@ require('lazy').setup({
   },
 
   {
-    "phaazon/hop.nvim",
-    branck = 'v2',
-    config = function ()
-      require('hop').setup()
-    end
-  },
-
-  {
     "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
@@ -328,28 +321,6 @@ require('lazy').setup({
       require("which-key").setup({})
     end,
   },
-
-  {
-    "nvim-pack/nvim-spectre",
-    config = function()
-      require('spectre').setup({
-        mapping={
-          ['run_replace'] = {
-            map = "<leader><cr>",
-            cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
-            desc = "replace all"
-          },
-          ['run_current_replace'] = {
-            map = "<cr>",
-            cmd = "<cmd>lua require('spectre.actions').run_current_replace()<CR>",
-            desc = "replace current line"
-          },
-        }
-      })
-    end,
-  },
-
-  'nvim-treesitter/nvim-treesitter-context',
 
   {
     "ray-x/lsp_signature.nvim",
@@ -397,8 +368,23 @@ require('lazy').setup({
     config = function()
       require("sos").setup({
         enabled = true,
-        timeout = 2000,
+        timeout = 1000,
       })
     end,
+  },
+
+  {
+    "ggandor/leap.nvim",
+    config = function ()
+      require('leap').add_default_mappings()
+    end
+  },
+
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = 'kevinhwang91/promise-async',
+    config = function ()
+      require('ufo').setup()
+    end
   }
 })
