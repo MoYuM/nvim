@@ -134,8 +134,6 @@ require("lazy").setup({
 					"lua_ls",
 					"tsserver",
 					"cssls",
-          "stylua",
-          "perttier"
 				},
 				handlers = {
 					function(server_name)
