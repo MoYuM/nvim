@@ -3,22 +3,18 @@
 ## Requirements
 
 - Neovim
-- [CaskaydiazCove Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode) font
-```bash
-brew tap homebrew/cask-fonts
-brew install font-caskaydia-cove-nerd-font
-```
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
 - make
-
-## Suggested Tools
-
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [lazygit](https://github.com/jesseduffield/lazygit)
+- need node.js > 16.0.0 for copilot
+
+## Suggested
+
+- JetBrainsMono Nerd Font
+- iTerm2
 
 ## Github Copilot
-
-- need node.js > 16.0.0
-
 ```
-:Copilot setup
+:Copilot auth
 ```
+
