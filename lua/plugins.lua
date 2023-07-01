@@ -10,6 +10,8 @@ require("lazy").setup({
 	"tpope/vim-fugitive",
 	"nvim-treesitter/nvim-treesitter-context",
 	"Pocco81/auto-save.nvim",
+	"ggandor/leap.nvim",
+	"sbdchd/neoformat",
 
 	{
 		"nvim-telescope/telescope.nvim",
@@ -35,7 +37,7 @@ require("lazy").setup({
 					},
 				},
 			})
-			require("telescope").load_extension("recent_files")
+		require("telescope").load_extension("recent_files")
 			require("telescope").load_extension("live_grep_args")
 		end,
 	},
@@ -233,7 +235,7 @@ require("lazy").setup({
 			vim.g.gitblame_date_format = "%r"
 			vim.g.gitblame_message_template = "󰙊 <summary> • <date> • <author>"
 			vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
-      vim.g.gitblame_date_format = '%r'
+			vim.g.gitblame_date_format = "%r"
 
 			require("lualine").setup({
 				options = {
@@ -369,23 +371,11 @@ require("lazy").setup({
 			})
 		end,
 	},
-
-	{
-		"ggandor/leap.nvim",
-		config = function()
-			require("leap").add_default_mappings()
-		end,
-	},
-
 	{
 		"kevinhwang91/nvim-ufo",
 		dependencies = "kevinhwang91/promise-async",
 		config = function()
 			require("ufo").setup()
 		end,
-	},
-
-	{
-		"sbdchd/neoformat",
 	},
 })

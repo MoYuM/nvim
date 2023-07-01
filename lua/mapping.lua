@@ -28,6 +28,12 @@ wk.register({
 	["\\"] = { ":Telescope resume<cr>", "resume telescope" },
 })
 
+-- leap
+vim.keymap.set({'n', 'x', 'o'}, 'f', '<Plug>(leap-forward-to)')
+vim.keymap.set({'n', 'x', 'o'}, 'F', '<Plug>(leap-backward-to)')
+vim.keymap.set({'n', 'x', 'o'}, 't', '<Plug>(leap-forward-till)')
+vim.keymap.set({'n', 'x', 'o'}, 'T', '<Plug>(leap-backward-till)')
+
 -- lsp
 wk.register({
 	["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", "lsp finder" },
