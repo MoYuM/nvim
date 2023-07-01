@@ -37,7 +37,7 @@ require("lazy").setup({
 					},
 				},
 			})
-		require("telescope").load_extension("recent_files")
+			require("telescope").load_extension("recent_files")
 			require("telescope").load_extension("live_grep_args")
 		end,
 	},
@@ -182,6 +182,12 @@ require("lazy").setup({
 				},
 			})
 		end,
+	},
+
+	{
+		"L3MON4D3/LuaSnip",
+		version = "<CurrentMajor>.*",
+		build = "make install_jsregexp",
 	},
 
 	{
