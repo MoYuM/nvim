@@ -12,6 +12,7 @@ require("lazy").setup({
 	"Pocco81/auto-save.nvim",
 	"ggandor/leap.nvim",
 	"sbdchd/neoformat",
+  "jose-elias-alvarez/typescript.nvim",
 
 	{
 		"nvim-telescope/telescope.nvim",
@@ -127,6 +128,7 @@ require("lazy").setup({
 		dependencies = {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
+      "jose-elias-alvarez/typescript.nvim"
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -143,6 +145,9 @@ require("lazy").setup({
 							capabilities = capabilities,
 						})
 					end,
+          ["tsserver"] = function ()
+            require("typescript").setup({})
+          end,
 					["lua_ls"] = function()
 						require("lspconfig").lua_ls.setup({
 							settings = {
