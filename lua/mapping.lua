@@ -58,13 +58,10 @@ wk.register({
 	["k"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "show line diagnostics" },
 	["K"] = { "<cmd>Lspsaga show_buf_diagnostics<CR>", "show buffer diagnostics" },
 	["O"] = { "<cmd>Lspsaga outline<CR>", "show outline" },
-	["gg"] = { "<cmd>LazyGit<CR>", "lazygit" },
-	["ff"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
+	["g"] = { "<cmd>LazyGit<CR>", "lazygit" },
+	["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
 	["lg"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
 	["o"] = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
-	["sh"] = { "<cmd>Telescope search_history<cr>", "Buffers" },
-	["ch"] = { "<cmd>Telescope command_history<cr>", "Buffers" },
-	["s"] = { "<cmd>HopChar1<cr>", "Hop" },
 }, {
 	prefix = "<leader>",
 })
