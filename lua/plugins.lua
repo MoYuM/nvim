@@ -1,4 +1,5 @@
 require("lazy").setup({
+	"j-hui/fidget.nvim",
 	"nvim-lua/plenary.nvim",
 	"nvim-tree/nvim-web-devicons",
 	"windwp/nvim-ts-autotag",
@@ -11,7 +12,11 @@ require("lazy").setup({
 	"nvim-treesitter/nvim-treesitter-context",
 	"pocco81/auto-save.nvim",
 	"sbdchd/neoformat",
-  "jose-elias-alvarez/typescript.nvim",
+	"jose-elias-alvarez/typescript.nvim",
+	"kylechui/nvim-surround",
+	"j-hui/fidget.nvim",
+	"lewis6991/gitsigns.nvim",
+	"ray-x/lsp_signature.nvim",
 
 	{
 		"nvim-telescope/telescope.nvim",
@@ -44,7 +49,7 @@ require("lazy").setup({
 
 	{
 		"zbirenbaum/copilot.lua",
-		cmd = "copilot",
+		cmd = "Copilot",
 		lazy = false,
 		config = function()
 			require("copilot").setup({
@@ -76,7 +81,7 @@ require("lazy").setup({
 	{
 		"nvim-tree/nvim-tree.lua",
 		keys = {
-			{ "1", "<cmd>:nvimtreefindfiletoggle<cr>", desc = "nvimtree" },
+			{ "1", "<cmd>:NvimTreeFindFileToggle<cr>", desc = "nvimtree" },
 		},
 		config = function()
 			vim.g.loaded_netrw = 1
@@ -127,7 +132,7 @@ require("lazy").setup({
 		dependencies = {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
-      "jose-elias-alvarez/typescript.nvim"
+			"jose-elias-alvarez/typescript.nvim"
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -144,9 +149,9 @@ require("lazy").setup({
 							capabilities = capabilities,
 						})
 					end,
-          ["tsserver"] = function ()
-            require("typescript").setup({})
-          end,
+					["tsserver"] = function()
+						require("typescript").setup({})
+					end,
 					["lua_ls"] = function()
 						require("lspconfig").lua_ls.setup({
 							settings = {
@@ -186,12 +191,6 @@ require("lazy").setup({
 				},
 			})
 		end,
-	},
-
-	{
-		"l3mon4d3/luasnip",
-		version = "<currentmajor>.*",
-		build = "make install_jsregexp",
 	},
 
 	{
@@ -290,12 +289,12 @@ require("lazy").setup({
 	},
 
 	{
-		"numtostr/comment.nvim",
+		"numtostr/Comment.nvim",
 		dependencies = {
 			"joosepalviste/nvim-ts-context-commentstring",
 		},
 		config = function()
-			require("comment").setup({
+			require("Comment").setup({
 				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 			})
 		end,
@@ -325,43 +324,11 @@ require("lazy").setup({
 	},
 
 	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
-	},
-
-	{
 		"folke/which-key.nvim",
 		config = function()
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 			require("which-key").setup({})
-		end,
-	},
-
-	{
-		"ray-x/lsp_signature.nvim",
-		config = function()
-			require("lsp_signature").setup({})
-		end,
-	},
-
-	{
-		"j-hui/fidget.nvim",
-		config = function()
-			require("fidget").setup({})
-		end,
-	},
-
-	{
-		"kylechui/nvim-surround",
-		version = "*", -- use for stability; omit to use `main` branch for the latest features
-		event = "verylazy",
-		config = function()
-			require("nvim-surround").setup({
-				-- configuration here, or leave empty to use defaults
-			})
 		end,
 	},
 
@@ -377,7 +344,7 @@ require("lazy").setup({
 		"wansmer/treesj",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
-			require("treesj").setup({--[[ your config ]]
+			require("treesj").setup({ --[[ your config ]]
 			})
 		end,
 	},
@@ -388,51 +355,14 @@ require("lazy").setup({
 			require("ufo").setup()
 		end,
 	},
-  {
-  "folke/flash.nvim",
-  event = "verylazy",
-  opts = {},
-  keys = {
-    {
-      "s",
-      mode = { "n", "x", "o" },
-      function()
-        require("flash").jump()
-      end,
-      desc = "flash",
-    },
-    {
-      "s",
-      mode = { "n", "o", "x" },
-      function()
-        require("flash").treesitter()
-      end,
-      desc = "flash treesitter",
-    },
-    {
-      "r",
-      mode = "o",
-      function()
-        require("flash").remote()
-      end,
-      desc = "remote flash",
-    },
-    {
-      "r",
-      mode = { "o", "x" },
-      function()
-        require("flash").treesitter_search()
-      end,
-      desc = "flash treesitter search",
-    },
-    {
-      "<c-s>",
-      mode = { "c" },
-      function()
-        require("flash").toggle()
-      end,
-      desc = "toggle flash search",
-    },
-  },
-}
+	{
+		"folke/flash.nvim",
+		opts = {
+			modes = {
+				char = {
+					enabled = false,
+				}
+			}
+		},
+	}
 })
