@@ -56,8 +56,8 @@ local fc = s("fc", {
 })
 
 
-ls.add_snippets("all", {
-	log,
-	useState,
-	fc,
-})
+-- ls.add_snippets("all", {
+-- 	log,
+-- 	useState,
+-- 	fc,
+-- })
