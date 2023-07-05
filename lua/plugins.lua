@@ -3,14 +3,13 @@ require("lazy").setup({
 	"nvim-tree/nvim-web-devicons",
 	"windwp/nvim-ts-autotag",
 	"fedepujol/move.nvim",
-	"RRethy/vim-illuminate",
+	"rrethy/vim-illuminate",
 	"kdheepak/lazygit.nvim",
 	"smartpde/telescope-recent-files",
 	"onsails/lspkind.nvim",
 	"tpope/vim-fugitive",
 	"nvim-treesitter/nvim-treesitter-context",
-	"Pocco81/auto-save.nvim",
-	-- "ggandor/leap.nvim",
+	"pocco81/auto-save.nvim",
 	"sbdchd/neoformat",
   "jose-elias-alvarez/typescript.nvim",
 
@@ -45,7 +44,7 @@ require("lazy").setup({
 
 	{
 		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
+		cmd = "copilot",
 		lazy = false,
 		config = function()
 			require("copilot").setup({
@@ -54,7 +53,7 @@ require("lazy").setup({
 					enable = true,
 					auto_trigger = true,
 					keymap = {
-						accept = "<C-;>",
+						accept = "<c-;>",
 					},
 				},
 				panel = { enabled = false },
@@ -77,11 +76,11 @@ require("lazy").setup({
 	{
 		"nvim-tree/nvim-tree.lua",
 		keys = {
-			{ "1", "<cmd>:NvimTreeFindFileToggle<cr>", desc = "NvimTree" },
+			{ "1", "<cmd>:nvimtreefindfiletoggle<cr>", desc = "nvimtree" },
 		},
 		config = function()
 			vim.g.loaded_netrw = 1
-			vim.g.loaded_netrwPlugin = 1
+			vim.g.loaded_netrwplugin = 1
 			vim.opt.termguicolors = true
 			require("nvim-tree").setup({
 				sort_by = "name",
@@ -109,7 +108,7 @@ require("lazy").setup({
 
 	{
 		"windwp/nvim-autopairs",
-		event = "InsertEnter",
+		event = "insertenter",
 		dependencies = {
 			"hrsh7th/nvim-cmp",
 		},
@@ -151,7 +150,7 @@ require("lazy").setup({
 					["lua_ls"] = function()
 						require("lspconfig").lua_ls.setup({
 							settings = {
-								Lua = {
+								lua = {
 									diagnostics = {
 										globals = { "vim" },
 									},
@@ -166,7 +165,7 @@ require("lazy").setup({
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
+		build = ":tsupdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
@@ -190,15 +189,15 @@ require("lazy").setup({
 	},
 
 	{
-		"L3MON4D3/LuaSnip",
-		version = "<CurrentMajor>.*",
+		"l3mon4d3/luasnip",
+		version = "<currentmajor>.*",
 		build = "make install_jsregexp",
 	},
 
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
-			"L3MON4D3/LuaSnip",
+			"l3mon4d3/luasnip",
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-nvim-lsp",
@@ -224,7 +223,7 @@ require("lazy").setup({
 
 	{
 		"max397574/better-escape.nvim",
-		event = "InsertEnter",
+		event = "insertenter",
 		config = function()
 			require("better_escape").setup({
 				mapping = { "jj" },
@@ -245,7 +244,7 @@ require("lazy").setup({
 			local git_blame = require("gitblame")
 			vim.g.gitblame_date_format = "%r"
 			vim.g.gitblame_message_template = "󰙊 <summary> • <date> • <author>"
-			vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
+			vim.g.gitblame_display_virtual_text = 0 -- disable virtual text
 			vim.g.gitblame_date_format = "%r"
 
 			require("lualine").setup({
@@ -285,18 +284,18 @@ require("lazy").setup({
 		config = function()
 			require("auto-session").setup({
 				log_level = "error",
-				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+				auto_session_suppress_dirs = { "~/", "~/projects", "~/downloads", "/" },
 			})
 		end,
 	},
 
 	{
-		"numToStr/Comment.nvim",
+		"numtostr/comment.nvim",
 		dependencies = {
-			"JoosepAlviste/nvim-ts-context-commentstring",
+			"joosepalviste/nvim-ts-context-commentstring",
 		},
 		config = function()
-			require("Comment").setup({
+			require("comment").setup({
 				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 			})
 		end,
@@ -304,7 +303,7 @@ require("lazy").setup({
 
 	{
 		"glepnir/lspsaga.nvim",
-		event = "LspAttach",
+		event = "lspattach",
 		config = function()
 			require("lspsaga").setup({
 				beacon = {
@@ -357,11 +356,11 @@ require("lazy").setup({
 
 	{
 		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
+		version = "*", -- use for stability; omit to use `main` branch for the latest features
+		event = "verylazy",
 		config = function()
 			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
+				-- configuration here, or leave empty to use defaults
 			})
 		end,
 	},
@@ -375,7 +374,7 @@ require("lazy").setup({
 	},
 
 	{
-		"Wansmer/treesj",
+		"wansmer/treesj",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
 			require("treesj").setup({--[[ your config ]]
@@ -391,7 +390,7 @@ require("lazy").setup({
 	},
   {
   "folke/flash.nvim",
-  event = "VeryLazy",
+  event = "verylazy",
   opts = {},
   keys = {
     {
@@ -400,15 +399,15 @@ require("lazy").setup({
       function()
         require("flash").jump()
       end,
-      desc = "Flash",
+      desc = "flash",
     },
     {
-      "S",
+      "s",
       mode = { "n", "o", "x" },
       function()
         require("flash").treesitter()
       end,
-      desc = "Flash Treesitter",
+      desc = "flash treesitter",
     },
     {
       "r",
@@ -416,15 +415,15 @@ require("lazy").setup({
       function()
         require("flash").remote()
       end,
-      desc = "Remote Flash",
+      desc = "remote flash",
     },
     {
-      "R",
+      "r",
       mode = { "o", "x" },
       function()
         require("flash").treesitter_search()
       end,
-      desc = "Flash Treesitter Search",
+      desc = "flash treesitter search",
     },
     {
       "<c-s>",
@@ -432,7 +431,7 @@ require("lazy").setup({
       function()
         require("flash").toggle()
       end,
-      desc = "Toggle Flash Search",
+      desc = "toggle flash search",
     },
   },
 }
