@@ -355,16 +355,12 @@ require("lazy").setup({
 			require("ufo").setup()
 		end,
 	},
-	{
-		"folke/flash.nvim",
-		opts = {
-			modes = {
-				char = {
-					enabled = false,
-				}
-			}
-		},
-    keys = {
+  {
+  "folke/flash.nvim",
+  event = "VeryLazy",
+  ---@type Flash.Config
+  opts = {},
+  keys = {
     {
       "s",
       mode = { "n", "x", "o" },
@@ -406,5 +402,5 @@ require("lazy").setup({
       desc = "Toggle Flash Search",
     },
   },
-	}
+}
 })
