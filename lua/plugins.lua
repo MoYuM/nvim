@@ -1,5 +1,4 @@
 require("lazy").setup({
-	"j-hui/fidget.nvim",
 	"nvim-lua/plenary.nvim",
 	"nvim-tree/nvim-web-devicons",
 	"windwp/nvim-ts-autotag",
@@ -15,6 +14,14 @@ require("lazy").setup({
 	"jose-elias-alvarez/typescript.nvim",
 	"kylechui/nvim-surround",
 	"ray-x/lsp_signature.nvim",
+
+  {
+    "j-hui/fidget.nvim",
+    tag = 'legacy',
+    config = function ()
+      require('fidget').setup({})
+    end
+  },
 
   {
     "lewis6991/gitsigns.nvim",
