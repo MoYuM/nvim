@@ -14,9 +14,14 @@ require("lazy").setup({
 	"sbdchd/neoformat",
 	"jose-elias-alvarez/typescript.nvim",
 	"kylechui/nvim-surround",
-	"j-hui/fidget.nvim",
-	"lewis6991/gitsigns.nvim",
 	"ray-x/lsp_signature.nvim",
+
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function ()
+      require('gitsigns').setup({})
+    end
+  },
 
 	{
 		"nvim-telescope/telescope.nvim",
