@@ -18,6 +18,7 @@ require("lazy").setup({
   {
     "j-hui/fidget.nvim",
     tag = 'legacy',
+    pin = true,
     config = function ()
       require('fidget').setup({})
     end
