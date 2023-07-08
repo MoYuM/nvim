@@ -11,10 +11,13 @@ end
 -- leader
 vim.g.mapleader = " "
 
+-- test
+map('n', '99', "<cmd>lua require('mo').moc()<cr>", "test")
+
 -- go back
 map("n", "-", "<C-o>")
 
--- restart lsp server
+-- restart lsp servejr
 map("n", "<leader>lr", ":LspRestart<cr>", "Restart lsp server")
 
 -- format
