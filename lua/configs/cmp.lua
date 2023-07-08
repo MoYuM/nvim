@@ -64,13 +64,6 @@ cmp.setup({
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  window = {
-    completion = {
-      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-      col_offset = -3,
-      side_padding = 0,
-    },
-  },
   experimental = {
     ghost_text = false,
     native_menu = false,
@@ -79,19 +72,15 @@ cmp.setup({
     debounce = 150
   },
   formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      local kind = lspkind.cmp_format({
-        mode = "symbol_text",
-        maxwidth = 50,
-        symbol_map = { Copilot = " " }
-      })(entry, vim_item)
-      local strings = vim.split(kind.kind, "%s", { trimempty = true })
-      kind.kind = " " .. (strings[1] or "") .. " "
-      kind.menu = "    (" .. (strings[2] or "") .. ")"
-      return kind
-    end,
-  },
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+      maxwidth = 100,
+      ellipsis_char = '...',
+      before = function (_, vim_item)
+        return vim_item
+      end
+    })
+  }
 })
 
 cmp.setup.cmdline({ "/", "?" }, {

@@ -14,6 +14,7 @@ require("lazy").setup({
 	"jose-elias-alvarez/typescript.nvim",
 	"kylechui/nvim-surround",
 	"ray-x/lsp_signature.nvim",
+  "wellle/targets.vim",
 
   {
     "j-hui/fidget.nvim",
@@ -84,8 +85,38 @@ require("lazy").setup({
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
-				transparent = true,
+      require("tokyonight").setup({
+        transparent = true,
+        on_highlights = function(hl, c)
+          local prompt = "#2d3149"
+          hl.TelescopeNormal = {
+            bg = c.bg_dark,
+            fg = c.fg_dark,
+          }
+          hl.TelescopeBorder = {
+            bg = c.bg_dark,
+            fg = c.bg_dark,
+          }
+          hl.TelescopePromptNormal = {
+            bg = prompt,
+          }
+          hl.TelescopePromptBorder = {
+            bg = prompt,
+            fg = prompt,
+          }
+          hl.TelescopePromptTitle = {
+            bg = prompt,
+            fg = prompt,
+          }
+          hl.TelescopePreviewTitle = {
+            bg = c.bg_dark,
+            fg = c.bg_dark,
+          }
+          hl.TelescopeResultsTitle = {
+            bg = c.bg_dark,
+            fg = c.bg_dark,
+          }
+        end,
 			})
 			vim.cmd([[colorscheme tokyonight]])
 		end,
