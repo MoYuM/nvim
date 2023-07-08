@@ -38,20 +38,22 @@ require("lazy").setup({
 		},
 		config = function()
 			require("telescope").setup({
-				defaults = {},
+				defaults = {
+        },
 				pickers = {
 					find_files = {
-						theme = "dropdown",
 					},
 				},
 				extensions = {
 					recent_files = {
 						only_cwd = true,
-						theme = "dropdown",
 					},
 					live_grep_args = {
 						auto_quoting = false,
-						theme = "dropdown",
+            layout_config = {
+              width = 0.9,
+              height = 0.9
+            }
 					},
 				},
 			})
