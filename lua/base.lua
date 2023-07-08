@@ -18,3 +18,6 @@ vim.o.foldenable = true
 
 -- disable editorconfig
 vim.g.editorconfig = false
+
+-- better auto session
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

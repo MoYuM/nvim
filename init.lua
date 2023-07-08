@@ -11,8 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-print('Hello MoYuM，又是美好的一天！！')
-
 require('plugins')
 require("ui")
 require("mapping")
