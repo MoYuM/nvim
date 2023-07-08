@@ -74,9 +74,9 @@ wk.register({
 
 -- toggle terminal
 wk.register({
-	["<D-j>"] = { ":ToggleTerm direction=float<CR>", "toggle terminal float" },
+  ["<leader>t"] = { ":ToggleTerm<CR>", "toggle terminal float" },
 }, {
-	mode = "n",
+	mode = {"n"},
 })
 wk.register({
 	["<esc>"] = { "<C-\\><C-n>", "quit term mode" },
