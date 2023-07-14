@@ -15,7 +15,11 @@ require("lazy").setup({
 	"kylechui/nvim-surround",
 	"ray-x/lsp_signature.nvim",
   "wellle/targets.vim",
-
+-- Lazy
+{
+    'dgagn/diagflow.nvim',
+    opts = {}
+},
   {
     "utilyre/barbecue.nvim",
     name = "barbecue",
