@@ -15,11 +15,17 @@ require("lazy").setup({
 	"kylechui/nvim-surround",
 	"ray-x/lsp_signature.nvim",
   "wellle/targets.vim",
--- Lazy
-{
+  -- Lazy
+  {
     'dgagn/diagflow.nvim',
     opts = {}
-},
+  },
+
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
   {
     "utilyre/barbecue.nvim",
     name = "barbecue",
@@ -206,12 +212,12 @@ require("lazy").setup({
 				},
 				handlers = {
 					function(server_name)
-						require("lspconfig")[server_name].setup({
-							capabilities = capabilities,
-						})
-					end,
-					["tsserver"] = function()
-						require("typescript").setup({})
+            -- don't setup tsserver, it's already setup by typescript-tool.nvim
+            if (not server_name == "tsserver") then
+              require("lspconfig")[server_name].setup({
+                capabilities = capabilities,
+              })
+            end
 					end,
 					["lua_ls"] = function()
 						require("lspconfig").lua_ls.setup({
