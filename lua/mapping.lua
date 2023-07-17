@@ -1,21 +1,23 @@
 local wk = require("which-key")
 
-local function map(mode, lhs, rhs, desc)
-  wk.register({
-    [lhs] = { rhs, desc },
-  }, {
-    mode = mode,
-  })
+local map = function(mode, key, result, desc)
+  vim.keymap.set(mode, key, result, { noremap = true, silent = true, desc = desc })
 end
 
 -- leader
 vim.g.mapleader = " "
 
+-- yanky
+map({"n","x"}, "p", "<Plug>(YankyPutAfter)")
+map({"n","x"}, "P", "<Plug>(YankyPutBefore)")
+map({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
+map({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
+map("n", "<C-n>", "<Plug>(YankyCycleForward)")
+map("n", "<C-p>", "<Plug>(YankyCycleBackward)")
+map("n", "<leader>p", "<cmd>Telescope yank_history theme=cursor<cr>")
+
 -- test
 map('n', '99', "<cmd>lua require('mo').moc()<cr>", "test")
-
--- go back
-map("n", "-", "<C-o>")
 
 -- restart lsp servejr
 map("n", "<leader>lr", ":LspRestart<cr>", "Restart lsp server")
@@ -57,8 +59,8 @@ wk.register({
 	["O"] = { "<cmd>Lspsaga outline<CR>", "show outline" },
 	["g"] = { "<cmd>LazyGit<CR>", "lazygit" },
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-  ["p"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
-	["lg"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
+  ["c"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
+	["l"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
 	["o"] = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
 }, {
 	prefix = "<leader>",
