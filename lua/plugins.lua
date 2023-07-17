@@ -21,7 +21,7 @@ require("lazy").setup({
     "gbprod/yanky.nvim",
     opts = {}
   },
-  
+
   {
     'dgagn/diagflow.nvim',
     opts = {}
