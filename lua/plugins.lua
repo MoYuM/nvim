@@ -16,6 +16,14 @@ require("lazy").setup({
 	"ray-x/lsp_signature.nvim",
   "wellle/targets.vim",
   -- Lazy
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+       position = "right",      
+       mode = "lsp_references"
+    },
+  },
 
   {
     "gbprod/yanky.nvim",

@@ -16,6 +16,9 @@ map("n", "<C-n>", "<Plug>(YankyCycleForward)")
 map("n", "<C-p>", "<Plug>(YankyCycleBackward)")
 map("n", "<leader>p", "<cmd>Telescope yank_history theme=cursor<cr>")
 
+-- reference
+map("n", "<leader>r", "<cmd>TroubleToggle lsp_references<cr>")
+
 -- test
 map('n', '99', "<cmd>lua require('mo').moc()<cr>", "test")
 
