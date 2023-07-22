@@ -62,7 +62,7 @@ wk.register({
 	["O"] = { "<cmd>Lspsaga outline<CR>", "show outline" },
 	["g"] = { "<cmd>LazyGit<CR>", "lazygit" },
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-  ["c"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
+  ["<leader>"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
 	["l"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
 	["o"] = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
 }, {
