@@ -17,6 +17,20 @@ require("lazy").setup({
   "wellle/targets.vim",
   -- Lazy
   {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+       position = "right",      
+       mode = "lsp_references"
+    },
+  },
+
+  {
+    "gbprod/yanky.nvim",
+    opts = {}
+  },
+
+  {
     'dgagn/diagflow.nvim',
     opts = {}
   },
@@ -59,6 +73,7 @@ require("lazy").setup({
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
       "nvim-telescope/telescope-live-grep-args.nvim",
+      "gbprod/yanky.nvim",
     },
 		config = function()
 			require("telescope").setup({
@@ -81,6 +96,7 @@ require("lazy").setup({
 			})
 			require("telescope").load_extension("recent_files")
 			require("telescope").load_extension("live_grep_args")
+			require("telescope").load_extension("yank_history")
 		end,
 	},
 
