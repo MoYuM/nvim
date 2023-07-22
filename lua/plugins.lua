@@ -13,77 +13,76 @@ require("lazy").setup({
 	"jose-elias-alvarez/typescript.nvim",
 	"kylechui/nvim-surround",
 	"ray-x/lsp_signature.nvim",
-  "wellle/targets.vim",
-  -- Lazy
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-       position = "right",
-       mode = "lsp_references"
-    },
-  },
+	"wellle/targets.vim",
+	-- Lazy
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			position = "right",
+			mode = "lsp_references",
+		},
+	},
 
-  {
-    "gbprod/yanky.nvim",
-    opts = {}
-  },
+	{
+		"gbprod/yanky.nvim",
+		opts = {},
+	},
 
-  {
-    'dgagn/diagflow.nvim',
-    opts = {}
-  },
+	{
+		"dgagn/diagflow.nvim",
+		opts = {},
+	},
 
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  },
-  {
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {
-      theme = 'tokyonight',
-    }
-  },
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+	},
+	{
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		opts = {
+			theme = "tokyonight",
+		},
+	},
 
-  {
-    "j-hui/fidget.nvim",
-    tag = 'legacy',
-    pin = true,
-    config = function ()
-      require('fidget').setup({})
-    end
-  },
+	{
+		"j-hui/fidget.nvim",
+		tag = "legacy",
+		pin = true,
+		config = function()
+			require("fidget").setup({})
+		end,
+	},
 
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function ()
-      require('gitsigns').setup({})
-    end
-  },
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup({})
+		end,
+	},
 
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
-      "nvim-telescope/telescope-live-grep-args.nvim",
-      "gbprod/yanky.nvim",
-    },
+			"nvim-telescope/telescope-live-grep-args.nvim",
+			"gbprod/yanky.nvim",
+		},
 		config = function()
 			require("telescope").setup({
-        defaults = {
-          layout_config = {
-            width = 0.9,
-            height = 0.9
-          }
-        },
-        pickers = {
-        },
+				defaults = {
+					layout_config = {
+						width = 0.9,
+						height = 0.9,
+					},
+				},
+				pickers = {},
 				extensions = {
 					recent_files = {
 						only_cwd = true,
@@ -123,38 +122,38 @@ require("lazy").setup({
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000,
 		config = function()
-      require("tokyonight").setup({
-        transparent = true,
-        on_highlights = function(hl, c)
-          local prompt = "#2d3149"
-          hl.TelescopeNormal = {
-            bg = c.bg_dark,
-            fg = c.fg_dark,
-          }
-          hl.TelescopeBorder = {
-            bg = c.bg_dark,
-            fg = c.bg_dark,
-          }
-          hl.TelescopePromptNormal = {
-            bg = prompt,
-          }
-          hl.TelescopePromptBorder = {
-            bg = prompt,
-            fg = prompt,
-          }
-          hl.TelescopePromptTitle = {
-            bg = prompt,
-            fg = prompt,
-          }
-          hl.TelescopePreviewTitle = {
-            bg = c.bg_dark,
-            fg = c.bg_dark,
-          }
-          hl.TelescopeResultsTitle = {
-            bg = c.bg_dark,
-            fg = c.bg_dark,
-          }
-        end,
+			require("tokyonight").setup({
+				transparent = true,
+				on_highlights = function(hl, c)
+					local prompt = "#2d3149"
+					hl.TelescopeNormal = {
+						bg = c.bg_dark,
+						fg = c.fg_dark,
+					}
+					hl.TelescopeBorder = {
+						bg = c.bg_dark,
+						fg = c.bg_dark,
+					}
+					hl.TelescopePromptNormal = {
+						bg = prompt,
+					}
+					hl.TelescopePromptBorder = {
+						bg = prompt,
+						fg = prompt,
+					}
+					hl.TelescopePromptTitle = {
+						bg = prompt,
+						fg = prompt,
+					}
+					hl.TelescopePreviewTitle = {
+						bg = c.bg_dark,
+						fg = c.bg_dark,
+					}
+					hl.TelescopeResultsTitle = {
+						bg = c.bg_dark,
+						fg = c.bg_dark,
+					}
+				end,
 			})
 			vim.cmd([[colorscheme tokyonight]])
 		end,
@@ -214,7 +213,7 @@ require("lazy").setup({
 		dependencies = {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
-			"jose-elias-alvarez/typescript.nvim"
+			"jose-elias-alvarez/typescript.nvim",
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -227,18 +226,18 @@ require("lazy").setup({
 				},
 				handlers = {
 					function(server_name)
-            -- don't setup tsserver, it's already setup by typescript-tool.nvim
-            if (not server_name == "tsserver") then
-              require("lspconfig")[server_name].setup({
-                capabilities = capabilities,
-              })
-            end
+						-- don't setup tsserver, it's already setup by typescript-tool.nvim
+						if not server_name == "tsserver" then
+							require("lspconfig")[server_name].setup({
+								capabilities = capabilities,
+							})
+						end
 					end,
-          ["cssls"] = function ()
-            require("lspconfig").cssls.setup({
-              capabilities = capabilities,
-            })
-          end,
+					["cssls"] = function()
+						require("lspconfig").cssls.setup({
+							capabilities = capabilities,
+						})
+					end,
 					["lua_ls"] = function()
 						require("lspconfig").lua_ls.setup({
 							settings = {
@@ -323,6 +322,7 @@ require("lazy").setup({
 			"f-person/git-blame.nvim",
 		},
 		config = function()
+			local ui = require("ui")
 			local function moyum()
 				return [[moyum]]
 			end
@@ -344,16 +344,25 @@ require("lazy").setup({
 						{
 							"mode",
 							fmt = function(str)
-								return " " .. str
+								return ui.icons.Vim .. str
 							end,
 						},
 					},
-					lualine_b = { "branch", "diagnostics" },
-					lualine_x = { "diff" },
+					lualine_b = { "branch" },
+					lualine_x = {
+						{
+							"diagnostics",
+							symbols = {
+								error = ui.icons.Error,
+								warn = ui.icons.Warn,
+								hint = ui.icons.Hint,
+								info = ui.icons.Info,
+							},
+						},
+					},
 					lualine_y = {
 						{
-							"filename",
-							path = 4,
+							"diff",
 						},
 					},
 					lualine_z = { moyum },
@@ -436,16 +445,16 @@ require("lazy").setup({
 		end,
 	},
 	{
-    "kevinhwang91/nvim-ufo",
-    dependencies = "kevinhwang91/promise-async",
-    config = function()
-      require("ufo").setup()
-    end,
-  },
-  {
-    "ggandor/leap.nvim",
-    config = function()
-      require('leap').add_default_mappings()
-    end
-  },
+		"kevinhwang91/nvim-ufo",
+		dependencies = "kevinhwang91/promise-async",
+		config = function()
+			require("ufo").setup()
+		end,
+	},
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+	},
 })
