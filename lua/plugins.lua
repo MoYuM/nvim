@@ -8,7 +8,6 @@ require("lazy").setup({
 	"smartpde/telescope-recent-files",
 	"onsails/lspkind.nvim",
 	"tpope/vim-fugitive",
-	"nvim-treesitter/nvim-treesitter-context",
 	"pocco81/auto-save.nvim",
 	"sbdchd/neoformat",
 	"jose-elias-alvarez/typescript.nvim",
