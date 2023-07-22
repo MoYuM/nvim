@@ -219,6 +219,11 @@ require("lazy").setup({
               })
             end
 					end,
+          ["cssls"] = function ()
+            require("lspconfig").cssls.setup({
+              capabilities = capabilities,
+            })
+          end,
 					["lua_ls"] = function()
 						require("lspconfig").lua_ls.setup({
 							settings = {
