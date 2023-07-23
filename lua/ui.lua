@@ -1,16 +1,41 @@
 local M = {}
 
 M.icons = {
-  Vim = " ",
-  Error = "󰱯 ",
-  Warn = "󰧼 ",
-  Hint = "󰄛 ",
-  Info = " ",
+	Vim = " ",
+	Error = "󰱯 ",
+	Warn = "󰧼 ",
+	Hint = "󰄛 ",
+	Info = " ",
+	Text = " ",
+	Method = " ",
+	Function = " ",
+	Constructor = " ",
+	Field = " ",
+	Variable = " ",
+	Class = " ",
+	Interface = " ",
+	Module = " ",
+	Property = " ",
+	Unit = " ",
+	Value = " ",
+	Enum = " ",
+	Keyword = " ",
+	Snippet = " ",
+	Color = " ",
+	File = " ",
+	Reference = " ",
+	Folder = " ",
+	EnumMember = " ",
+	Constant = " ",
+	Struct = " ",
+	Event = " ",
+	Operator = " ",
+	TypeParameter = " ",
 }
 
 M.colors = {
-  orange = "#FF8000",
-  pink = "#ff88aa",
+	orange = "#FF8000",
+	pink = "#ff88aa",
 }
 
 return M

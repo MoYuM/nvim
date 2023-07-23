@@ -1,6 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
+local ui = require('ui')
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -73,12 +74,8 @@ cmp.setup({
   },
   formatting = {
     format = lspkind.cmp_format({
-      mode = 'symbol',
-      maxwidth = 100,
-      ellipsis_char = '...',
-      before = function (_, vim_item)
-        return vim_item
-      end
+      mode = 'symbol_text',
+      symbol_map = ui.icons,
     })
   }
 })
