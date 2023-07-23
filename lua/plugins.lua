@@ -348,7 +348,15 @@ require("lazy").setup({
 							end,
 						},
 					},
-					lualine_b = { "branch" },
+					lualine_b = {
+						{
+							"branch",
+							color = {
+								fg = ui.colors.orange,
+                gui = "bold"
+							},
+						},
+					},
 					lualine_x = {
 						{
 							"diagnostics",
