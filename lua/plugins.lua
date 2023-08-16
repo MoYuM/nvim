@@ -23,15 +23,15 @@ require("lazy").setup({
 			mode = "lsp_references",
 		},
 	},
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-    },
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 	{
 		"gbprod/yanky.nvim",
 		opts = {},
@@ -73,6 +73,7 @@ require("lazy").setup({
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({})
+			require("scrollbar.handlers.gitsigns").setup()
 		end,
 	},
 
@@ -361,7 +362,7 @@ require("lazy").setup({
 							"branch",
 							color = {
 								fg = ui.colors.orange,
-                gui = "bold"
+								gui = "bold",
 							},
 						},
 					},
@@ -471,6 +472,37 @@ require("lazy").setup({
 		"ggandor/leap.nvim",
 		config = function()
 			require("leap").add_default_mappings()
+		end,
+	},
+	{
+		"karb94/neoscroll.nvim",
+		opts = {
+			hide_cursor = false,
+			easing_function = "sine",
+		},
+	},
+	{
+		"petertriho/nvim-scrollbar",
+		config = function()
+			local colors = require("tokyonight.colors").setup()
+
+			require("scrollbar").setup({
+				handle = {
+					color = colors.bg_highlight,
+				},
+				marks = {
+					Cursor = { text = "" },
+					Search = { color = colors.orange },
+					Error = { color = colors.error },
+					Warn = { color = colors.warning },
+					Info = { color = colors.info },
+					Hint = { color = colors.hint },
+					Misc = { color = colors.purple },
+				},
+				handlers = {
+					cursor = false,
+				},
+			})
 		end,
 	},
 })
