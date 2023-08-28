@@ -505,4 +505,6 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+  { "folke/neodev.nvim", opts = {} }
 })

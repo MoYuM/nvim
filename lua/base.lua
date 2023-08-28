@@ -14,7 +14,12 @@ end
 
 opt.scrolloff = 8
 
--- fold
+-- spell
+vim.opt_global.spell = true
+vim.opt_global.spelllang = "en,cjk"
+vim.opt.spelloptions = "camel"
+
+
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
