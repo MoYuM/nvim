@@ -15,11 +15,11 @@ end
 opt.scrolloff = 8
 
 -- spell
-vim.opt_global.spell = true
-vim.opt_global.spelllang = "en,cjk"
+vim.opt.spell = true
+vim.opt.spelllang = "en,cjk"
 vim.opt.spelloptions = "camel"
 
-
+-- fold
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
