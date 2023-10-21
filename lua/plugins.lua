@@ -63,10 +63,7 @@ require("lazy").setup({
 	{
 		"j-hui/fidget.nvim",
 		tag = "legacy",
-		pin = true,
-		config = function()
-			require("fidget").setup({})
-		end,
+		opts = {},
 	},
 
 	{
@@ -506,5 +503,5 @@ require("lazy").setup({
 		end,
 	},
 
-  { "folke/neodev.nvim", opts = {} }
+	{ "folke/neodev.nvim", opts = {} }
 })
