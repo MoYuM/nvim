@@ -46,14 +46,7 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     lazy = false,
-    opts = {
-      view = {
-        adaptive_size = true,
-        float = {
-          enable = true,
-        },
-      },
-    },
+    opts = overrides.nvimtree,
   },
 
   -- Install a plugin
