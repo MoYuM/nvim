@@ -157,7 +157,22 @@ local plugins = {
     lazy = false
   },
 
-  { "kylechui/nvim-surround", lazy = false }
+  { "kylechui/nvim-surround", lazy = false },
+
+  {
+    "wellle/targets.vim",
+    lazy = false,
+  },
+
+  {
+    "rrethy/vim-illuminate",
+    lazy = false,
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
+  }
 }
 
 return plugins
