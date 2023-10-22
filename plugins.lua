@@ -1,52 +1,9 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
 
   -- Override plugin definition options
-  {
-    "pocco81/auto-save.nvim",
-    lazy = false,
-  },
-
-  {
-    "kdheepak/lazygit.nvim",
-    lazy = false,
-  },
-
-   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    lazy = false,
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          accept = false,
-          enable = true,
-          auto_trigger = true,
-          keymap = {
-            accept = "<C-;>",
-            accept_word = false,
-            accept_line = false,
-            next = "<C-]>",
-            prev = "<C-[>",
-            dismiss = "<C-]>",
-          },
-        },
-      })
-    end,
-  },
-
-  {
-    "rmagatti/auto-session",
-    lazy = false,
-    config = function()
-      require("auto-session").setup({
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-      })
-    end,
-  },
 
   {
     "neovim/nvim-lspconfig",
@@ -68,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -77,8 +34,26 @@ local plugins = {
   },
 
   {
+    "hrsh7th/nvim-cmp",
+    lazy = false,
+    config = function(_, opts)
+      opts.sources[#opts.sources + 1] = {  name = "hrsh7th/cmp-cmdline" }
+      require("cmp").setup(opts)
+      require "custom.configs.cmp"
+    end,
+  },
+
+  {
     "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
+    lazy = false,
+    opts = {
+      view = {
+        adaptive_size = true,
+        float = {
+          enable = true,
+        },
+      },
+    },
   },
 
   -- Install a plugin
@@ -93,7 +68,7 @@ local plugins = {
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
+  --   enabled = false,
   -- },
 
   -- All NvChad plugins are lazy-loaded by default
@@ -103,6 +78,86 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+
+  {
+    "rmagatti/auto-session",
+    opts = {},
+    lazy = false,
+  },
+
+  {
+    "Pocco81/auto-save.nvim",
+    opts = {
+      enabled = true,
+    },
+    lazy = false,
+  },
+
+  {
+    "fedepujol/move.nvim",
+    lazy = false,
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    lazy = false,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+    lazy = false,
+  },
+
+  {
+		"dgagn/diagflow.nvim",
+		opts = {},
+	},
+
+  {
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		lazy = false,
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					accept = false,
+					enable = true,
+					auto_trigger = true,
+					keymap = {
+						accept = "<c-;>",
+					},
+				},
+				panel = { enabled = false },
+			})
+		end,
+	},
+
+  {
+		"wansmer/treesj",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {},
+    lazy = false,
+	},
+
+  {
+		"ggandor/leap.nvim",
+    lazy = false,
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+	},
+
+  {
+    "smartpde/telescope-recent-files",
+    lazy = false
+  },
+
+  { "kylechui/nvim-surround", lazy = false }
 }
 
 return plugins

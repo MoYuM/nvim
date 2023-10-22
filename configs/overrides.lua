@@ -9,7 +9,6 @@ M.treesitter = {
     "javascript",
     "typescript",
     "tsx",
-    "c",
     "markdown",
     "markdown_inline",
   },
@@ -33,10 +32,6 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
-
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
   },
 }
 
@@ -45,12 +40,7 @@ M.nvimtree = {
   git = {
     enable = true,
   },
-  view = {
-    float = {
-      enable = true,
-      quit_on_focus_loss = true,
-    },
-  },
+
   renderer = {
     highlight_git = true,
     icons = {
