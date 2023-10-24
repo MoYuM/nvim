@@ -503,5 +503,13 @@ require("lazy").setup({
 		end,
 	},
 
-	{ "folke/neodev.nvim", opts = {} }
+	{ "folke/neodev.nvim", opts = {} },
+
+  {
+    "norcalli/nvim-colorizer.lua",
+    opts = {},
+    config = function()
+      require'colorizer'.setup()
+    end,
+  }
 })
