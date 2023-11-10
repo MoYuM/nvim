@@ -11,7 +11,6 @@ require("lazy").setup({
 	"pocco81/auto-save.nvim",
 	"sbdchd/neoformat",
 	"jose-elias-alvarez/typescript.nvim",
-	"kylechui/nvim-surround",
 	"ray-x/lsp_signature.nvim",
 	"wellle/targets.vim",
 	-- Lazy
@@ -511,5 +510,16 @@ require("lazy").setup({
     config = function()
       require'colorizer'.setup()
     end,
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
   }
 })
