@@ -276,15 +276,14 @@ require("lazy").setup({
 					enable = true,
 					use_languagetree = true,
 				},
-				indent = { enable = true },
 				autotag = {
 					enable = true,
 				},
 			})
 		end,
 	},
-
 	{
+
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"l3mon4d3/luasnip",
@@ -300,16 +299,29 @@ require("lazy").setup({
 		end,
 	},
 
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			vim.opt.list = true
-			require("indent_blankline").setup({
-				space_char_blankline = " ",
-				show_current_context = true,
-			})
-		end,
-	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	config = function()
+	-- 		vim.opt.list = true
+	-- 		require("indent_blankline").setup({
+	-- 			space_char_blankline = " ",
+	-- 			show_current_context = true,
+ --        scope = { enabled = true },
+	-- 		})
+	-- 	end,
+	-- },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   main = "ibl",
+  --   opts = {
+  --     indent = { char = "" },
+  --     scope = {
+  --       enabled = true,
+  --       show_start = false,
+  --       char = "·",
+  --     }
+  --   },
+  -- },
 
 	{
 		"max397574/better-escape.nvim",
@@ -534,5 +546,22 @@ require("lazy").setup({
     config = true,
     -- Uncomment next line if you want to follow only stable versions
     -- version = "*" 
-  }
+  },
+
+  -- Go forward/backward with square brackets
+	{
+		"echasnovski/mini.bracketed",
+		event = "BufReadPost",
+		config = function()
+			local bracketed = require("mini.bracketed")
+			bracketed.setup({
+				file = { suffix = "" },
+				window = { suffix = "" },
+				quickfix = { suffix = "" },
+				yank = { suffix = "" },
+				treesitter = { suffix = "n" },
+        oldfile = { suffix = "" }
+			})
+		end,
+	},
 })
