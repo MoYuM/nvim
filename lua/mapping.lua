@@ -31,6 +31,9 @@ map("n", "=", ":Neoformat<cr>", "Format")
 -- quit
 map("n", "<leader>q", ":wqa<cr>", "Quit neovim")
 
+-- rename
+map("n", "<leader>rn", ":IncRename ")
+
 wk.register({
 	["3"] = { "#", "find next word under cursor" },
 	["\\"] = { ":Telescope resume<cr>", "resume telescope" },

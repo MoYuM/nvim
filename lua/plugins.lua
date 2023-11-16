@@ -521,5 +521,10 @@ require("lazy").setup({
             -- Configuration here, or leave empty to use defaults
         })
     end
+  },
+
+  {
+    "smjonas/inc-rename.nvim",
+    opts = {},
   }
 })
