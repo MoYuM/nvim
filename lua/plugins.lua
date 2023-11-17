@@ -299,30 +299,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	config = function()
-	-- 		vim.opt.list = true
-	-- 		require("indent_blankline").setup({
-	-- 			space_char_blankline = " ",
-	-- 			show_current_context = true,
- --        scope = { enabled = true },
-	-- 		})
-	-- 	end,
-	-- },
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   main = "ibl",
-  --   opts = {
-  --     indent = { char = "" },
-  --     scope = {
-  --       enabled = true,
-  --       show_start = false,
-  --       char = "·",
-  --     }
-  --   },
-  -- },
-
 	{
 		"max397574/better-escape.nvim",
 		event = "insertenter",
@@ -403,7 +379,7 @@ require("lazy").setup({
 		"rmagatti/auto-session",
 		config = function()
 			require("auto-session").setup({
-				log_level = "error",
+        log_level = "error",
 				auto_session_suppress_dirs = { "~/", "~/projects", "~/downloads", "/" },
 			})
 		end,
