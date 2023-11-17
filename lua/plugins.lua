@@ -31,10 +31,6 @@ require("lazy").setup({
 			-- refer to the configuration section below
 		},
 	},
-	{
-		"gbprod/yanky.nvim",
-		opts = {},
-	},
 
 	{
 		"dgagn/diagflow.nvim",
@@ -276,6 +272,7 @@ require("lazy").setup({
 					enable = true,
 					use_languagetree = true,
 				},
+				indent = { enable = true },
 				autotag = {
 					enable = true,
 				},
@@ -419,29 +416,6 @@ require("lazy").setup({
 				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 			})
 		end,
-	},
-
-	{
-		"glepnir/lspsaga.nvim",
-		event = "lspattach",
-		config = function()
-			require("lspsaga").setup({
-				beacon = {
-					enable = true,
-					frequency = 7,
-				},
-				ui = {
-					code_action = "",
-				},
-				symbol_in_winbar = {
-					enable = false,
-				},
-			})
-		end,
-		dependencies = {
-			{ "nvim-tree/nvim-web-devicons" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
 	},
 
 	{
