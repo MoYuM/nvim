@@ -46,6 +46,12 @@ opt.cursorline = true
 
 opt.wrap = false
 
+-- neovide
+if vim.g.neovide then
+  vim.o.guifont = "JetBrainsMono Nerd Font:h14"
+  vim.opt.linespace = 1
+end
+
 for type, icon in pairs(ui.icons) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })

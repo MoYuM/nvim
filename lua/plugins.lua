@@ -127,8 +127,12 @@ require("lazy").setup({
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000,
 		config = function()
+			local transparent = true
+			if vim.g.neovide then
+				transparent = false
+			end
 			require("tokyonight").setup({
-				transparent = true,
+				transparent = transparent,
 				on_highlights = function(hl, c)
 					local prompt = "#2d3149"
 					hl.TelescopeNormal = {
