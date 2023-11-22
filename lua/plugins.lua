@@ -544,4 +544,9 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+  {
+    "chrisgrieser/nvim-spider",
+    opts = {},
+  }
 })
