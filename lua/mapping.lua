@@ -7,15 +7,6 @@ end
 -- leader
 vim.g.mapleader = " "
 
--- yanky
-map({"n","x"}, "p", "<Plug>(YankyPutAfter)")
-map({"n","x"}, "P", "<Plug>(YankyPutBefore)")
-map({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
-map({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
-map("n", "<C-n>", "<Plug>(YankyCycleForward)")
-map("n", "<C-p>", "<Plug>(YankyCycleBackward)")
-map("n", "<leader>p", "<cmd>Telescope yank_history theme=cursor<cr>")
-
 -- reference
 map("n", "<leader>r", "<cmd>TroubleToggle lsp_references<cr>")
 
