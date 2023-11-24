@@ -1,11 +1,11 @@
 return {
-  	------------------- LSP ---------------------------
 	-- 专门对 tsserver 的优化
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
 	},
+
 	-- mason 配合 lsp
 	{
 		"williamboman/mason-lspconfig.nvim",
@@ -52,12 +52,14 @@ return {
 			})
 		end,
 	},
+
 	-- 右下角的 lsp 状态信息
 	{
 		"j-hui/fidget.nvim",
 		tag = "legacy",
 		opts = {},
 	},
+
 	-- 基于 lsp 的重命名
 	{
 		"smjonas/inc-rename.nvim",
@@ -87,6 +89,7 @@ return {
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	},
+
 	-- lua 开发, neovim 开发
 	{ "folke/neodev.nvim", opts = {} },
 }

@@ -1,5 +1,5 @@
 return {
-  	------------------- UI ----------------------------
+	------------------- UI ----------------------------
 	"onsails/lspkind.nvim", -- cmp 的样式
 	-- tokyonight theme
 	{
@@ -48,7 +48,7 @@ return {
 		end,
 	},
 
-  -- 状态条
+	-- 状态条
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = {

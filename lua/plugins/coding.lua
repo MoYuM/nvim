@@ -80,14 +80,12 @@ return {
 		end,
 	},
 
-
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
-    opts = {},
+		opts = {},
 	},
-
 
 	-- 自动补全
 	{
@@ -117,7 +115,6 @@ return {
 		end,
 	},
 
-
 	-- 注释
 	{
 		"numtostr/Comment.nvim",
@@ -140,7 +137,6 @@ return {
 			require("which-key").setup({})
 		end,
 	},
-
 
 	-- 转换对象数组的写法
 	{
@@ -168,5 +164,4 @@ return {
 			require("leap").add_default_mappings()
 		end,
 	},
-
 }

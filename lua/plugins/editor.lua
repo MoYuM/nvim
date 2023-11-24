@@ -1,6 +1,6 @@
 ---@diagnostic disable: missing-fields
 return {
-  	-- 让错误提示显示在右上角
+	-- 让错误提示显示在右上角
 	{
 		"dgagn/diagflow.nvim",
 		opts = {},
@@ -19,7 +19,7 @@ return {
 		},
 	},
 
-  	-- 文件导航
+	-- 文件导航
 	{
 		"nvim-tree/nvim-tree.lua",
 		keys = {
@@ -53,7 +53,7 @@ return {
 		end,
 	},
 
-  	-- 让颜色显示出来
+	-- 让颜色显示出来
 	{
 		"norcalli/nvim-colorizer.lua",
 		opts = {},
@@ -62,7 +62,7 @@ return {
 		end,
 	},
 
-  	-- tree-sitter
+	-- tree-sitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":tsupdate",
@@ -88,7 +88,7 @@ return {
 		end,
 	},
 
-  	-- 自动保存 session，快速回到之前的状态
+	-- 自动保存 session，快速回到之前的状态
 	{
 		"rmagatti/auto-session",
 		config = function()
@@ -99,7 +99,7 @@ return {
 		end,
 	},
 
-  	-- 终端
+	-- 终端
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
@@ -108,7 +108,7 @@ return {
 		},
 	},
 
-  	-- 更丝滑的滚动
+	-- 更丝滑的滚动
 	{
 		"karb94/neoscroll.nvim",
 		opts = {
@@ -143,4 +143,3 @@ return {
 		end,
 	},
 }
-
