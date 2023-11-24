@@ -493,4 +493,27 @@ require("lazy").setup({
     "smjonas/inc-rename.nvim",
     opts = {},
   },
+
+  	{
+		"glepnir/lspsaga.nvim",
+		event = "lspattach",
+		config = function()
+			require("lspsaga").setup({
+				beacon = {
+					enable = true,
+					frequency = 7,
+				},
+				ui = {
+					code_action = "",
+				},
+				symbol_in_winbar = {
+					enable = false,
+				},
+			})
+		end,
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	},
 })
