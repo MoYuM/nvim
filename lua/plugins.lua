@@ -494,6 +494,7 @@ require("lazy").setup({
 
 	{ "folke/neodev.nvim", opts = {} },
 
+  -- 让颜色显示出来
   {
     "norcalli/nvim-colorizer.lua",
     opts = {},
@@ -513,38 +514,9 @@ require("lazy").setup({
     end
   },
 
+  -- 基于 lsp 的重命名
   {
     "smjonas/inc-rename.nvim",
     opts = {},
   },
-
-  { 
-    "danymat/neogen", 
-    dependencies = "nvim-treesitter/nvim-treesitter", 
-    config = true,
-    -- Uncomment next line if you want to follow only stable versions
-    -- version = "*" 
-  },
-
-  -- Go forward/backward with square brackets
-	{
-		"echasnovski/mini.bracketed",
-		event = "BufReadPost",
-		config = function()
-			local bracketed = require("mini.bracketed")
-			bracketed.setup({
-				file = { suffix = "" },
-				window = { suffix = "" },
-				quickfix = { suffix = "" },
-				yank = { suffix = "" },
-				treesitter = { suffix = "n" },
-        oldfile = { suffix = "" }
-			})
-		end,
-	},
-
-  {
-    "chrisgrieser/nvim-spider",
-    opts = {},
-  }
 })
