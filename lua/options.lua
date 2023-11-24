@@ -14,6 +14,9 @@ end
 
 opt.scrolloff = 8
 
+-- leader
+vim.g.mapleader = " "
+
 -- spell
 vim.opt.spell = true
 vim.opt.spelllang = "en,cjk"

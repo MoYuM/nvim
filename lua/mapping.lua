@@ -4,8 +4,6 @@ local map = function(mode, key, result, desc)
   vim.keymap.set(mode, key, result, { noremap = true, silent = true, desc = desc })
 end
 
--- leader
-vim.g.mapleader = " "
 
 -- reference
 map("n", "<leader>r", "<cmd>TroubleToggle lsp_references<cr>")
@@ -36,7 +34,7 @@ wk.register({
 	["gr"] = { "<cmd>Lspsaga rename<CR>", "rename" },
 	["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "peek definition" },
 	["hd"] = { "<cmd>Lspsaga hover_doc<CR>", "hover doc" },
-	["d]"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "jump to next diagnostics" },
+	["d]"] = { ":Lspsaga diagnostic_jump_next<CR>", "jump to next diagnostics" },
 	["d["] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "jump to prev diagnostics" },
 })
 
