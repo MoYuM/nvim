@@ -1,15 +1,11 @@
 local wk = require("which-key")
 
 local map = function(mode, key, result, desc)
-  vim.keymap.set(mode, key, result, { noremap = true, silent = true, desc = desc })
+	vim.keymap.set(mode, key, result, { noremap = true, silent = true, desc = desc })
 end
 
-
--- reference
-map("n", "<leader>r", "<cmd>TroubleToggle lsp_references<cr>")
-
 -- test
-map('n', '99', "<cmd>lua require('mo').moc()<cr>", "test")
+map("n", "99", "<cmd>lua require('mo').moc()<cr>", "test")
 
 -- restart lsp servejr
 map("n", "<leader>lr", ":LspRestart<cr>", "Restart lsp server")
@@ -31,7 +27,6 @@ wk.register({
 -- lsp
 wk.register({
 	["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", "lsp finder" },
-	["gr"] = { "<cmd>Lspsaga rename<CR>", "rename" },
 	["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "peek definition" },
 	["hd"] = { "<cmd>Lspsaga hover_doc<CR>", "hover doc" },
 	["d]"] = { ":Lspsaga diagnostic_jump_next<CR>", "jump to next diagnostics" },
@@ -54,7 +49,7 @@ wk.register({
 	["O"] = { "<cmd>Lspsaga outline<CR>", "show outline" },
 	["g"] = { "<cmd>LazyGit<CR>", "lazygit" },
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-  ["<leader>"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
+	["<leader>"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
 	["l"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
 	["o"] = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
 }, {
@@ -72,9 +67,9 @@ wk.register({
 
 -- toggle terminal
 wk.register({
-  ["<leader>t"] = { ":ToggleTerm<CR>", "toggle terminal float" },
+	["<leader>t"] = { ":ToggleTerm<CR>", "toggle terminal float" },
 }, {
-	mode = {"n"},
+	mode = { "n" },
 })
 wk.register({
 	["<esc>"] = { "<C-\\><C-n>", "quit term mode" },
@@ -82,27 +77,7 @@ wk.register({
 	mode = "t",
 })
 
-map(
-	{ "n", "o", "x" },
-	"w",
-	"<cmd>lua require('spider').motion('w')<CR>",
-	{ desc = "Spider-w" }
-)
-map(
-	{ "n", "o", "x" },
-	"e",
-	"<cmd>lua require('spider').motion('e')<CR>",
-	{ desc = "Spider-e" }
-)
-map(
-	{ "n", "o", "x" },
-	"b",
-	"<cmd>lua require('spider').motion('b')<CR>",
-	{ desc = "Spider-b" }
-)
-map(
-	{ "n", "o", "x" },
-	"ge",
-	"<cmd>lua require('spider').motion('ge')<CR>",
-	{ desc = "Spider-ge" }
-)
+map({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+map({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+map({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })

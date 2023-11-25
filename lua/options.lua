@@ -7,6 +7,8 @@ end
 
 local is_mac = has "macunix"
 
+
+
 -- 复制时高亮
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 
