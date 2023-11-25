@@ -13,9 +13,6 @@ map("n", "<leader>lr", ":LspRestart<cr>", "Restart lsp server")
 -- format
 map("n", "=", ":Neoformat<cr>", "Format")
 
--- quit
-map("n", "<leader>q", ":wqa<cr>", "Quit neovim")
-
 -- rename
 map("n", "<leader>rn", ":IncRename ")
 
@@ -72,7 +69,7 @@ wk.register({
 	mode = { "n" },
 })
 wk.register({
-	["<esc>"] = { "<C-\\><C-n>", "quit term mode" },
+	["<esc><esc>"] = { "<C-\\><C-n>", "quit term mode" },
 }, {
 	mode = "t",
 })
