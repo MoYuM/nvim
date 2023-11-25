@@ -6,13 +6,24 @@ return {
 		opts = {},
 	},
 
+  "williamboman/mason.nvim",
+
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    opts = {
+      ensure_installed = {
+        'stylua',
+        'prettier'
+      }
+    }
+  },
+
 	-- mason 配合 lsp
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
-			"jose-elias-alvarez/typescript.nvim",
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
