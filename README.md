@@ -1,5 +1,7 @@
 # My Neovim Config
 
+![nvim](./images/nvim.png)
+
 ## Requirements
 
 - Neovim
