@@ -33,6 +33,7 @@ return {
 					"lua_ls",
 					"tsserver",
 					"cssls",
+          "tailwindcss"
 				},
 				handlers = {
 					function(server_name)
@@ -59,6 +60,11 @@ return {
 							},
 						})
 					end,
+          ["tailwindcss"] = function ()
+            require("lspconfig").tailwindcss.setup({
+              capabilities = capabilities,
+            })
+          end
 				},
 			})
 		end,
