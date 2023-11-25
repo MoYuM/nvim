@@ -6,17 +6,17 @@ return {
 		opts = {},
 	},
 
-  "williamboman/mason.nvim",
+	"williamboman/mason.nvim",
 
-  {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-    opts = {
-      ensure_installed = {
-        'stylua',
-        'prettier'
-      }
-    }
-  },
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				"stylua",
+				"prettier",
+			},
+		},
+	},
 
 	-- mason 配合 lsp
 	{
