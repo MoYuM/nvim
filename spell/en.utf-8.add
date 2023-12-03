@@ -95,3 +95,5 @@ LSP
 Neovim
 huyu
 BDM
+deps
+tsserver
