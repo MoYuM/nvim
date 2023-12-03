@@ -9,29 +9,9 @@ local M = {}
 
 local commad_list = {
   {
-    cmd = "git s",
-    desc = "查看 git 状态",
-  },
-  {
-    cmd = "git push",
-    desc = "提交！！",
-  },
-  {
     cmd = "def p -d",
     desc = '发布预发',
   },
-  {
-    cmd = "tnpm update",
-    desc = "更新依赖",
-  },
-  {
-    cmd = "clam dev --remote",
-    desc = "H5 启动本地服务",
-  },
-  {
-    cmd = "clam cr",
-    desc = "打开 CR"
-  }
 }
 
 local function moc(opts)
