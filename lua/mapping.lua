@@ -7,7 +7,7 @@ end
 -- test
 map("n", "99", "<cmd>lua require('mo').moc()<cr>", "test")
 
--- restart lsp servejr
+-- restart lsp server
 map("n", "<leader>lr", ":LspRestart<cr>", "Restart lsp server")
 
 -- format
