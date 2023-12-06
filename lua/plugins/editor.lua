@@ -65,16 +65,34 @@ return {
 	-- tree-sitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = ":tsupdate",
+		build = ":TSUpdate",
+		event = { "LazyFile", "VeryLazy" },
+		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
-					"lua",
-					"typescript",
-					"tsx",
+					"bash",
+					"c",
+					"diff",
+					"html",
 					"javascript",
+					"jsdoc",
+					"json",
+					"jsonc",
+					"lua",
+					"luadoc",
+					"luap",
 					"markdown",
 					"markdown_inline",
+					"python",
+					"query",
+					"regex",
+					"toml",
+					"tsx",
+					"typescript",
+					"vim",
+					"vimdoc",
+					"yaml",
 				},
 				highlight = {
 					enable = true,
