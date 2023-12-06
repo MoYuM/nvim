@@ -110,6 +110,7 @@ return {
 	-- lua 开发, neovim 开发
 	{ "folke/neodev.nvim", opts = {} },
 
+  -- 显示函数的引用数量
 	{
 		"Wansmer/symbol-usage.nvim",
 		event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
