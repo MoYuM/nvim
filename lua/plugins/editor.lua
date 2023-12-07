@@ -70,13 +70,10 @@ return {
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
 					"bash",
-					"c",
-					"diff",
 					"html",
 					"javascript",
 					"jsdoc",
 					"json",
-					"jsonc",
 					"lua",
 					"luadoc",
 					"luap",
