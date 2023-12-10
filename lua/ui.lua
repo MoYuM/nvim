@@ -2,9 +2,9 @@ local M = {}
 
 M.icons = {
 	Vim = " ",
-	Error = "󰱯 ",
+	Error = "󱓻 ",
 	Warn = "󰧼 ",
-	Hint = "󰄛 ",
+	Hint = " ",
 	Info = " ",
 	Text = " ",
 	Method = " ",

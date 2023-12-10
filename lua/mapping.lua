@@ -1,24 +1,14 @@
 local wk = require("which-key")
 
-local map = function(mode, key, result, desc)
-	vim.keymap.set(mode, key, result, { noremap = true, silent = true, desc = desc })
-end
-
--- test
-map("n", "99", "<cmd>lua require('mo').moc()<cr>", "test")
-
--- restart lsp server
-map("n", "<leader>lr", ":LspRestart<cr>", "Restart lsp server")
-
--- format
-map("n", "=", ":Neoformat<cr>", "Format")
-
--- rename
-map("n", "<leader>rn", ":IncRename ")
-
+-- normal
 wk.register({
 	["3"] = { "#", "find next word under cursor" },
 	["\\"] = { ":Telescope resume<cr>", "resume telescope" },
+	["<esc>"] = { ":noh<cr>", "no highlight" },
+	["99"] = { "<cmd>lua require('mo').moc()<cr>", "test" },
+	["<leader>lr"] = { ":LspRestart<cr>", "Restart lsp server" },
+	["="] = { ":Neoformat<cr>", "Format" },
+	["<leader>rn"] = { ":IncRename ", "rename" },
 })
 
 -- lsp

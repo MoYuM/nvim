@@ -31,9 +31,8 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"tsserver",
 					"cssls",
-          "tailwindcss"
+					"tailwindcss",
 				},
 				handlers = {
 					function(server_name)
@@ -60,11 +59,11 @@ return {
 							},
 						})
 					end,
-          ["tailwindcss"] = function ()
-            require("lspconfig").tailwindcss.setup({
-              capabilities = capabilities,
-            })
-          end
+					["tailwindcss"] = function()
+						require("lspconfig").tailwindcss.setup({
+							capabilities = capabilities,
+						})
+					end,
 				},
 			})
 		end,

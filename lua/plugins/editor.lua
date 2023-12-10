@@ -65,16 +65,29 @@ return {
 	-- tree-sitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = ":tsupdate",
+		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
-					"lua",
-					"typescript",
-					"tsx",
+					"bash",
+					"html",
 					"javascript",
+					"jsdoc",
+					"json",
+					"lua",
+					"luadoc",
+					"luap",
 					"markdown",
 					"markdown_inline",
+					"python",
+					"query",
+					"regex",
+					"toml",
+					"tsx",
+					"typescript",
+					"vim",
+					"vimdoc",
+					"yaml",
 				},
 				highlight = {
 					enable = true,
