@@ -98,3 +98,5 @@ BDM
 deps
 tsserver
 lsp
+luasnip
+cmp
