@@ -6,9 +6,7 @@ wk.register({
   ["\\"] = { ":Telescope resume<cr>", "resume telescope" },
   ["<esc>"] = { ":noh<cr>", "no highlight" },
   ["99"] = { "<cmd>lua require('mo').moc()<cr>", "test" },
-  ["<leader>lr"] = { ":LspRestart<cr>", "Restart lsp server" },
   ["="] = { ":lua require('conform').format()<cr>", "format" },
-  ["<leader>rn"] = { ":IncRename ", "rename" },
 })
 
 -- lsp
@@ -28,6 +26,7 @@ wk.register({
   ["<C-l>"] = { ":MoveHChar(1)<CR>", "move char right" },
 })
 
+-- leader
 wk.register({
   ["a"] = { "ggVG", "Select all" },
   ["ca"] = { "<cmd>Lspsaga code_action<CR>", "code action" },
@@ -37,8 +36,10 @@ wk.register({
   ["g"] = { "<cmd>LazyGit<CR>", "lazygit" },
   ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
   ["<leader>"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
-  ["l"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
+  ["lg"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
   ["o"] = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
+  ["rl"] = { ":LspRestart<cr>", "Restart lsp server" },
+  ["rn"] = { ":IncRename ", "rename" },
 }, {
   prefix = "<leader>",
 })
