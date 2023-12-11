@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
@@ -35,7 +36,7 @@ cmp.setup({
       else
         fallback()
       end
-    end, {"i","s","c",}),
+    end, { "i", "s", "c", }),
     ["<down>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -92,6 +93,6 @@ cmp.setup.cmdline(":", {
   sources = cmp.config.sources({
     { name = "path" },
   }, {
-      { name = "cmdline" },
-    }),
+    { name = "cmdline" },
+  }),
 })
