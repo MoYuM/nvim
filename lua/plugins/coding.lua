@@ -5,17 +5,13 @@ return {
   "rrethy/vim-illuminate",           -- 高亮代码中其他和当前选中的一样的单词
   "smartpde/telescope-recent-files", -- 最近文件
   "pocco81/auto-save.nvim",          -- 自动保存
-  -- "sbdchd/neoformat", -- format
+
+  -- format
   {
     "stevearc/conform.nvim",
-    opts = {
-      format_on_save = {
-        -- These options will be passed to conform.format()
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
-    },
+    opts = { },
   },
+
   "wellle/targets.vim", -- 快捷选中更多的 target
   -- 更明显的 TODO 注释
   {
