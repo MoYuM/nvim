@@ -68,6 +68,11 @@ return {
 						require("lspconfig").volar.setup({
 							capabilities = capabilities,
 						})
+          end,
+          ["unocss"] = function ()
+						require("lspconfig").unocss.setup({
+							capabilities = capabilities,
+						})
           end
 				},
 			})
