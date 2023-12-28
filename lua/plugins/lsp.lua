@@ -64,6 +64,11 @@ return {
 							capabilities = capabilities,
 						})
 					end,
+          ["volar"] = function ()
+						require("lspconfig").volar.setup({
+							capabilities = capabilities,
+						})
+          end
 				},
 			})
 		end,
