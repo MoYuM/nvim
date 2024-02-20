@@ -1,10 +1,17 @@
 ---@diagnostic disable: missing-fields
 return {
 	"windwp/nvim-ts-autotag", -- 自动补全标签
-	"fedepujol/move.nvim", -- 快速移动代码
 	"rrethy/vim-illuminate", -- 高亮代码中其他和当前选中的一样的单词
 	"smartpde/telescope-recent-files", -- 最近文件
 	"pocco81/auto-save.nvim", -- 自动保存
+
+  -- 快速移动代码
+	{
+		"fedepujol/move.nvim",
+		opts = {
+			--- Config
+		},
+	},
 
 	-- format
 	{
