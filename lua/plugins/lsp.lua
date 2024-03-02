@@ -118,4 +118,10 @@ return {
 
 	-- lua 开发, neovim 开发
 	{ "folke/neodev.nvim", opts = {} },
+
+  -- 代码错误提示
+  {
+    'dmmulroy/ts-error-translator.nvim',
+    opts = {}
+  }
 }
