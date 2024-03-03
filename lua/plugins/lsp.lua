@@ -64,16 +64,16 @@ return {
 							capabilities = capabilities,
 						})
 					end,
-          ["volar"] = function ()
+					["volar"] = function()
 						require("lspconfig").volar.setup({
 							capabilities = capabilities,
 						})
-          end,
-          ["unocss"] = function ()
+					end,
+					["unocss"] = function()
 						require("lspconfig").unocss.setup({
 							capabilities = capabilities,
 						})
-          end
+					end,
 				},
 			})
 		end,
@@ -119,9 +119,31 @@ return {
 	-- lua 开发, neovim 开发
 	{ "folke/neodev.nvim", opts = {} },
 
-  -- 代码错误提示
-  {
-    'dmmulroy/ts-error-translator.nvim',
-    opts = {}
-  }
+	-- 代码错误提示
+	{
+		"dmmulroy/ts-error-translator.nvim",
+		opts = {},
+	},
+
+	-- lint
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("lint").linters_by_ft = {
+				jsx = { "cspell" },
+				tsx = { "cspell" },
+				js = { "cspell" },
+				ts = { "cspell" },
+				lua = { "cspell" },
+				css = { "cspell" },
+				less = { "cspell" },
+				scss = { "cspell" },
+			}
+			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+				callback = function()
+					require("lint").try_lint()
+				end,
+			})
+		end,
+	},
 }
