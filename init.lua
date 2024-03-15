@@ -2,6 +2,10 @@ require("options")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
+-- neovim > 0.9 
+-- 实验性功能，加快启动速度
+vim.loader.enable()
+
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
