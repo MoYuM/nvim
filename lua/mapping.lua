@@ -33,7 +33,7 @@ wk.register({
   ["k"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "show line diagnostics" },
   ["K"] = { "<cmd>Lspsaga show_buf_diagnostics<CR>", "show buffer diagnostics" },
   ["O"] = { "<cmd>Lspsaga outline<CR>", "show outline" },
-  ["g"] = { "<cmd>Neogit<CR>", "neo git" },
+  ["g"] = { "<cmd>LazyGit<CR>", "git" },
   ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
   ["<leader>"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
   ["lg"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
