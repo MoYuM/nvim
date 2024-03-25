@@ -16,6 +16,9 @@ return {
     config = function()
       require("navigator").setup({
         mason = true,
+        lsp = {
+          format_on_save = false,
+        },
       })
     end,
   },
