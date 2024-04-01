@@ -12,7 +12,7 @@ return {
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
 		version = "*",
-    event = "VeryLazy",
+    event = "BufEnter",
 		dependencies = {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons", -- optional dependency
@@ -70,7 +70,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {

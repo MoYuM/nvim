@@ -51,7 +51,7 @@ return {
 	-- 状态条
 	{
 		"nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
+    event = "BufEnter",
 		dependencies = {
 			"f-person/git-blame.nvim",
 		},
