@@ -2,7 +2,6 @@ return {
 	-- 专门对 tsserver 的优化
 	{
 		"pmizio/typescript-tools.nvim",
-		event = "lspattach",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
 	},
