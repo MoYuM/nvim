@@ -3,6 +3,7 @@ return {
 	-- 让错误提示显示在右上角
 	{
 		"dgagn/diagflow.nvim",
+    event = "VeryLazy",
 		opts = {},
 	},
 	-- 上面的面包屑
@@ -10,6 +11,7 @@ return {
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
 		version = "*",
+    event = "VeryLazy",
 		dependencies = {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons", -- optional dependency
@@ -57,6 +59,7 @@ return {
 	{
 		"norcalli/nvim-colorizer.lua",
 		opts = {},
+    event = "VeryLazy",
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -66,6 +69,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+    event = "VeryLazy",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
@@ -116,6 +120,7 @@ return {
 	-- 终端
 	{
 		"akinsho/toggleterm.nvim",
+    event = "VeryLazy",
 		version = "*",
 		opts = {
 			autochdir = true,
@@ -125,6 +130,7 @@ return {
 	-- 更丝滑的滚动
 	{
 		"karb94/neoscroll.nvim",
+    event = "VeryLazy",
 		opts = {
 			hide_cursor = false,
 			easing_function = "sine",
@@ -134,6 +140,7 @@ return {
 	-- 滚动条
 	{
 		"petertriho/nvim-scrollbar",
+    enabled = false,
 		config = function()
 			local colors = require("tokyonight.colors").setup()
 
@@ -188,6 +195,7 @@ return {
 	{
 		"mawkler/modicator.nvim",
 		dependencies = "folke/tokyonight.nvim", -- Add your colorscheme plugin here
+    event = "VeryLazy",
 		init = function()
 			-- These are required for Modicator to work
 			vim.o.cursorline = true

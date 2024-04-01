@@ -71,6 +71,7 @@ return {
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {},
+		event = "VeryLazy",
 	},
 	-- telescope
 	{
@@ -78,6 +79,7 @@ return {
 		dependencies = {
 			"nvim-telescope/telescope-live-grep-args.nvim",
 		},
+		event = "VeryLazy",
 		config = function()
 			require("telescope").setup({
 				defaults = {

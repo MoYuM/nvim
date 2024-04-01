@@ -2,6 +2,7 @@ return {
 	-- 专门对 tsserver 的优化
 	{
 		"pmizio/typescript-tools.nvim",
+		event = "lspattach",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
 	},
@@ -10,6 +11,7 @@ return {
 
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		event = "lspattach",
 		opts = {
 			ensure_installed = {
 				"stylua",
@@ -82,6 +84,7 @@ return {
 	-- 右下角的 lsp 状态信息
 	{
 		"j-hui/fidget.nvim",
+		event = "lspattach",
 		tag = "legacy",
 		opts = {},
 	},
@@ -90,6 +93,9 @@ return {
 	{
 		"smjonas/inc-rename.nvim",
 		opts = {},
+    keys = {
+      "<leader>rn",
+    }
 	},
 
 	-- 开箱即用的 lsp 功能
@@ -122,28 +128,29 @@ return {
 	-- 更好的代码错误提示
 	{
 		"dmmulroy/ts-error-translator.nvim",
+		event = "lspattach",
 		opts = {},
 	},
 
 	-- lint
-	{
-		"mfussenegger/nvim-lint",
-		config = function()
-			require("lint").linters_by_ft = {
-				jsx = { "cspell" },
-				tsx = { "cspell" },
-				js = { "cspell" },
-				ts = { "cspell" },
-				lua = { "cspell" },
-				css = { "cspell" },
-				less = { "cspell" },
-				scss = { "cspell" },
-			}
-			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-				callback = function()
-					require("lint").try_lint()
-				end,
-			})
-		end,
-	},
+	-- {
+	-- 	"mfussenegger/nvim-lint",
+	-- 	config = function()
+	-- 		require("lint").linters_by_ft = {
+	-- 			jsx = { "cspell" },
+	-- 			tsx = { "cspell" },
+	-- 			js = { "cspell" },
+	-- 			ts = { "cspell" },
+	-- 			lua = { "cspell" },
+	-- 			css = { "cspell" },
+	-- 			less = { "cspell" },
+	-- 			scss = { "cspell" },
+	-- 		}
+	-- 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	-- 			callback = function()
+	-- 				require("lint").try_lint()
+	-- 			end,
+	-- 		})
+	-- 	end,
+	-- },
 }
