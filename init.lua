@@ -2,7 +2,7 @@ require("options")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
--- neovim > 0.9 
+-- neovim > 0.9
 -- 实验性功能，加快启动速度
 vim.loader.enable()
 
@@ -28,6 +28,10 @@ require("lazy").setup({
 	},
 	install = { colorscheme = { "tokyonight", "habamax" } },
 	checker = { enabled = false }, -- automatically check for plugin updates
+	change_detection = {
+		enabled = false,
+		notify = false, -- get a notification when changes are found
+	},
 	performance = {
 		rtp = {
 			disabled_plugins = {
