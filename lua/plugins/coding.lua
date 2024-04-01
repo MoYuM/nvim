@@ -186,13 +186,11 @@ return {
 
 	-- 转换对象数组的写法
 	{
-		"wansmer/treesj",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		config = function()
-			require("treesj").setup({ --[[ your config ]]
-			})
-		end,
-	},
+    "wansmer/treesj",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts= {},
+    keys = {"<leader>m"},
+  },
 
 	-- 折叠
 	{
