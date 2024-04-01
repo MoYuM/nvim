@@ -5,7 +5,7 @@ return {
 	"smartpde/telescope-recent-files", -- 最近文件
 	"pocco81/auto-save.nvim", -- 自动保存
 
-  -- 快速移动代码
+	-- 快速移动代码
 	{
 		"fedepujol/move.nvim",
 		opts = {
@@ -148,6 +148,7 @@ return {
 		config = function()
 			require("configs.cmp")
 		end,
+		event = { "insertenter", "CmdlineEnter" },
 	},
 
 	-- 更好的 jj 退出
@@ -186,18 +187,18 @@ return {
 
 	-- 转换对象数组的写法
 	{
-    "wansmer/treesj",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts= {},
-    keys = {"<leader>m"},
-  },
+		"wansmer/treesj",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = {},
+		keys = { "<leader>m" },
+	},
 
 	-- 折叠
 	{
 		"kevinhwang91/nvim-ufo",
 		dependencies = "kevinhwang91/promise-async",
-    opts = {},
-    keys = { "za" }
+		opts = {},
+		keys = { "za" },
 	},
 
 	-- 快速跳转
@@ -206,6 +207,6 @@ return {
 		config = function()
 			require("leap").add_default_mappings()
 		end,
-    keys = { "s", "S" },
+		keys = { "s", "S" },
 	},
 }
