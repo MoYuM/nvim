@@ -109,12 +109,7 @@ return {
 	-- 自动保存 session，快速回到之前的状态
 	{
 		"rmagatti/auto-session",
-		config = function()
-			require("auto-session").setup({
-				log_level = "error",
-				auto_session_suppress_dirs = { "~/", "~/projects", "~/downloads", "/" },
-			})
-		end,
+    opts = {}
 	},
 
 	-- 终端
