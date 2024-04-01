@@ -164,10 +164,27 @@ return {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
+		cmd = {
+			"CopilotChat",
+			"CopilotChatOpen",
+			"CopilotChatClose",
+			"CopilotChatToggle",
+			"CopilotChatReset",
+			"CopilotChatSave",
+			"CopilotChatLoad",
+			"CopilotChatExplain",
+			"CopilotChatTests",
+			"CopilotChatFix",
+			"CopilotChatOptimize",
+			"CopilotChatDocs",
+			"CopilotChatFixDiagnostic",
+			"CopilotChatCommit",
+			"CopilotChatCommitStaged",
+		},
 		opts = {},
 	},
 
-  -- 行号的颜色根据当前 mode 变化
+	-- 行号的颜色根据当前 mode 变化
 	{
 		"mawkler/modicator.nvim",
 		dependencies = "folke/tokyonight.nvim", -- Add your colorscheme plugin here
@@ -180,19 +197,19 @@ return {
 		opts = {},
 	},
 
-  -- tag 文件
-  {
-    "cbochs/grapple.nvim",
-    opts = {
-        scope = "git", -- also try out "git_branch"
-    },
-    event = { "BufReadPost", "BufNewFile" },
-    cmd = "Grapple",
-    keys = {
-        { "<leader>m", "<cmd>Grapple toggle<cr>", desc = "Grapple toggle tag" },
-        { "<leader>M", "<cmd>Grapple toggle_tags<cr>", desc = "Grapple open tags window" },
-        { "<leader>n", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
-        { "<leader>p", "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple cycle previous tag" },
-    },
-},
+	-- tag 文件
+	{
+		"cbochs/grapple.nvim",
+		opts = {
+			scope = "git", -- also try out "git_branch"
+		},
+		event = { "BufReadPost", "BufNewFile" },
+		cmd = "Grapple",
+		keys = {
+			{ "<leader>m", "<cmd>Grapple toggle<cr>", desc = "Grapple toggle tag" },
+			{ "<leader>M", "<cmd>Grapple toggle_tags<cr>", desc = "Grapple open tags window" },
+			{ "<leader>n", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
+			{ "<leader>p", "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple cycle previous tag" },
+		},
+	},
 }
