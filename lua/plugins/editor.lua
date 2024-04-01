@@ -1,4 +1,5 @@
 ---@diagnostic disable: missing-fields
+---@type LazyPluginSpec[]
 return {
 	-- 让错误提示显示在右上角
 	{
@@ -198,21 +199,5 @@ return {
 			vim.o.termguicolors = true
 		end,
 		opts = {},
-	},
-
-	-- tag 文件
-	{
-		"cbochs/grapple.nvim",
-		opts = {
-			scope = "git", -- also try out "git_branch"
-		},
-		event = { "BufReadPost", "BufNewFile" },
-		cmd = "Grapple",
-		keys = {
-			{ "<leader>m", "<cmd>Grapple toggle<cr>", desc = "Grapple toggle tag" },
-			{ "<leader>M", "<cmd>Grapple toggle_tags<cr>", desc = "Grapple open tags window" },
-			{ "<leader>n", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
-			{ "<leader>p", "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple cycle previous tag" },
-		},
 	},
 }

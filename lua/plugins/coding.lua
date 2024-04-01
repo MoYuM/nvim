@@ -1,4 +1,5 @@
 ---@diagnostic disable: missing-fields
+---@type LazyPluginSpec[]
 return {
 	{
 		"windwp/nvim-ts-autotag", -- 自动补全标签
@@ -188,6 +189,13 @@ return {
 				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 			})
 		end,
+		keys = {
+			"gcc",
+			{
+				"gc",
+        mode = 'v'
+			},
+		},
 	},
 
 	-- 快捷键
