@@ -27,7 +27,7 @@ wk.register({
 	["<leader>rl"] = { ":LspRestart<cr>", "Restart lsp server" },
 
 	-- move line
-	["<C-j>"] = { ":MoveLine(1)<CR>", "move line downo" },
+	["<C-j>"] = { ":MoveLine(1)<CR>", "move line down" },
 	["<C-k>"] = { ":MoveLine(-1)<CR>", "move line up" },
 	["<C-h>"] = { ":MoveHChar(-1)<CR>", "move char left" },
 	["<C-l>"] = { ":MoveHChar(1)<CR>", "move char right" },
