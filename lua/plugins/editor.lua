@@ -195,11 +195,18 @@ return {
 			"nvim-telescope/telescope.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
-    event = "VeryLazy",
+		event = "VeryLazy",
 		opts = {
 			after_open = function(bufnr)
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<Esc>", ":close<CR>", {})
+				vim.api.nvim_buf_set_keymap(bufnr, "n", "q", ":close<CR>", {})
 			end,
+			wrap = true,
+			float_win = { -- passed to nvim_open_win(), see :h api-floatwin
+				relative = "editor",
+				width = 160,
+				height = 30,
+				border = "rounded",
+			},
 		},
 	},
 }
