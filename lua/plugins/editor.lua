@@ -202,7 +202,7 @@ return {
 			end,
 			wrap = true,
 			previewer_cmd = "glow",
-      cmd_args = { "-s", "dark" },
+      cmd_args = { "-s", "dark", "-w", "160" },
 			picker_cmd_args = { "-p" },
 			float_win = { -- passed to nvim_open_win(), see :h api-floatwin
 				relative = "editor",
