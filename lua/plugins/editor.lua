@@ -195,6 +195,7 @@ return {
 			"nvim-telescope/telescope.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
+    event = "VeryLazy",
 		opts = {
 			after_open = function(bufnr)
 				vim.api.nvim_buf_set_keymap(bufnr, "n", "<Esc>", ":close<CR>", {})
