@@ -202,7 +202,7 @@ return {
 			end,
 			wrap = true,
 			previewer_cmd = "glow",
-      cmd_args = { "-s", "dark", "-w", "160" },
+			cmd_args = { "-s", "dark", "-w", "160" },
 			picker_cmd_args = { "-p" },
 			float_win = { -- passed to nvim_open_win(), see :h api-floatwin
 				relative = "editor",
@@ -210,6 +210,18 @@ return {
 				height = 30,
 				border = "rounded",
 			},
+		},
+	},
+
+	-- markdown preview
+	{
+		"ellisonleao/glow.nvim",
+		config = true,
+		cmd = "Glow",
+		opts = {
+			width = 160,
+			width_ratio = 0.8, -- maximum width of the Glow window compared to the nvim window size (overrides `width`)
+			height_ratio = 0.8,
 		},
 	},
 }
