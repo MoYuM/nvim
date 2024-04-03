@@ -78,7 +78,7 @@ return {
 						{
 							"mode",
 							fmt = function(str)
-								return ui.icons.Vim .. str
+								return ui.icons.Vim .. string.sub(str, 1, 1)
 							end,
 						},
 					},
