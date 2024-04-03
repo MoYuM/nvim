@@ -16,9 +16,10 @@ Personal Neovim configuration, optimized for web development. Simple, clean, and
 
 - Neovim
 - make
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [lazygit](https://github.com/jesseduffield/lazygit)
 - need node.js > 16.0.0 for copilot
+- [ripgrep](https://github.com/BurntSushi/ripgrep) form fuzzy search
+- [lazygit](https://github.com/jesseduffield/lazygit) form lazygit.nvim
+- [glow](https://github.com/charmbracelet/glow) for markdown preview
 
 ## Install
 
