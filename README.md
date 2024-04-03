@@ -1,8 +1,8 @@
 # 🐟 Moyu Neovim Config
 
-<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/plugins?style=flat" /></a>
-<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/leaderkey?style=flat" /></a>
-<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/plugin-manager?style=flat" /></a>
+<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/plugins?style=flat-square" /></a>
+<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/leaderkey?style=flat-square" /></a>
+<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/plugin-manager?style=flat-square" /></a>
 
 ## Introduction
 
