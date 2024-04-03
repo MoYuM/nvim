@@ -53,29 +53,29 @@ Some custom key mappings you need to pay attention to
 | `\\` | resume telescope |
 | `<esc>` | no highlight |
 | `=` | format |
-| `<leader>a` | Select all |
-| `<leader><leader>` | Find Commands |
-| `<leader>t` | toggle terminal float |
 | `gh` | lsp finder |
 | `gd` | peek definition |
 | `hd` | hover doc |
 | `d]` | jump to next diagnostics |
 | `d[` | jump to prev diagnostics |
+| `<leader>a` | Select all |
+| `<leader><leader>` | Find Commands |
+| `<leader>t` | toggle terminal float |
 | `<leader>ca` | code action |
 | `<leader>k` | show line diagnostics |
 | `<leader>K` | show buffer diagnostics |
 | `<leader>O` | show outline |
 | `<leader>rn` | rename |
 | `<leader>rl` | Restart lsp server |
-| `<C-j>` | move line down |
-| `<C-k>` | move line up |
-| `<C-h>` | move char left |
-| `<C-l>` | move char right |
-| `<leader>g` | git |
+| `<leader>g` | lazygit |
 | `<leader>f` | Find Files |
 | `<leader>lg` | Live Grep |
 | `<leader>o` | Recent files |
 | `<leader>d` | toggle Devdoc |
+| `<C-j>` | move line down |
+| `<C-k>` | move line up |
+| `<C-h>` | move char left |
+| `<C-l>` | move char right |
 | `<C-j>` (in visual mode) | move block down |
 | `<C-k>` (in visual mode) | move block up |
 | `<C-h>` (in visual mode) | move block left |
