@@ -1,5 +1,9 @@
 # 🐟 Moyu Neovim Config
 
+<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/plugins?style=flat" /></a>
+<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/leaderkey?style=flat" /></a>
+<a href="https://dotfyle.com/MoYuM/nvim"><img src="https://dotfyle.com/MoYuM/nvim/badges/plugin-manager?style=flat" /></a>
+
 ## Introduction
 
 Personal Neovim configuration, optimized for web development. Simple, clean, and fast.
