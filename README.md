@@ -14,6 +14,14 @@ Personal Neovim configuration, optimized for web development. Simple, clean, and
 - 💫 Out-of-the-box web development environment, with support for tailwindcss
 - 🎈 Strive for simplicity, no unnecessary UI components
 
+## Simplicity UI
+
+Moyu simplifies the UI as much as possible, while retaining the necessary information.
+- The file navigator is hidden by default.
+- Use `fidget.nvim` to display diagnostics at the top right.
+- Git commit information is displayed in the status line, not behind the cursor.
+- And much more...
+
 ![nvim](./images/nvim.png)
 
 ## Requirements
