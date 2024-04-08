@@ -77,8 +77,8 @@ return {
 					lualine_a = {
 						{
 							"mode",
-							fmt = function(str)
-								return ui.icons.Vim .. string.sub(str, 1, 1)
+							fmt = function()
+								return ui.icons.Vim
 							end,
 						},
 					},
