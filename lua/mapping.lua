@@ -1,66 +1,58 @@
 local wk = require("which-key")
 
--- normal
 wk.register({
-  ["3"] = { "#", "find next word under cursor" },
-  ["\\"] = { ":Telescope resume<cr>", "resume telescope" },
-  ["<esc>"] = { ":noh<cr>", "no highlight" },
-  ["99"] = { "<cmd>lua require('mo').moc()<cr>", "test" },
-  ["="] = { ":lua require('conform').format()<cr>", "format" },
+	-- normal
+	["3"] = { "#", "find next word under cursor" },
+	["\\"] = { ":Telescope resume<cr>", "resume telescope" },
+	["<esc>"] = { ":noh<cr>", "no highlight" },
+	["99"] = { "<cmd>lua require('mo').moc()<cr>", "test" },
+	["="] = { ":lua require('conform').format()<cr>", "format" },
+	["<leader>a"] = { "ggVG", "Select all" },
+	["<leader><leader>"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
+  ["<leader>mc"] = { "<cmd>MCunderCursor<cr>", "MCunderCursor" },
+
+	-- terminal
+	["<leader>t"] = { ":ToggleTerm<CR>", "toggle terminal float" },
+
+	-- lsp
+	["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", "lsp finder" },
+	["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "peek definition" },
+	["hd"] = { "<cmd>Lspsaga hover_doc<CR>", "hover doc" },
+	["d]"] = { ":Lspsaga diagnostic_jump_next<CR>", "jump to next diagnostics" },
+	["d["] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "jump to prev diagnostics" },
+	["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "code action" },
+	["<leader>k"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "show line diagnostics" },
+	["<leader>K"] = { "<cmd>Lspsaga show_buf_diagnostics<CR>", "show buffer diagnostics" },
+	["<leader>O"] = { "<cmd>Lspsaga outline<CR>", "show outline" },
+	["<leader>rn"] = { ":IncRename ", "rename" },
+	["<leader>rl"] = { ":LspRestart<cr>", "Restart lsp server" },
+
+	-- move line
+	["<C-j>"] = { ":MoveLine(1)<CR>", "move line down" },
+	["<C-k>"] = { ":MoveLine(-1)<CR>", "move line up" },
+	["<C-h>"] = { ":MoveHChar(-1)<CR>", "move char left" },
+	["<C-l>"] = { ":MoveHChar(1)<CR>", "move char right" },
+
+	["<leader>g"] = { "<cmd>LazyGit<CR>", "git" },
+	["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
+	["<leader>lg"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
+	["<leader>o"] = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
+
+	-- devdocs
+	["<leader>d"] = { ":DevdocsOpenFloat<CR>", "toggle Devdoc" },
 })
 
--- lsp
 wk.register({
-  ["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", "lsp finder" },
-  ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "peek definition" },
-  ["hd"] = { "<cmd>Lspsaga hover_doc<CR>", "hover doc" },
-  ["d]"] = { ":Lspsaga diagnostic_jump_next<CR>", "jump to next diagnostics" },
-  ["d["] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "jump to prev diagnostics" },
-})
-
--- move line
-wk.register({
-  ["<C-j>"] = { ":MoveLine(1)<CR>", "move line downo" },
-  ["<C-k>"] = { ":MoveLine(-1)<CR>", "move line up" },
-  ["<C-h>"] = { ":MoveHChar(-1)<CR>", "move char left" },
-  ["<C-l>"] = { ":MoveHChar(1)<CR>", "move char right" },
-})
-
--- leader
-wk.register({
-  ["a"] = { "ggVG", "Select all" },
-  ["ca"] = { "<cmd>Lspsaga code_action<CR>", "code action" },
-  ["k"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "show line diagnostics" },
-  ["K"] = { "<cmd>Lspsaga show_buf_diagnostics<CR>", "show buffer diagnostics" },
-  ["O"] = { "<cmd>Lspsaga outline<CR>", "show outline" },
-  ["g"] = { "<cmd>LazyGit<CR>", "git" },
-  ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-  ["<leader>"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
-  ["lg"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
-  ["o"] = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
-  ["rl"] = { ":LspRestart<cr>", "Restart lsp server" },
-  ["rn"] = { ":IncRename ", "rename" },
+	["<C-j>"] = { ":MoveBlock(1)<CR>", "move block down" },
+	["<C-k>"] = { ":MoveBlock(-1)<CR>", "move block up" },
+	["<C-h>"] = { ":MoveHBlock(-1)<CR>", "move block left" },
+	["<C-l>"] = { ":MoveHBlock(1)<CR>", "move block right" },
 }, {
-  prefix = "<leader>",
+	mode = "v",
 })
 
 wk.register({
-  ["<C-j>"] = { ":MoveBlock(1)<CR>", "move block down" },
-  ["<C-k>"] = { ":MoveBlock(-1)<CR>", "move block up" },
-  ["<C-h>"] = { ":MoveHBlock(-1)<CR>", "move block left" },
-  ["<C-l>"] = { ":MoveHBlock(1)<CR>", "move block right" },
+	["<esc><esc>"] = { "<C-\\><C-n>", "quit term mode" },
 }, {
-  mode = "v",
-})
-
--- toggle terminal
-wk.register({
-  ["<leader>t"] = { ":ToggleTerm<CR>", "toggle terminal float" },
-}, {
-  mode = { "n" },
-})
-wk.register({
-  ["<esc><esc>"] = { "<C-\\><C-n>", "quit term mode" },
-}, {
-  mode = "t",
+	mode = "t",
 })

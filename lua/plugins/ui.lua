@@ -51,6 +51,7 @@ return {
 	-- 状态条
 	{
 		"nvim-lualine/lualine.nvim",
+    event = "BufEnter",
 		dependencies = {
 			"f-person/git-blame.nvim",
 		},
@@ -76,8 +77,8 @@ return {
 					lualine_a = {
 						{
 							"mode",
-							fmt = function(str)
-								return ui.icons.Vim .. str
+							fmt = function()
+								return ui.icons.Vim
 							end,
 						},
 					},

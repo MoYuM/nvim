@@ -1,8 +1,10 @@
 ---@diagnostic disable: missing-fields
+---@type LazyPluginSpec[]
 return {
 	-- 让错误提示显示在右上角
 	{
 		"dgagn/diagflow.nvim",
+		event = "VeryLazy",
 		opts = {},
 	},
 	-- 上面的面包屑
@@ -10,6 +12,7 @@ return {
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
 		version = "*",
+		event = "BufEnter",
 		dependencies = {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons", -- optional dependency
@@ -57,6 +60,7 @@ return {
 	{
 		"norcalli/nvim-colorizer.lua",
 		opts = {},
+		event = "VeryLazy",
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -66,6 +70,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		-- event = "VeryLazy",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
@@ -105,17 +110,13 @@ return {
 	-- 自动保存 session，快速回到之前的状态
 	{
 		"rmagatti/auto-session",
-		config = function()
-			require("auto-session").setup({
-				log_level = "error",
-				auto_session_suppress_dirs = { "~/", "~/projects", "~/downloads", "/" },
-			})
-		end,
+		opts = {},
 	},
 
 	-- 终端
 	{
 		"akinsho/toggleterm.nvim",
+		event = "VeryLazy",
 		version = "*",
 		opts = {
 			autochdir = true,
@@ -125,6 +126,7 @@ return {
 	-- 更丝滑的滚动
 	{
 		"karb94/neoscroll.nvim",
+		event = "VeryLazy",
 		opts = {
 			hide_cursor = false,
 			easing_function = "sine",
@@ -134,6 +136,7 @@ return {
 	-- 滚动条
 	{
 		"petertriho/nvim-scrollbar",
+		enabled = false,
 		config = function()
 			local colors = require("tokyonight.colors").setup()
 
@@ -156,19 +159,4 @@ return {
 			})
 		end,
 	},
-
-  -- 
-   {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
-    dependencies = {
-      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-    },
-    opts = {
-      -- debug = true, -- Enable debugging
-      -- See Configuration section for rest
-    },
-    -- See Commands section for default commands if you want to lazy load on them
-  },
 }
