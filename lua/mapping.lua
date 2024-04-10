@@ -9,6 +9,7 @@ wk.register({
 	["="] = { ":lua require('conform').format()<cr>", "format" },
 	["<leader>a"] = { "ggVG", "Select all" },
 	["<leader><leader>"] = { "<cmd>Telescope commands<cr>", "Find Commands" },
+  ["<leader>mc"] = { "<cmd>MCunderCursor<cr>", "MCunderCursor" },
 
 	-- terminal
 	["<leader>t"] = { ":ToggleTerm<CR>", "toggle terminal float" },
