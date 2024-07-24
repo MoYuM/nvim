@@ -31,7 +31,6 @@ Moyu simplifies the UI as much as possible, while retaining the necessary inform
 - need node.js > 16.0.0 for copilot
 - [ripgrep](https://github.com/BurntSushi/ripgrep) for fuzzy search
 - [lazygit](https://github.com/jesseduffield/lazygit) for lazygit.nvim
-- [glow](https://github.com/charmbracelet/glow) for markdown preview
 
 ## Install
 
