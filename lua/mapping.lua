@@ -37,9 +37,6 @@ wk.register({
 	["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
 	["<leader>lg"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep" },
 	["<leader>o"] = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent files" },
-
-	-- devdocs
-	["<leader>d"] = { ":DevdocsOpenFloat<CR>", "toggle Devdoc" },
 })
 
 wk.register({
