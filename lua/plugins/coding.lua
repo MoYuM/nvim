@@ -1,16 +1,21 @@
 ---@diagnostic disable: missing-fields
 ---@type LazyPluginSpec[]
 return {
+	-- 自动补全标签
 	{
-		"windwp/nvim-ts-autotag", -- 自动补全标签
+		"windwp/nvim-ts-autotag",
 		event = "insertenter",
 	},
+
+	-- 高亮代码中其他和当前选中的一样的单词
 	{
-		"rrethy/vim-illuminate", -- 高亮代码中其他和当前选中的一样的单词
+		"rrethy/vim-illuminate",
 		event = "insertenter",
 	},
+
+	-- 最近文件
 	{
-		"smartpde/telescope-recent-files", -- 最近文件
+		"smartpde/telescope-recent-files",
 		event = "VeryLazy",
 	},
 
@@ -21,7 +26,7 @@ return {
 	},
 
 	-- 快速移动代码
-  {
+	{
 		"fedepujol/move.nvim",
 		opts = {},
 		event = "VeryLazy",
@@ -66,7 +71,11 @@ return {
 		end,
 	},
 
-	"wellle/targets.vim", -- 快捷选中更多的 target
+	-- 快捷选中更多的 target
+	{
+		"wellle/targets.vim",
+	},
+
 	-- 更明显的 TODO 注释
 	{
 		"folke/todo-comments.nvim",
@@ -74,6 +83,7 @@ return {
 		opts = {},
 		event = "VeryLazy",
 	},
+
 	-- telescope
 	{
 		"nvim-telescope/telescope.nvim",
@@ -125,7 +135,6 @@ return {
 	},
 
 	-- 自动括号补全,
-	-- TODO 这个在有些情况不太合理
 	{
 		"altermo/ultimate-autopair.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },
