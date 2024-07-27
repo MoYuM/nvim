@@ -33,9 +33,7 @@
   "mini.nvim": { "branch": "main", "commit": "657ef75b52a548090fb7906735517b7ddbf39e88" },
   "move.nvim": { "branch": "main", "commit": "cccbd4ea9049ca5f99f025ffaddb7392359c7d6a" },
   "multicursors.nvim": { "branch": "main", "commit": "8b3e14682eed06a532b155c7eae33e174846b3fd" },
-  "neodev.nvim": { "branch": "main", "commit": "ce9a2e8eaba5649b553529c5498acb43a6c317cd" },
   "neoscroll.nvim": { "branch": "master", "commit": "21d52973bde32db998fc8b6590f87eb3c3c6d8e4" },
-  "nvim-autopairs": { "branch": "master", "commit": "4f41e5940bc0443fdbe5f995e2a596847215cd2a" },
   "nvim-cmp": { "branch": "main", "commit": "ce16de5665c766f39c271705b17fff06f7bcb84f" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" },
   "nvim-lspconfig": { "branch": "master", "commit": "e25c4cdecd3d58c0deccce0f372426c8c480bcce" },
@@ -60,6 +58,7 @@
   "treesj": { "branch": "main", "commit": "60e27280030f9cd8dfb6ceb335922c6ff76682cc" },
   "ts-error-translator.nvim": { "branch": "main", "commit": "11ae55b28bde02663b5f983f59b0e3fd9c4e845b" },
   "typescript-tools.nvim": { "branch": "master", "commit": "c43d9580c3ff5999a1eabca849f807ab33787ea7" },
+  "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "0a501a22b587cc98531fcb617bf8cda29cb2dc11" },
   "vim-illuminate": { "branch": "master", "commit": "305bf07b919ac526deb5193280379e2f8b599926" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
