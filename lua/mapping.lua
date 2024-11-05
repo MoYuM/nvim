@@ -11,6 +11,7 @@ wk.add({
 	{ "<leader><leader>", "<cmd>Telescope commands<cr>", desc = "Find Commands" },
 	{ "<leader>a", "ggVG", desc = "Select all" },
 	{ "<leader>ca", "<cmd>:lua vim.lsp.buf.code_action()<CR>", desc = "code action" },
+  { "<leader>k", "<cmd>:lua vim.diagnostic.open_float()<CR>", desc = "show line diagnostics" },
 	{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 	{ "<leader>g", "<cmd>LazyGit<CR>", desc = "git" },
 	{
