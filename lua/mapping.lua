@@ -13,7 +13,6 @@ wk.add({
 	{ "<leader>ca", "<cmd>:lua vim.lsp.buf.code_action()<CR>", desc = "code action" },
 	{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 	{ "<leader>g", "<cmd>LazyGit<CR>", desc = "git" },
-	{ "<leader>k", "<cmd>:lua vim.diagnostic.open_float()<CR>", desc = "show line diagnostics" },
 	{
 		"<leader>lg",
 		"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",

@@ -64,21 +64,16 @@ Some custom key mappings you need to pay attention to
 | `\\` | resume telescope |
 | `<esc>` | no highlight |
 | `=` | format |
-| `hd` | hover doc |
 | `<leader>a` | Select all |
 | `<leader><leader>` | Find Commands |
 | `<leader>t` | toggle terminal float |
 | `<leader>ca` | code action |
-| `<leader>k` | show line diagnostics |
-| `<leader>K` | show buffer diagnostics |
-| `<leader>O` | show outline |
 | `<leader>rn` | rename |
 | `<leader>rl` | Restart lsp server |
 | `<leader>g` | lazygit |
 | `<leader>f` | Find Files |
 | `<leader>lg` | Live Grep |
 | `<leader>o` | Recent files |
-| `<leader>d` | toggle Devdoc |
 | `<C-j>` | move line down |
 | `<C-k>` | move line up |
 | `<C-h>` | move char left |
