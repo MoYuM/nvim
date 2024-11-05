@@ -9,8 +9,6 @@ wk.add({
 	{ "<C-l>", ":MoveHChar(1)<CR>", desc = "move char right" },
 	{ "<esc>", ":noh<cr>", desc = "no highlight" },
 	{ "<leader><leader>", "<cmd>Telescope commands<cr>", desc = "Find Commands" },
-	{ "<leader>K", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "show buffer diagnostics" },
-	{ "<leader>O", "<cmd>Lspsaga outline<CR>", desc = "show outline" },
 	{ "<leader>a", "ggVG", desc = "Select all" },
 	{ "<leader>ca", "<cmd>:lua vim.lsp.buf.code_action()<CR>", desc = "code action" },
 	{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
@@ -35,11 +33,7 @@ wk.add({
 	{ "<leader>t", ":ToggleTerm<CR>", desc = "toggle terminal float" },
 	{ "=", ":lua require('conform').format()<cr>", desc = "format" },
 	{ "\\", ":Telescope resume<cr>", desc = "resume telescope" },
-	{ "d[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "jump to prev diagnostics" },
-	{ "d]", ":Lspsaga diagnostic_jump_next<CR>", desc = "jump to next diagnostics" },
-	{ "gd", "<cmd>Lspsaga peek_definition<CR>", desc = "peek definition" },
-	{ "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "lsp finder" },
-	{ "hd", "<cmd>Lspsaga hover_doc<CR>", desc = "hover doc" },
+	{ "hd", "<cmd>:lua vim.lsp.buf.hover()<CR>", desc = "hover doc" },
 })
 
 wk.add({
