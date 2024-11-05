@@ -12,7 +12,7 @@ wk.add({
 	{ "<leader>K", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "show buffer diagnostics" },
 	{ "<leader>O", "<cmd>Lspsaga outline<CR>", desc = "show outline" },
 	{ "<leader>a", "ggVG", desc = "Select all" },
-	{ "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc = "code action" },
+	{ "<leader>ca", "<cmd>:lua vim.lsp.buf.code_action()<CR>", desc = "code action" },
 	{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 	{ "<leader>g", "<cmd>LazyGit<CR>", desc = "git" },
 	{ "<leader>k", "<cmd>:lua vim.diagnostic.open_float()<CR>", desc = "show line diagnostics" },
