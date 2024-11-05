@@ -5,6 +5,7 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		event = "insertenter",
+    opts = {},
 	},
 
 	-- 高亮代码中其他和当前选中的一样的单词
