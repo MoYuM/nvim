@@ -64,11 +64,7 @@ Some custom key mappings you need to pay attention to
 | `\\` | resume telescope |
 | `<esc>` | no highlight |
 | `=` | format |
-| `gh` | lsp finder |
-| `gd` | peek definition |
 | `hd` | hover doc |
-| `d]` | jump to next diagnostics |
-| `d[` | jump to prev diagnostics |
 | `<leader>a` | Select all |
 | `<leader><leader>` | Find Commands |
 | `<leader>t` | toggle terminal float |
