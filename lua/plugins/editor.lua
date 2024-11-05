@@ -5,7 +5,10 @@ return {
 	{
 		"dgagn/diagflow.nvim",
 		event = "VeryLazy",
-		opts = {},
+		opts = {
+			max_width = 120, -- The maximum width of the diagnostic messages
+      text_align = 'left',
+		},
 	},
 	-- 上面的面包屑
 	{

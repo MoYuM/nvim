@@ -15,7 +15,7 @@ wk.add({
 	{ "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc = "code action" },
 	{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 	{ "<leader>g", "<cmd>LazyGit<CR>", desc = "git" },
-	{ "<leader>k", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "show line diagnostics" },
+	{ "<leader>k", "<cmd>:lua vim.diagnostic.open_float()<CR>", desc = "show line diagnostics" },
 	{
 		"<leader>lg",
 		"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
@@ -24,7 +24,14 @@ wk.add({
 	{ "<leader>mc", "<cmd>MCunderCursor<cr>", desc = "MCunderCursor" },
 	{ "<leader>o", "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", desc = "Recent files" },
 	{ "<leader>rl", ":LspRestart<cr>", desc = "Restart lsp server" },
-	{ "<leader>rn", ":IncRename ", desc = "rename" },
+	{
+		"<leader>rn",
+		function()
+			return ":IncRename " .. vim.fn.expand("<cword>")
+		end,
+		desc = "rename",
+    expr = true,
+	},
 	{ "<leader>t", ":ToggleTerm<CR>", desc = "toggle terminal float" },
 	{ "=", ":lua require('conform').format()<cr>", desc = "format" },
 	{ "\\", ":Telescope resume<cr>", desc = "resume telescope" },
