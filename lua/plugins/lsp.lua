@@ -1,11 +1,4 @@
 return {
-	-- 专门对 tsserver 的优化
-	{
-		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
-	},
-
 	"williamboman/mason.nvim",
 
 	{
@@ -37,12 +30,9 @@ return {
 				},
 				handlers = {
 					function(server_name)
-						-- don't setup tsserver, it's already setup by typescript-tool.nvim
-						if not server_name == "tsserver" then
-							require("lspconfig")[server_name].setup({
-								capabilities = capabilities,
-							})
-						end
+						require("lspconfig")[server_name].setup({
+							capabilities = capabilities,
+						})
 					end,
 					["cssls"] = function()
 						require("lspconfig").cssls.setup({
@@ -92,9 +82,9 @@ return {
 	{
 		"smjonas/inc-rename.nvim",
 		opts = {},
-    keys = {
-      "<leader>rn",
-    }
+		keys = {
+			"<leader>rn",
+		},
 	},
 
 	-- 开箱即用的 lsp 功能
@@ -122,28 +112,28 @@ return {
 	},
 
 	-- lua 开发, neovim 开发
-  {
-    "folke/lazydev.nvim",
-    ft = "lua", -- only load on lua files
-    opts = {
-      library = {
-        -- See the configuration section for more details
-        -- Load luvit types when the `vim.uv` word is found
-        { path = "luvit-meta/library", words = { "vim%.uv" } },
-      },
-    },
-  },
-  { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
-  { -- optional completion source for require statements and module annotations
-    "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      table.insert(opts.sources, {
-        name = "lazydev",
-        group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-      })
-    end,
-  },
+	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "luvit-meta/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
+	{ -- optional completion source for require statements and module annotations
+		"hrsh7th/nvim-cmp",
+		opts = function(_, opts)
+			opts.sources = opts.sources or {}
+			table.insert(opts.sources, {
+				name = "lazydev",
+				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+			})
+		end,
+	},
 
 	-- 更好的代码错误提示
 	{
