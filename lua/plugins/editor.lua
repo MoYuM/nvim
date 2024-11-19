@@ -7,7 +7,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			max_width = 120, -- The maximum width of the diagnostic messages
-      text_align = 'left',
+			text_align = "left",
 		},
 	},
 	-- 上面的面包屑
@@ -103,9 +103,6 @@ return {
 					use_languagetree = true,
 				},
 				indent = { enable = true },
-				autotag = {
-					enable = true,
-				},
 			})
 		end,
 	},

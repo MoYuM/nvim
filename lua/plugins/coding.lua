@@ -4,8 +4,15 @@ return {
 	-- 自动补全标签
 	{
 		"windwp/nvim-ts-autotag",
-		event = "insertenter",
-		opts = {},
+		config = function()
+			require("nvim-ts-autotag").setup({
+				opts = {
+					enable_close = true, -- Auto close tags
+					enable_rename = true, -- Auto rename pairs of tags
+					enable_close_on_slash = false, -- Auto close on trailing </
+				},
+			})
+		end,
 	},
 
 	-- 高亮代码中其他和当前选中的一样的单词
@@ -172,9 +179,7 @@ return {
 		"max397574/better-escape.nvim",
 		event = "insertenter",
 		config = function()
-			require("better_escape").setup({
-				mapping = { "jj" },
-			})
+			require("better_escape").setup()
 		end,
 	},
 
