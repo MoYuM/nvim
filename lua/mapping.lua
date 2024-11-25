@@ -11,7 +11,7 @@ wk.add({
 	{ "<leader><leader>", "<cmd>Telescope commands<cr>", desc = "Find Commands" },
 	{ "<leader>a", "ggVG", desc = "Select all" },
 	{ "<leader>ca", "<cmd>:lua vim.lsp.buf.code_action()<CR>", desc = "code action" },
-  { "<leader>k", "<cmd>:lua vim.diagnostic.open_float()<CR>", desc = "show line diagnostics" },
+	{ "<leader>k", "<cmd>:lua vim.diagnostic.open_float()<CR>", desc = "show line diagnostics" },
 	{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 	{ "<leader>g", "<cmd>LazyGit<CR>", desc = "git" },
 	{
@@ -28,7 +28,7 @@ wk.add({
 			return ":IncRename " .. vim.fn.expand("<cword>")
 		end,
 		desc = "rename",
-    expr = true,
+		expr = true,
 	},
 	{ "<leader>t", ":ToggleTerm<CR>", desc = "toggle terminal float" },
 	{ "=", ":lua require('conform').format()<cr>", desc = "format" },
@@ -46,4 +46,14 @@ wk.add({
 
 wk.add({
 	{ "<esc><esc>", "<C-\\><C-n>", desc = "quit term mode", mode = "t" },
+})
+
+-- yank
+wk.add({
+	{ "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+	{ "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+	{ "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+	{ "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
+	{ "<C-p>", "<Plug>(YankyPreviousEntry)", mode = "n" },
+	{ "<C-n>", "<Plug>(YankyNextEntry)", mode = "n" },
 })

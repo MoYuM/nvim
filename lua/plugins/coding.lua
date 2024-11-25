@@ -291,4 +291,14 @@ return {
 		},
 		cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
 	},
+
+	-- 粘贴
+	{
+		"gbprod/yanky.nvim",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 }
