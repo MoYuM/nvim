@@ -134,7 +134,7 @@ return {
 					enable = true,
 					auto_trigger = true,
 					keymap = {
-						accept = "<c-;>",
+						accept = "<C-l>",
 					},
 				},
 				panel = { enabled = false },
