@@ -60,7 +60,6 @@ return {
 			local function moyum()
 				return [[moyum]]
 			end
-
 			local git_blame = require("gitblame")
 			vim.g.gitblame_date_format = "%r"
 			vim.g.gitblame_message_template = "󰙊 <summary> • <date> • <author>"
@@ -92,6 +91,7 @@ return {
 						},
 					},
 					lualine_x = {
+            "copilot",
 						{
 							"diagnostics",
 							symbols = {

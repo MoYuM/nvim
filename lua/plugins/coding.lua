@@ -123,6 +123,7 @@ return {
 	},
 
 	-- github copilot
+  { 'AndreM222/copilot-lualine' },
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
@@ -141,6 +142,22 @@ return {
 			})
 		end,
 	},
+
+	-- {
+	-- 	"Exafunction/codeium.vim",
+	-- 	config = function()
+ --      vim.g.codeium_enabled = true
+	-- 		vim.keymap.set("i", "<C-l>", function()
+	-- 			return vim.fn["codeium#Accept"]()
+	-- 		end, { expr = true, silent = true })
+	-- 		-- vim.keymap.set("i", "<c-;>", function()
+	-- 		-- 	return vim.fn["codeium#CycleCompletions"](1)
+	-- 		-- end, { expr = true, silent = true })
+	-- 		-- vim.keymap.set("i", "<c-,>", function()
+	-- 		-- 	return vim.fn["codeium#CycleCompletions"](-1)
+	-- 		-- end, { expr = true, silent = true })
+	-- 	end,
+	-- },
 
 	-- 自动括号补全,
 	{

@@ -12,7 +12,7 @@ return {
 		},
 	},
 
-	-- mason 配合 lsp
+	-- Mason 配合 lsp
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
@@ -27,19 +27,18 @@ return {
 					"lua_ls",
 					"cssls",
 					"tailwindcss",
+					"ts_ls",
 				},
 				handlers = {
-					function(server_name)
-						require("lspconfig")[server_name].setup({
-							capabilities = capabilities,
-						})
-					end,
-					["cssls"] = function()
+					function()
 						require("lspconfig").cssls.setup({
 							capabilities = capabilities,
 						})
-					end,
-					["lua_ls"] = function()
+
+						require("lspconfig").ts_ls.setup({
+							capabilities = capabilities,
+						})
+
 						require("lspconfig").lua_ls.setup({
 							settings = {
 								lua = {
@@ -49,18 +48,15 @@ return {
 								},
 							},
 						})
-					end,
-					["tailwindcss"] = function()
+
 						require("lspconfig").tailwindcss.setup({
 							capabilities = capabilities,
 						})
-					end,
-					["volar"] = function()
+
 						require("lspconfig").volar.setup({
 							capabilities = capabilities,
 						})
-					end,
-					["unocss"] = function()
+
 						require("lspconfig").unocss.setup({
 							capabilities = capabilities,
 						})
@@ -86,7 +82,7 @@ return {
 		end,
 	},
 
-	-- lua 开发, neovim 开发
+	-- lua 开发, Neovim 开发
 	{
 		"folke/lazydev.nvim",
 		ft = "lua", -- only load on lua files
@@ -115,5 +111,22 @@ return {
 		"dmmulroy/ts-error-translator.nvim",
 		event = "lspattach",
 		opts = {},
+	},
+
+  -- 利用 none-ls 做 spell check
+	{
+		"nvimtools/none-ls.nvim",
+		dependencies = {
+			"davidmh/cspell.nvim",
+		},
+		config = function()
+			local cspell = require("cspell")
+			require("null-ls").setup({
+				sources = {
+					cspell.diagnostics,
+					cspell.code_actions,
+				},
+			})
+		end,
 	},
 }

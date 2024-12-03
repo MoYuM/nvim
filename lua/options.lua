@@ -25,7 +25,7 @@ vim.g.mapleader = " "
 
 -- spell
 vim.opt.spell = true
-vim.opt.spelllang = "en,cjk"
+vim.opt.spelllang = "en_us,cjk"
 vim.opt.spelloptions = "camel"
 
 -- fold
@@ -36,7 +36,7 @@ vim.o.foldenable = true
 -- disable editorconfig
 vim.g.editorconfig = false
 
--- better auto session
+-- better auto sessioon
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- indent

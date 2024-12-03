@@ -2,7 +2,9 @@ local wk = require("which-key")
 
 wk.add({
 	{ "3", "#", desc = "find next word under cursor" },
-	{ "99", "<cmd>lua require('mo').moc()<cr>", desc = "test" },
+	-- { "99", "<cmd>lua require('mo').moc()<cr>", desc = "test" },
+  { "9", "^", desc = "return first char of the line" },
+  {"4", "$", desc = "return last char of the line"},
 	{ "<esc>", ":noh<cr>", desc = "no highlight" },
 	{ "<leader><leader>", "<cmd>Telescope commands<cr>", desc = "Find Commands" },
 	{ "<leader>a", "ggVG", desc = "Select all" },
