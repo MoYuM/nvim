@@ -50,7 +50,7 @@ return {
 				-- Customize or remove this keymap to your liking
 				"=",
 				function()
-					require("conform").format({ async = true, lsp_fallback = true })
+					require("conform").format({ async = true, lsp_format = "fallback" })
 				end,
 				mode = "n",
 				desc = "Format buffer",
@@ -62,7 +62,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "isort", "black" },
-				javascript = { { "prettierd", "prettier" } },
+				javascript = { "prettierd", "prettier" },
 			},
 			-- Set up format-on-save
 			-- format_on_save = { timeout_ms = 500, lsp_fallback = true },
@@ -123,7 +123,7 @@ return {
 	},
 
 	-- github copilot
-  { 'AndreM222/copilot-lualine' },
+	{ "AndreM222/copilot-lualine" },
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
@@ -146,7 +146,7 @@ return {
 	-- {
 	-- 	"Exafunction/codeium.vim",
 	-- 	config = function()
- --      vim.g.codeium_enabled = true
+	--      vim.g.codeium_enabled = true
 	-- 		vim.keymap.set("i", "<C-l>", function()
 	-- 			return vim.fn["codeium#Accept"]()
 	-- 		end, { expr = true, silent = true })
