@@ -113,7 +113,7 @@ return {
 		opts = {},
 	},
 
-  -- 利用 none-ls 做 spell check
+	-- 利用 none-ls 做 spell check
 	{
 		"nvimtools/none-ls.nvim",
 		dependencies = {
@@ -121,10 +121,13 @@ return {
 		},
 		config = function()
 			local cspell = require("cspell")
+			local config = {
+				cspell_config_dirs = { "~/.config/nvim" },
+			}
 			require("null-ls").setup({
 				sources = {
-					cspell.diagnostics,
-					cspell.code_actions,
+					cspell.diagnostics.with({ config = config }),
+					cspell.code_actions.with({ config = config }),
 				},
 			})
 		end,
