@@ -123,25 +123,25 @@ return {
 	},
 
 	-- github copilot
-	{ "AndreM222/copilot-lualine" },
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		lazy = false,
-		config = function()
-			require("copilot").setup({
-				suggestion = {
-					accept = false,
-					enable = true,
-					auto_trigger = true,
-					keymap = {
-						accept = "<C-l>",
-					},
-				},
-				panel = { enabled = false },
-			})
-		end,
-	},
+	-- { "AndreM222/copilot-lualine" },
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	cmd = "Copilot",
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		require("copilot").setup({
+	-- 			suggestion = {
+	-- 				accept = false,
+	-- 				enable = true,
+	-- 				auto_trigger = true,
+	-- 				keymap = {
+	-- 					accept = "<C-l>",
+	-- 				},
+	-- 			},
+	-- 			panel = { enabled = false },
+	-- 		})
+	-- 	end,
+	-- },
 
 	-- {
 	-- 	"Exafunction/codeium.vim",
