@@ -24,9 +24,9 @@ opt.scrolloff = 8
 vim.g.mapleader = " "
 
 -- spell
-vim.opt.spell = true
-vim.opt.spelllang = "en_us,cjk"
-vim.opt.spelloptions = "camel"
+-- vim.opt.spell = true
+-- vim.opt.spelllang = "en_us,cjk"
+-- vim.opt.spelloptions = "camel"
 
 -- fold
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
@@ -58,6 +58,10 @@ opt.wrap = false
 -- neovide
 if vim.g.neovide then
 	vim.o.guifont = "JetBrainsMono Nerd Font:h14"
+	vim.g.neovide_window_blurred = true
+	vim.g.neovide_floating_blur_amount_x = 2.0
+	vim.g.neovide_floating_blur_amount_y = 2.0
+  vim.g.neovide_transparency = 0.8
 	vim.opt.linespace = 1
 end
 

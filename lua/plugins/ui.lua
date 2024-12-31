@@ -9,7 +9,7 @@ return {
 		config = function()
 			local transparent = true
 			if vim.g.neovide then
-				transparent = false
+				transparent = true
 			end
 			require("tokyonight").setup({
 				transparent = transparent,

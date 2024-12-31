@@ -6,7 +6,6 @@ return {
 		"dgagn/diagflow.nvim",
 		event = "VeryLazy",
 		opts = {
-			max_width = 120, -- The maximum width of the diagnostic messages
 			text_align = "left",
 		},
 	},
@@ -127,43 +126,17 @@ return {
 	{
 		"karb94/neoscroll.nvim",
 		event = "VeryLazy",
-		opts = {
-			hide_cursor = false,
-			easing_function = "sine",
-		},
-	},
-
-	-- 滚动条
-	{
-		"petertriho/nvim-scrollbar",
-		enabled = false,
 		config = function()
-			local colors = require("tokyonight.colors").setup()
+			local opts = {
+				hide_cursor = false,
+				easing_function = "sine",
+			}
 
-			require("scrollbar").setup({
-				handle = {
-					color = colors.bg_highlight,
-				},
-				marks = {
-					Cursor = { text = "" },
-					Search = { color = colors.orange },
-					Error = { color = colors.error },
-					Warn = { color = colors.warning },
-					Info = { color = colors.info },
-					Hint = { color = colors.hint },
-					Misc = { color = colors.purple },
-				},
-				handlers = {
-					cursor = false,
-				},
-			})
+			if vim.g.neovide then
+				-- Put anything you want to happen only in Neovide here
+			else
+				require("neoscroll").setup(opts)
+			end
 		end,
 	},
-
-  {
-    "rcarriga/nvim-notify",
-    config = function()
-      vim.notify = require("notify")
-    end,
-  }
 }

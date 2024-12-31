@@ -71,7 +71,6 @@ return {
 		"j-hui/fidget.nvim",
 		event = "lspattach",
 		tag = "legacy",
-		opts = {},
 	},
 
 	-- 基于 lsp 的重命名
@@ -111,25 +110,5 @@ return {
 		"dmmulroy/ts-error-translator.nvim",
 		event = "lspattach",
 		opts = {},
-	},
-
-	-- 利用 none-ls 做 spell check
-	{
-		"nvimtools/none-ls.nvim",
-		dependencies = {
-			"davidmh/cspell.nvim",
-		},
-		config = function()
-			local cspell = require("cspell")
-			local config = {
-				cspell_config_dirs = { "~/.config/nvim" },
-			}
-			require("null-ls").setup({
-				sources = {
-					cspell.diagnostics.with({ config = config }),
-					cspell.code_actions.with({ config = config }),
-				},
-			})
-		end,
 	},
 }
