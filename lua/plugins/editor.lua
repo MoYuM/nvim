@@ -139,4 +139,9 @@ return {
 			end
 		end,
 	},
+
+  -- bigfile
+	{
+		"LunarVim/bigfile.nvim",
+	},
 }
