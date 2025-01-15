@@ -128,6 +128,7 @@ return {
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
 		lazy = false,
+    enabled = false,
 		config = function()
 			require("copilot").setup({
 				suggestion = {
