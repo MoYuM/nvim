@@ -47,3 +47,4 @@ require("lazy").setup({
 require("mapping")
 require("ui")
 require("mo")
+require("cmd")
