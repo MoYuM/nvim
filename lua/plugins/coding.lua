@@ -123,26 +123,26 @@ return {
   },
 
   -- github copilot
-  { "AndreM222/copilot-lualine" },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    lazy = false,
-    enabled = false,
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          accept = false,
-          enable = true,
-          auto_trigger = true,
-          keymap = {
-            accept = "<C-l>",
-          },
-        },
-        panel = { enabled = false },
-      })
-    end,
-  },
+  -- { "AndreM222/copilot-lualine" },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   lazy = false,
+  --   enabled = false,
+  --   config = function()
+  --     require("copilot").setup({
+  --       suggestion = {
+  --         accept = false,
+  --         enable = true,
+  --         auto_trigger = true,
+  --         keymap = {
+  --           accept = "<C-l>",
+  --         },
+  --       },
+  --       panel = { enabled = false },
+  --     })
+  --   end,
+  -- },
 
   -- 自动括号补全,
   {
@@ -271,23 +271,23 @@ return {
     keys = { "s", "S" },
   },
 
-  {
-    "smoka7/multicursors.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      'nvimtools/hydra.nvim',
-    },
-    opts = {},
-    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
-    keys = {
-      {
-        mode = { 'v', 'n' },
-        '<Leader>m',
-        '<cmd>MCstart<cr>',
-        desc = 'Create a selection for selected text or word under the cursor',
-      },
-    },
-  },
+  -- {
+  --   "smoka7/multicursors.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     'nvimtools/hydra.nvim',
+  --   },
+  --   opts = {},
+  --   cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+  --   keys = {
+  --     {
+  --       mode = { 'v', 'n' },
+  --       '<Leader>m',
+  --       '<cmd>MCstart<cr>',
+  --       desc = 'Create a selection for selected text or word under the cursor',
+  --     },
+  --   },
+  -- },
 
   -- 粘贴
   {
