@@ -21,6 +21,7 @@ return {
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
@@ -79,6 +80,30 @@ return {
 					end,
 				},
 			})
+		end,
+	},
+
+	-- 强制 ts_ls 使用 Mason 自带的现代 TypeScript，忽略项目本地的老旧版本
+	-- 用 vim.schedule 确保在 mason-lspconfig 的 automatic_enable 之后执行
+	{
+		"neovim/nvim-lspconfig",
+		event = "VeryLazy",
+		config = function()
+			local mason_ts = vim.fn.stdpath("data")
+				.. "/mason/packages/typescript-language-server/node_modules/typescript/lib/tsserver.js"
+			if vim.fn.filereadable(mason_ts) ~= 1 then
+				return
+			end
+			vim.lsp.config("ts_ls", {
+				init_options = {
+					hostInfo = "neovim",
+					tsserver = { path = mason_ts },
+				},
+			})
+			-- 重启已有的 ts_ls 客户端
+			for _, client in ipairs(vim.lsp.get_clients({ name = "ts_ls" })) do
+				client:restart()
+			end
 		end,
 	},
 
